@@ -6,14 +6,21 @@ Offline-first PWA that compares Czech self-employed (OSVČ) income with an emplo
 
 ```bash
 pnpm install
-pnpm test          # vitest, all suites
+pnpm dev           # Vite dev server
+pnpm test          # vitest, all suites (calculations in Node, UI with happy-dom)
 pnpm test:watch
 pnpm typecheck     # tsc --noEmit
+pnpm build         # production build with the service worker, into dist/
+pnpm preview       # serve dist/ at /osvc-v-employee/
+pnpm e2e           # Playwright on desktop and Pixel 7 (builds and previews itself)
+pnpm lighthouse    # needs pnpm preview --port 4173; fails below performance 95 or accessibility 100
+pnpm icons         # re-render the PNG icons from public/favicon.svg
 pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> [--out file.txt] [--find "phrase"]
 ```
 
 ## Layout
 
+- App layers in order: `src/calc` → `src/data` (yearly tax data) → `src/model` (Inputs → Results) → `src/state` (signals store, persistence, sharing) → `src/i18n` → `src/ui` (shared components) → `src/app` (shell, routing, PWA) → `src/screens/<route>`; details in `docs/architecture.md`
 - `src/calc/` pure calculators, imported through `src/calc/index.ts`
   - each takes its inputs plus one year's `rates` object (RORO) and returns every intermediate value
   - `*.test.ts` next to each module; `*.law.test.ts` holds tests written from the statutes
@@ -47,7 +54,9 @@ pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> [--out file.txt] [--find "phrase"]
 - Scope of the calculations: everything that changes the OSVČ vs. employee comparison (tax, insurance, paušální daň, benefits and eligibility, gross equivalent, the PRD plan). Pensions are left out on purpose; the app only says OSVČ pensions are lower.
 - The law wins over Dan's Python library and the year sheets; known sheet issues are listed in the PRD and in `TODO.md`.
 - 2024–2026 values are verified against the official texts and agency figures; 2027 values follow from the 2027 wording in e-Sbírka and nařízení vlády 177/2026 Sb. and must be compared with the agencies' figures once published (see `TODO.md`).
-- Calculations are TypeScript (as the PRD says); the front-end stack for the app is not chosen yet.
+- Calculations are TypeScript (as the PRD says). The app is Vite 8 + Preact 11 with Signals and vite-plugin-pwa, plain CSS with native nesting (no framework) to stay under 50 KB of initial JS; screens other than the splitter and the calculator load lazily.
+- The app is deployed by `.github/workflows/deploy.yml` (typecheck, unit, e2e, Lighthouse, then the gh-pages branch) to https://benabraham.github.io/osvc-v-employee/.
+- UI text lives in one message bundle per feature (`src/i18n/messages/<feature>.ts`, Czech first, English complete); never hard-code user-visible strings.
 - The repository is private on GitHub (`benabraham/osvc-v-employee`), MIT-licensed; it goes public at delivery.
 
 ## Git

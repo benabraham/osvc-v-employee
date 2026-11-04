@@ -44,23 +44,25 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 
 ## App (PRD "Scope")
 
-- [ ] Choose and scaffold the front-end stack (PWA, offline, Baseline 2024)
-- [ ] Calculator screen: inputs → net income, levies, gross equivalent
-- [ ] Invoice splitter as the default screen
-- [ ] Costs list with amortisation
-- [ ] Paušální daň comparison hint
-- [ ] Overrides with reset (tax-deductible costs, total levies)
-- [ ] Range warnings (above 1.5M Kč, below minimum wage, paušální daň above its band)
-- [ ] Reverse calculation: target net → hourly rate
-- [ ] Named scenarios and comparison
-- [ ] Share my calculation (inputs in the URL) and share app
-- [ ] Export and import (JSON)
-- [ ] Tax year switcher with own numbers for a year without data, and input sync across years
-- [ ] Itemised credits and deductions in the UI, including the 2027 credits
-- [ ] Benefits view: sickness, maternity and paternity for OSVČ vs employee, with eligibility
-- [ ] Czech and English UI
-- [ ] Install, offline and local persistence; Lighthouse targets
-- [ ] Deploy to GitHub Pages; disclaimer, links to the year sheets and to GitHub issues
+- [x] Choose and scaffold the front-end stack (Vite 8, Preact 11 + Signals, vite-plugin-pwa; see docs/architecture.md)
+- [x] Calculator screen: inputs → net income, levies, gross equivalent
+- [x] Invoice splitter as the default screen
+- [x] Costs list with amortisation
+- [x] Paušální daň comparison hint
+- [x] Overrides with reset (tax-deductible costs, total levies)
+- [x] Range warnings (above 1.5M Kč, below minimum wage, paušální daň above its band)
+- [x] Reverse calculation: target net → hourly rate
+- [x] Named scenarios and comparison
+- [x] Share my calculation (inputs in the URL) and share app
+- [x] Export and import (JSON)
+- [x] Tax year switcher with own numbers for a year without data, and input sync across years
+- [x] Itemised credits and deductions in the UI, including the 2027 credits
+- [x] Benefits view: sickness, maternity and paternity for OSVČ vs employee, with eligibility
+- [x] Czech and English UI
+- [x] Install, offline and local persistence; Lighthouse targets
+- [x] Deploy to GitHub Pages; disclaimer, links to the year sheets and to GitHub issues
+
+- [ ] Follow-ups from the first QA pass (added below as they are found)
 
 ## Delivery
 
