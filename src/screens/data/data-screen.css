@@ -1,0 +1,11 @@
+/* Data screen: the link field shows a long address, so it reads left to right and small. */
+.data-screen .share-link-input {
+  text-align: left;
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+
+.data-screen .field input[type='file'] {
+  min-height: 2.75rem;
+  max-width: 100%;
+}
