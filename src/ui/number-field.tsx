@@ -50,9 +50,15 @@ export const NumberField = ({
   const [isFocused, setIsFocused] = useState(false)
   const [hasError, setHasError] = useState(false)
 
-  // follow outside changes (year switch, reset, import) while the user is not typing
+  // follow outside changes (year switch, reset, import); while typing, keep text that already means the value
+  // (e.g. "1," for 1) and replace text that means a different number (the value changed underneath)
   useEffect(() => {
-    if (!isFocused) setText(format(value))
+    if (!isFocused) {
+      setText(format(value))
+      return
+    }
+    const typed = parseNumberInput(text)
+    if (typed !== null && typed !== value) setText(format(value))
   }, [value, isFocused, currentLocale.value])
 
   const helpId = help ? `${id}-help` : undefined

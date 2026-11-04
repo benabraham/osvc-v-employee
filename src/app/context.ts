@@ -6,7 +6,7 @@ import { computed, signal } from '@preact/signals'
 import { TAX_YEARS } from '../data/tax-years'
 import { createTranslator, type MessageBundle, type Translator } from '../i18n'
 import { initialBundles } from '../i18n/messages'
-import { computeResults, yearOnYearChangeFor } from '../model'
+import { computeResults, workingDaysFor, yearOnYearChangeFor } from '../model'
 import { getAppStore } from '../state'
 import { currentLocale } from '../ui/locale'
 
@@ -52,9 +52,15 @@ export const results = computed(() => {
   return computeResults({ inputs: store.activeInputs.value, data })
 })
 
-/** Net monthly difference against the previous year for the same inputs, or null without data. */
+/**
+ * Net monthly difference against the previous year for the same inputs (PRD "Year-on-year change"), or null
+ * without data. Working days are pinned to this year's value, so the change shows the rules, not a different
+ * default number of working days.
+ */
 export const yearOnYearChange = computed(() => {
   const data = store.activeYearData.value
   if (!data) return null
-  return yearOnYearChangeFor({ inputs: store.activeInputs.value, data, previousData: TAX_YEARS[data.year - 1] })
+  const inputs = store.activeInputs.value
+  const sameInputs = { ...inputs, workingDays: workingDaysFor({ inputs, data }) }
+  return yearOnYearChangeFor({ inputs: sameInputs, data, previousData: TAX_YEARS[data.year - 1] })
 })

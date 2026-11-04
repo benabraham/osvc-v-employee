@@ -46,6 +46,24 @@ describe('NumberField', () => {
     expect(input.getAttribute('aria-invalid')).toBe('true')
   })
 
+  it('follows a new value from outside even while focused (year switch with the field focused)', () => {
+    const { rerender } = render(<NumberField id="rate2" label="Sazba" value={650} onValue={() => {}} />)
+    const input = screen.getByLabelText('Sazba') as HTMLInputElement
+    fireEvent.focus(input)
+    fireEvent.input(input, { target: { value: '800' } })
+    rerender(<NumberField id="rate2" label="Sazba" value={700} onValue={() => {}} />)
+    expect(input.value).toBe('700')
+  })
+
+  it('keeps half-typed text that still means the current value', () => {
+    const { rerender } = render(<NumberField id="reserve" label="Rezerva" value={1} onValue={() => {}} maximumFractionDigits={2} />)
+    const input = screen.getByLabelText('Rezerva') as HTMLInputElement
+    fireEvent.focus(input)
+    fireEvent.input(input, { target: { value: '1,' } })
+    rerender(<NumberField id="reserve" label="Rezerva" value={1} onValue={() => {}} maximumFractionDigits={2} />)
+    expect(input.value).toBe('1,')
+  })
+
   it('clamps to the allowed range', () => {
     const onValue = vi.fn()
     render(<NumberField id="months" label="Měsíce" value={12} onValue={onValue} min={0} max={12} />)

@@ -17,3 +17,11 @@ test.describe('no horizontal scrolling at 360 px', () => {
     })
   }
 })
+
+test('the desktop navigation stays in view while the page scrolls', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'phones use the fixed bottom bar')
+  await page.setViewportSize({ width: 1366, height: 900 })
+  await page.goto('./#/calc')
+  await page.mouse.wheel(0, 1_500)
+  await expect(page.getByRole('navigation', { name: 'Hlavní navigace' }).getByRole('link', { name: 'Náklady' })).toBeInViewport()
+})

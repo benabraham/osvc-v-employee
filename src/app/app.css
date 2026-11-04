@@ -252,3 +252,13 @@
     display: none;
   }
 }
+
+/* desktop: toasts in the bottom-right corner, clear of the form controls */
+@media (min-width: 960px) {
+  .toast-stack {
+    left: auto;
+    right: var(--space-5);
+    bottom: var(--space-5);
+    transform: none;
+  }
+}

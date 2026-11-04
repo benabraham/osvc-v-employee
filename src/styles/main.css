@@ -254,8 +254,12 @@ a {
   .app-nav {
     position: sticky;
     top: var(--header-height);
-    inset: auto;
-    height: calc(100dvh - var(--header-height));
+    /* a grid item stretches to the row height and could not stick; keep it one screen tall */
+    align-self: start;
+    /* resets the phone bar's inset: auto 0 0 0, keeping the sticky top */
+    inset: var(--header-height) auto auto auto;
+    height: auto;
+    max-height: calc(100dvh - var(--header-height));
     flex-direction: column;
     justify-content: flex-start;
     gap: var(--space-1);
