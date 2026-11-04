@@ -103,6 +103,10 @@ html {
   text-size-adjust: 100%;
 }
 
+.money {
+  white-space: nowrap;
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
@@ -618,14 +622,16 @@ a {
     }
 
     & dt {
+      min-width: 0;
       color: var(--color-text-muted);
     }
 
+    /* the amount stays on one line; a note under it may wrap, so a narrow phone never scrolls sideways */
     & dd {
+      min-width: min-content;
       margin: 0;
       font-weight: 600;
       text-align: right;
-      white-space: nowrap;
     }
 
     & .result-note {

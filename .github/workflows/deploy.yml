@@ -32,6 +32,12 @@ jobs:
       - run: pnpm e2e
         env:
           CI: true
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-results
+          path: test-results/
+          retention-days: 7
       # PRD quality gate: Lighthouse performance ≥ 95 and accessibility 100
       - run: |
           pnpm preview --port 4173 --strictPort &
