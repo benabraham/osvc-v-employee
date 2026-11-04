@@ -1,4 +1,4 @@
-# Private reference material: Dan's Python tax library, its tests, the test harness and fixtures derived from them
+# Dan's private Python tax library and anything that runs it must never be committed
 /reference/
 
 # Tooling

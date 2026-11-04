@@ -10,7 +10,7 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
   - [ ] Finanční správa: paušální daň bands 9 661 / 16 745 / 27 139 Kč, band 1 with surcharge 11 061 Kč, 23 % threshold 1 859 868 Kč
   - [ ] If band 1 differs from 9 661 Kč, recheck the rounding order in `calculatePausalniDanMonthlyAmounts`
 - [ ] Add the published links to `docs/legal-research/year-values.md` and the published numbers to the 2027 tests in `src/calc/osvc-regimes.test.ts`
-- [ ] Add the 2028 slot each January: average wage from the new nařízení vlády, minimum wage from MPSV, act wordings from e-Sbírka
+- [ ] Add the 2028 slot each January: average wage from the new nařízení vlády, minimum wage from MPSV, act wordings from e-Sbírka (`pnpm esbirka /sb/1992/589/2028-01-01 --find …`)
 
 ## Calculations not modelled yet
 

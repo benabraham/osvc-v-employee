@@ -30,6 +30,8 @@ The amounts for a given year come from the state bodies that publish them (VZP, 
 
 ## How to re-check
 
+`pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> --find "phrase"` fetches any act from the official e-Sbírka as it reads on that date and shows the phrase in context.
+
 1. Open the linked act at the version shown and find the quoted paragraph.
 2. Compare the numbers with the tests named next to each rule (`pnpm test` runs them all).
 3. When a new year's values are published, add them to [year-values.md](year-values.md) and to the tests, then run the tests.

@@ -17,7 +17,7 @@ Pensions are left out on purpose: the app only notes that OSVČ pensions are low
 
 ## Tests
 
-The fixtures in `src/calc/fixtures` come from `reference/harness/generate_fixtures.py`. That folder is git-ignored and holds Dan's private Python tax library. There are two kinds of rows:
+The fixtures in `src/calc/fixtures` were exported once from Dan's private Python tax library, which stays outside the repository; the JSON files are frozen and the tests need nothing else. There are two kinds of rows:
 
 - `library-test`: the library's own hand-written test cases.
 - `generated`: inputs chosen for coverage, with expected values from running the library. They fill gaps: the library has no own tests for 2024 and 2025 (`test_calc2025.py` is a copy of `test_calc2023.py`, and `test_calc2024.py` only covers 2023 classes).

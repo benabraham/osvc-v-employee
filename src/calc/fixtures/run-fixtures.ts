@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 /**
- * One case exported from the reference Python library by reference/harness/generate_fixtures.py.
+ * One case exported once from the reference Python library (kept outside the repository); the JSON is frozen.
  * `library-test` rows carry the library's hand-written expectations, `generated` rows its computed output.
  */
 export type FixtureRow = {

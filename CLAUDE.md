@@ -9,6 +9,7 @@ pnpm install
 pnpm test          # vitest, all suites
 pnpm test:watch
 pnpm typecheck     # tsc --noEmit
+pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> [--out file.txt] [--find "phrase"]
 ```
 
 ## Layout
@@ -19,7 +20,8 @@ pnpm typecheck     # tsc --noEmit
   - `fixtures/*.json` cases exported from the reference Python library (`library-test` = its own tests, `generated` = its output for chosen inputs)
 - `docs/legal-research/` word-for-word statute quotes, the official source of every year value, and which function and test implement each rule
 - `docs/calc-port-notes.md` what was ported, what changed against the library, and why
-- `reference/` git-ignored: Dan's private Python tax library and the fixture generator; never commit it or any Python file
+- `tools/esbirka.ts` downloads any act from the official e-Sbírka as it reads on a date (`pnpm esbirka /sb/1992/589/2027-01-01 --find "35 %"`); use it to quote and check the law
+- No Python in this repository: Dan's private tax library and anything that runs it stay outside (`/reference/` is git-ignored in case it is copied in again). The fixtures are a frozen export of it
 
 ## Rules for calculations
 
