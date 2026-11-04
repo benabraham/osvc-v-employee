@@ -26,6 +26,16 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      # end-to-end on desktop and Pixel 7 (builds and previews the app itself)
+      - run: pnpm e2e
+        env:
+          CI: true
+      # PRD quality gate: Lighthouse performance ≥ 95 and accessibility 100
+      - run: |
+          pnpm preview --port 4173 --strictPort &
+          npx --yes wait-on@8.0.3 http://localhost:4173/osvc-v-employee/
+          pnpm lighthouse
       # publishes dist/ to the gh-pages branch, which GitHub Pages serves
       - uses: peaceiris/actions-gh-pages@v4
         with:
