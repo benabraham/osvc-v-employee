@@ -2,7 +2,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2025",
-  "taxYear": 2025,
+  "taxYear": 2024,
   "input": {
    "pensionSavingsContributions": 12000,
    "lifeInsurancePremiums": 0,
@@ -10,7 +10,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 16200,
+   "pensionSavingsMonthlyThresholds": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -24,7 +37,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2025",
-  "taxYear": 2025,
+  "taxYear": 2024,
   "input": {
    "pensionSavingsContributions": 36000,
    "lifeInsurancePremiums": 0,
@@ -32,7 +45,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 16200,
+   "pensionSavingsMonthlyThresholds": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -46,7 +72,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2025",
-  "taxYear": 2025,
+  "taxYear": 2024,
   "input": {
    "pensionSavingsContributions": 68400,
    "lifeInsurancePremiums": 0,
@@ -54,7 +80,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 16200,
+   "pensionSavingsMonthlyThresholds": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -68,7 +107,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2025",
-  "taxYear": 2025,
+  "taxYear": 2024,
   "input": {
    "pensionSavingsContributions": 24000,
    "lifeInsurancePremiums": 12000,
@@ -76,7 +115,20 @@
    "longTermInvestmentContributions": 10000
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 16200,
+   "pensionSavingsMonthlyThresholds": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -90,7 +142,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2025",
-  "taxYear": 2025,
+  "taxYear": 2024,
   "input": {
    "pensionSavingsContributions": 30000,
    "lifeInsurancePremiums": 30000,
@@ -98,7 +150,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 16200,
+   "pensionSavingsMonthlyThresholds": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -112,7 +177,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 12000,
    "lifeInsurancePremiums": 0,
@@ -120,7 +185,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -134,7 +212,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 36000,
    "lifeInsurancePremiums": 0,
@@ -142,7 +220,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -156,7 +247,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 68400,
    "lifeInsurancePremiums": 0,
@@ -164,7 +255,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -178,7 +282,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 24000,
    "lifeInsurancePremiums": 12000,
@@ -186,7 +290,20 @@
    "longTermInvestmentContributions": 10000
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -200,7 +317,7 @@
  {
   "source": "generated",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 30000,
    "lifeInsurancePremiums": 30000,
@@ -208,7 +325,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {
@@ -222,7 +352,7 @@
  {
   "source": "library-test test_calc2026.TaxSavingProducts2026Tests",
   "libraryClass": "TaxSavingProducts2026",
-  "taxYear": 2026,
+  "taxYear": 2025,
   "input": {
    "pensionSavingsContributions": 68400,
    "lifeInsurancePremiums": 0,
@@ -230,7 +360,20 @@
    "longTermInvestmentContributions": 0
   },
   "rates": {
-   "pensionSavingsDeductibleAbove": 20400,
+   "pensionSavingsMonthlyThresholds": [
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ],
    "cap": 48000
   },
   "expected": {

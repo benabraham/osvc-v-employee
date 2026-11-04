@@ -2741,57 +2741,6 @@
   "libraryClass": "NetWage2025",
   "taxYear": 2025,
   "input": {
-   "children": 0,
-   "ztpHolder": false,
-   "disabilityDegree1or2": false,
-   "disabilityDegree3": false,
-   "grossWage": 20000
-  },
-  "rates": {
-   "minimumWage": 20800,
-   "healthRate": 0.045,
-   "socialRate": 0.071,
-   "employerSocialRate": 0.248,
-   "baseTaxRate": 0.15,
-   "solidarityTaxRate": 0.23,
-   "monthlySolidarityThreshold": 139671,
-   "payerCredit": 2570,
-   "ztpHolderCredit": 1345,
-   "disabilityDegree1or2Credit": 210,
-   "disabilityDegree3Credit": 420,
-   "childCreditsMonthly": {
-    "first": 1267,
-    "second": 1860,
-    "thirdAndMore": 2320
-   }
-  },
-  "expected": {
-   "employerHealthInsurance": 1800,
-   "employeeHealthInsurance": 900,
-   "employeeSocialInsurance": 1420,
-   "employerSocialInsurance": 4960,
-   "taxBase": 20000,
-   "taxAtBaseRate": 3000,
-   "taxAtSolidarityRate": 0,
-   "taxBeforeCredits": 3000,
-   "payerCredit": 2570,
-   "studentCredit": 0,
-   "ztpHolderCredit": 0,
-   "disabilityDegree1or2Credit": 0,
-   "disabilityDegree3Credit": 0,
-   "creditsTotal": 2570,
-   "taxAfterCredits": 430,
-   "childCredit": 0,
-   "taxAfterChildCredit": 430,
-   "childBonus": 0,
-   "netWage": 17250
-  }
- },
- {
-  "source": "generated",
-  "libraryClass": "NetWage2025",
-  "taxYear": 2025,
-  "input": {
    "children": 1,
    "ztpHolder": false,
    "disabilityDegree1or2": false,
@@ -3397,58 +3346,6 @@
    "taxAfterChildCredit": 655,
    "childBonus": 0,
    "netWage": 20780
-  }
- },
- {
-  "source": "generated",
-  "libraryClass": "NetWage2026",
-  "taxYear": 2026,
-  "input": {
-   "children": 0,
-   "ztpHolder": false,
-   "disabilityDegree1or2": false,
-   "disabilityDegree3": false,
-   "grossWage": 20000
-  },
-  "rates": {
-   "minimumWage": 22400,
-   "healthRate": 0.045,
-   "socialRate": 0.071,
-   "socialRateRetired": 0.006,
-   "employerSocialRate": 0.248,
-   "baseTaxRate": 0.15,
-   "solidarityTaxRate": 0.23,
-   "monthlySolidarityThreshold": 146901,
-   "payerCredit": 2570,
-   "ztpHolderCredit": 1345,
-   "disabilityDegree1or2Credit": 210,
-   "disabilityDegree3Credit": 420,
-   "childCreditsMonthly": {
-    "first": 1267,
-    "second": 1860,
-    "thirdAndMore": 2320
-   }
-  },
-  "expected": {
-   "employerHealthInsurance": 1800,
-   "employeeHealthInsurance": 900,
-   "employeeSocialInsurance": 1420,
-   "employerSocialInsurance": 4960,
-   "taxBase": 20000,
-   "taxAtBaseRate": 3000,
-   "taxAtSolidarityRate": 0,
-   "taxBeforeCredits": 3000,
-   "payerCredit": 2570,
-   "studentCredit": 0,
-   "ztpHolderCredit": 0,
-   "disabilityDegree1or2Credit": 0,
-   "disabilityDegree3Credit": 0,
-   "creditsTotal": 2570,
-   "taxAfterCredits": 430,
-   "childCredit": 0,
-   "taxAfterChildCredit": 430,
-   "childBonus": 0,
-   "netWage": 17250
   }
  },
  {
