@@ -32,6 +32,33 @@ The 40 % planned for 2026 was replaced by 35 % (zákon č. 90/2026 Sb.); the wor
 
 A tenth of each year's average wage rounded down to 500 Kč: 4 396 → 4 000 Kč (2024), 4 655 → 4 500 Kč (2025), 4 896 → 4 500 Kč (2026), 5 166 → 5 000 Kč (2027). ČSSZ publishes 4 000 Kč for 2024 and 4 500 Kč for 2026. Tested in `osvc-regimes.test.ts`.
 
+## Every other provision the calculations use, in the 2024 wording
+
+Each phrase below was found word for word in the e-Sbírka version in force on 1 January 2024, so the 2024 calculations rest on the 2024 act. The union dues and exam fee deductions are absent from that version, which confirms they ended in 2024.
+
+| Act (1 January 2024) | Provision | Wording found |
+| --- | --- | --- |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 16 odst. 1 | „15 % pro část základu daně do 36násobku průměrné mzdy“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 7 odst. 7 písm. b) | „do částky 1 200 000 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 15 odst. 1 | „nejvýše 15 % ze základu daně“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 15 odst. 4 | „nesmí překročit 150 000 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 15 odst. 6 | „nejvýše 48 000 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35ba odst. 1 písm. a) | „základní slevu ve výši 30 840 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35ba odst. 1 písm. e) | „slevu na držitele průkazu ZTP/P ve výši 16 140 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35bb odst. 1 | „Výše slevy na manžela činí 24 840 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35c odst. 1 | „15 204 Kč ročně na jedno dítě, 22 320 Kč ročně na druhé dítě a 27 840 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35c odst. 3 | „pokud jeho výše činí alespoň 100 Kč“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 35c odst. 4 | „alespoň ve výši šestinásobku minimální mzdy“ |
+| [zákon č. 586/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/586/2024-01-01) | § 38lk odst. 7 | „a) 100 Kč pro první pásmo paušálního režimu, b) 4 963 Kč pro druhé pásmo paušálního režimu a c) 9 320 Kč“ |
+| [zákon č. 592/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/592/2024-01-01) | § 3 odst. 6 | „Minimálním vyměřovacím základem je minimální mzda“ |
+| [zákon č. 592/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/592/2024-01-01) | § 3 odst. 10 | „pojistné ve výši 13,5 % z rozdílu těchto základů“ |
+| [zákon č. 592/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/592/2024-01-01) | § 3a odst. 2 | „dvanáctinásobek 50 % průměrné mzdy“ |
+| [zákon č. 592/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/592/2024-01-01) | § 3a odst. 5 | „částka 319 200 Kč a c) třetí pásmo paušálního režimu částka 470 400 Kč“ |
+| [zákon č. 589/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/589/2024-01-01) | § 5b odst. 1 | „od roku 2024 55 % daňového základu“ |
+| [zákon č. 589/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/589/2024-01-01) | § 7 odst. 1 písm. d) bod 2 | „2,7 % z vyměřovacího základu uvedeného v § 5b odst. 4“ |
+| [zákon č. 589/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/589/2024-01-01) | § 14 odst. 3 | „druhé pásmo paušálního režimu 28 050 Kč a c) třetí pásmo paušálního režimu 42 900 Kč“ |
+| [zákon č. 589/1992 Sb.](https://e-sbirka.gov.cz/eli/cz/sb/1992/589/2024-01-01) | § 15a odst. 1 | „čtyřicetiosminásobku průměrné mzdy“ |
+
 ## 23 % threshold
 
 § 16 odst. 1 zákona 586/1992 Sb. (quoted in [income-tax.md](income-tax.md)) sets it at 36 × the average wage: 36 × 48 967 = 1 762 812 Kč in 2026, as Finanční správa publishes.
