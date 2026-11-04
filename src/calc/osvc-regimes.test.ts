@@ -55,7 +55,10 @@ describe('paušální daň bands (§ 2a odst. 5)', () => {
 })
 
 describe('OSVČ voluntary sickness insurance (zákon 589/1992 Sb. § 3, § 5b odst. 4; zákon 187/2006 Sb. § 6 odst. 2)', () => {
-  it('keeps 4 500 Kč for 2026 (ČSSZ: "zůstává v roce 2026 ve výši 4 500 Kč")', () => {
+  it('follows § 6 odst. 2 year by year: 4 000 Kč in 2024, 4 500 Kč in 2025 and 2026 (ČSSZ publishes the same)', () => {
+    // a tenth of each year's average wage (nařízení vlády 286/2023, 282/2024, 365/2025 Sb.) rounded down to 500 Kč
+    expect(sicknessEligibilityThresholdFor({ averageWage: 43_967, previousThreshold: 4_000 })).toBe(4_000)
+    expect(sicknessEligibilityThresholdFor({ averageWage: 46_557, previousThreshold: 4_000 })).toBe(4_500)
     expect(sicknessEligibilityThresholdFor({ averageWage: 48_967, previousThreshold: 4_500 })).toBe(4_500)
   })
 

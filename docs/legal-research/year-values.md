@@ -34,5 +34,5 @@ Every year-specific number the tests expect, with the state body or regulation t
 - ČSSZ's table of minimum bases and its January 2026 overview show 235 044 Kč (19 587 Kč a month, 40 %) for 2026, from before the July 2026 change. The current act (§ 14 odst. 5), ČSSZ's July 2026 notice and Finanční správa's 9 162 Kč band 1 all use 35 %, so the tests use 205 668 Kč.
 - Finanční správa's employee page labels 1 762 812 Kč as the 2025 threshold too; for 2025 it is 36 × 46 557 = 1 676 052 Kč. The tests assert only 2026.
 - The 2024 year sheet's minimum SP base of 131 904 Kč (PRD known issue 10) equals the 2024 minimum for a *new* OSVČ, not the regular 158 292 Kč.
-- Historical wordings of the acts on zakonyprolidi.cz need a login, so 2024 rules are confirmed through ČSSZ's and Finanční správa's own 2024 publications.
+- The 2024 and mid-2026 rules are quoted from the official e-Sbírka wordings of those dates in [history.md](history.md).
 - Tests that use these values: `osvc-regimes.test.ts`, `osvc-plan.test.ts`, `*.law.test.ts`.
