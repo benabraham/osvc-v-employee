@@ -106,12 +106,30 @@ const pwaChecks = async (): Promise<PwaCheck[]> => {
  */
 const percentOf = (score: number | null | undefined): number => Math.round((score ?? 0) * 100)
 
+/** Lighthouse runs per check; the median smooths out noisy shared CI runners (as Lighthouse CI does). */
+const RUNS = 3
+
+/**
+ * The median of a list of numbers.
+ *
+ * @param {number[]} values
+ * @returns {number}
+ */
+const medianOf = (values: number[]): number => {
+  const sorted = [...values].sort((first, second) => first - second)
+  return sorted[Math.floor(sorted.length / 2)] ?? 0
+}
+
 const main = async (): Promise<void> => {
   await assertServerRunning()
-  const report = await runLighthouse({ chromePath: chromiumPath() })
-  const performance = report.categories['performance']?.score ?? 0
-  const accessibility = report.categories['accessibility']?.score ?? 0
-  const bestPractices = report.categories['best-practices']?.score ?? 0
+  const chromePath = chromiumPath()
+  const reports: LighthouseReport[] = []
+  for (let run = 0; run < RUNS; run += 1) reports.push(await runLighthouse({ chromePath }))
+  const scoresOf = (category: string) => reports.map((report) => report.categories[category]?.score ?? 0)
+  console.log(`  performance per run: ${scoresOf('performance').map(percentOf).join(', ')}`)
+  const performance = medianOf(scoresOf('performance'))
+  const accessibility = medianOf(scoresOf('accessibility'))
+  const bestPractices = medianOf(scoresOf('best-practices'))
   const checks = await pwaChecks()
   const pwaScore = checks.filter((check) => check.passed).length / checks.length
 
