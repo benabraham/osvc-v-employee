@@ -1,6 +1,6 @@
 # OSVČ vs. zaměstnanec — PRD
 
-Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export.
+Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 109).
 
 ## Overview
 
@@ -241,10 +241,10 @@ Constants live in data, one set per tax year, so a new year or a mid-year change
 | Working days | 252 | 251 | 250 | 252 |
 | Average wage (Kč/month) | 43 967 | 46 557 | 48 967 | 51 663 |
 | Minimum ZP base, 50 % of average wage (Kč/year) | 263 802 | 279 342 | 293 802 | 309 978 |
-| Minimum SP base (Kč/year) | 158 292 (30 %); the sheet has 131 904, which is wrong | 195 540 (35 %) | 205 668 (35 %, after the July change; was 40 %) | 216 996 (35 %) |
+| Minimum SP base (Kč/year) | 158 292 (30 %); the sheet has 131 904, the 2024 minimum for a new OSVČ | 195 540 (35 %) | 205 668 (35 %, after the July change; was 40 %) | 216 996 (35 %) |
 | SP share of profit | 55 % | 55 %; the sheet uses 60 %, which is wrong | 55 %; the sheet uses 65 %, which is wrong | 55 % |
 | ZP share of profit | 50 % | 50 % | 50 % | 50 % |
-| Paušální daň band 1 (Kč/month) | 7 498 | 8 716 | 9 162 (9 984 until July) | 9 662 |
+| Paušální daň band 1 (Kč/month) | 7 498 | 8 716 | 9 162 (9 984 until July) | 9 661 |
 | Paušální daň band 2 (Kč/month) | 16 745 | 16 745 | 16 745 | 16 745 |
 | Minimum wage (Kč/month) | 18 900 | 20 800; the sheet has 18 900, which is wrong | 22 400 | 24 900 |
 | Payer credit (Kč/year) | 30 840 | 30 840 | 30 840 | 30 840 |
@@ -312,7 +312,7 @@ Fourteen issues turned up across the year sheets. The app follows the law where 
 | 7 | Sickness insurance is a free-entry yearly amount. | Users must calculate it elsewhere. | Calculate it from the rate and base in v1. |
 | 8 | Past years' sheets might differ in formulas, not only in values. | One shared rule set could miscalculate a past year. | Checked: 2024–2026 share one structure, and only the constants and the SP share differ. One rule set with per-year data. |
 | 9 | The 2025 and 2026 sheets compute SP from 60 % and 65 % of profit. The law sets 55 % for 2024–2027. | SP is overstated once profit is above the minimum base. At 1 000 Kč/h in 2026: 81 235 instead of 68 737 Kč a year, and net monthly 900 Kč too low. The default inputs hide it. | Use 55 %, add the edge case to the fixtures, and fix the sheets. |
-| 10 | The 2024 sheet has a minimum SP base of 131 904 Kč (25 % of the average wage). The law set 30 %, 158 292 Kč. | Wrong only for low incomes; the defaults are unaffected. | Use 158 292 and fix the sheet. |
+| 10 | The 2024 sheet uses a minimum SP base of 131 904 Kč (25 % of the average wage), which the law allows only for a new OSVČ in its first three years. The regular minimum was 30 %, 158 292 Kč. | Wrong for an established OSVČ with low income; the defaults are unaffected. | Use 158 292 by default and 131 904 for a new OSVČ; fix the sheet. |
 | 11 | The 2025 sheet keeps the 2024 minimum wage (18 900 Kč). The 2025 value was 20 800 Kč. | The minimum-wage warning is wrong, and the gross estimate may shift. | Use 20 800 and fix the sheet. |
 | 12 | The 2024 and 2025 sheets' gross estimates match the old employee social rate of 6.5 %. From 2024 it is 7.1 %, because the 0.6 % sickness insurance came back. | The gross is understated by about 450 Kč (2024) and 490 Kč (2025) at the default inputs. | Use 7.1 %; the payroll cross-check covers it. |
 | 13 | All three sheets use the tax base unrounded. The law rounds it down to whole hundreds. | Income tax can be up to 15 Kč too high. Every fixture, including the 1 000 Kč/h case, has a round tax base, so none of them shows it. | Round down to hundreds after deductible items, add an edge case to the fixtures, and fix the sheets. |
