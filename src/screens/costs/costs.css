@@ -1,0 +1,111 @@
+/*
+ * Costs list. On a phone each row is a card; from 960 px the fields of a row line up in one grid line, with the
+ * row title moved out of sight (it stays for screen readers).
+ */
+
+.costs-screen {
+  & .costs-toolbar {
+    margin-bottom: var(--space-4);
+  }
+
+  & .costs-undo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 2.75rem;
+    margin-bottom: var(--space-3);
+
+    & .costs-undo .button {
+      min-height: 2.75rem;
+    }
+
+    & .costs-undo-status {
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  & .cost-list {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  & .cost-row {
+    position: relative;
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    box-shadow: var(--shadow);
+
+    & .cost-row-title {
+      margin: 0;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+    }
+
+    & .field-text input {
+      text-align: left;
+    }
+
+    & .cost-fields {
+      display: grid;
+      gap: var(--space-3);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    & .cost-yearly {
+      display: grid;
+      gap: var(--space-1);
+
+      & .cost-yearly-label {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+      }
+
+      & .cost-yearly-value {
+        min-height: 2.75rem;
+        line-height: 2.75rem;
+        font-weight: 700;
+        text-align: right;
+      }
+    }
+
+    & .cost-delete {
+      justify-self: start;
+      min-height: 2.75rem;
+    }
+  }
+
+  & .costs-total {
+    margin-top: var(--space-5);
+  }
+
+  @media (min-width: 960px) {
+    & .cost-row {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+      align-items: end;
+      padding: var(--space-2) var(--space-3);
+
+      & .cost-row-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      & .cost-fields {
+        display: contents;
+      }
+
+      & .cost-delete {
+        justify-self: end;
+      }
+    }
+  }
+}

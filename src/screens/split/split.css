@@ -1,0 +1,154 @@
+/*
+ * Invoice splitter. The amount is large for one-handed use; the five parts have their own colours in the bar and
+ * in the list, and the list carries the text labels, so colour is never the only cue.
+ */
+
+.split-screen {
+  /* the five parts of an invoice; light values, dark values below */
+  --split-levies: #b42318;
+  --split-costs: #7c3aed;
+  --split-reserve: #2563eb;
+  --split-holiday: #b45309;
+  --split-spend: var(--color-accent);
+
+  & .split-context {
+    margin-bottom: var(--space-4);
+  }
+
+  & .split-amount {
+    & .field-control {
+      min-height: 3.5rem;
+    }
+
+    & input {
+      min-height: 3.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    & .field-unit {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  & .split-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  & .split-chip {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-accent-contrast);
+    }
+  }
+
+  & .split-bar {
+    height: 1rem;
+    margin-bottom: var(--space-3);
+
+    & span {
+      min-width: 0;
+      transition: width 0.2s;
+    }
+  }
+
+  & [data-part='levies'] {
+    background: var(--split-levies);
+  }
+
+  & [data-part='costs'] {
+    background: var(--split-costs);
+  }
+
+  & [data-part='reserve'] {
+    background: var(--split-reserve);
+  }
+
+  & [data-part='holiday'] {
+    background: var(--split-holiday);
+  }
+
+  & [data-part='spend'] {
+    background: var(--split-spend);
+  }
+
+  & .split-swatch {
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: var(--space-2);
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  & .split-list {
+    & dt,
+    & dd {
+      font-size: 1.125rem;
+    }
+
+    & .result-row {
+      padding: var(--space-3) 0;
+
+      &.is-total dt,
+      &.is-total dd {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  & .split-copy {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0;
+  }
+
+  & .split-copy-status {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-accent-strong);
+  }
+
+  & .split-note p:last-child,
+  & .split-setup p:last-child {
+    margin-bottom: 0;
+  }
+
+  & .split-setup h2 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .split-screen {
+    --split-levies: #f97066;
+    --split-costs: #c4b5fd;
+    --split-reserve: #93c5fd;
+    --split-holiday: #fbbf24;
+    --split-spend: var(--color-accent);
+  }
+}
+
+:root[data-theme='dark'] .split-screen {
+  --split-levies: #f97066;
+  --split-costs: #c4b5fd;
+  --split-reserve: #93c5fd;
+  --split-holiday: #fbbf24;
+  --split-spend: var(--color-accent);
+}
