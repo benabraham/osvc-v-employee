@@ -52,16 +52,4 @@ Rounding follows the library's Python 2 `round()`: exact ties go away from zero,
 
 ## Year values used in tests
 
-Every year-specific number a test expects is published by a state body. 2027 amounts are not published yet (VZP, ČSSZ and Finanční správa had none in November 2026), so only the 2027 average wage is tested.
-
-| Value | 2024 | 2025 | 2026 | 2027 | Source |
-| --- | --- | --- | --- | --- | --- |
-| Average wage (Kč) | 43 967 | 46 557 | 48 967 | 51 663 | [VZP](https://www.vzp.cz/platci/informace/osvc/osvc-prumerna-mzda); 2026 nařízení vlády 365/2025 Sb.; 2027 [nařízení vlády 177/2026 Sb.](https://www.zakonyprolidi.cz/cs/2026-177) (48 900 × 1.0565) |
-| Minimum wage (Kč) | 18 900 | 20 800 | 22 400 | 24 900 | [MPSV](https://mpsv.gov.cz/prehled-o-vyvoji-castek-minimalni-mzdy), [MPSV 2027](https://mpsv.gov.cz/minimalni-mzda-v-roce-2027-vzroste-na-24-900-korun) |
-| ZP minimum monthly base / advance (Kč) | 21 983.50 / 2 968 | 23 278.50 / 3 143 | 24 483.50 / 3 306 | – | [VZP](https://www.vzp.cz/platci/informace/osvc/osvc-minimalni-vyse-zaloh) |
-| SP minimum yearly base (Kč) | 158 292 | 195 540 | 205 668 | – | [ČSSZ](https://www.cssz.gov.cz/vyse-minimalnich-vymerovacich-zakladu-osvc); 2026 at 35 %: 17 139 Kč a month, advance 5 005 Kč ([ČSSZ, July 2026](https://www.cssz.gov.cz/-/informace-pro-osvc-o-zmene-pojistneho-na-duchodove-pojisteni-od-1-7-2026)) |
-| New OSVČ SP minimum yearly base (Kč) | 131 904 | 139 680 | 146 904 | – | [ČSSZ](https://www.cssz.gov.cz/vyse-minimalnich-vymerovacich-zakladu-osvc) |
-| Maximum SP base, 23 % threshold (Kč) | | | 2 350 416, 1 762 812 | – | [ČSSZ](https://www.cssz.gov.cz/maximalni-vymerovaci-zaklad), [Finanční správa](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/zamestnanci-zamestnavatele/obecne-informace) |
-| Paušální daň bands 1 / 2 / 3 (Kč a month) | 7 498 / 16 745 / 27 139 | 8 716 / 16 745 / 27 139 | 9 162 / 16 745 / 27 139 | – | [Finanční správa 2024](https://financnisprava.gov.cz/cs/financni-sprava/media-a-verejnost/tiskove-zpravy-gfr/tiskove-zpravy-2024/pausalni-dan-prilakala-na-32-tisic-osvc), [2025–2026](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/pausalni-dan/informace-k-institutu-pausalni-dane-pro-rok-2025) |
-
-ČSSZ's table of minimum bases still shows 235 044 Kč for 2026, the 40 % figure from before the July 2026 change. The current act (§ 14 odst. 5), ČSSZ's own July 2026 notice and Finanční správa's 9 162 Kč band 1 all use 35 %, so the tests use 205 668 Kč.
+Every year value the tests expect, and the official publication behind it, is listed in [legal-research/year-values.md](legal-research/year-values.md).
