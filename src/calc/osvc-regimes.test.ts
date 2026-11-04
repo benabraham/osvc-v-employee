@@ -55,9 +55,21 @@ describe('paušální daň bands (§ 2a odst. 5)', () => {
 })
 
 describe('OSVČ voluntary sickness insurance (zákon 589/1992 Sb. § 3, § 5b odst. 4; zákon 187/2006 Sb. § 6 odst. 2)', () => {
-  it('raises the eligibility threshold to a tenth of the average wage rounded down to 500 Kč', () => {
+  it('keeps 4 500 Kč for 2026 (ČSSZ: "zůstává v roce 2026 ve výši 4 500 Kč")', () => {
     expect(sicknessEligibilityThresholdFor({ averageWage: 48_967, previousThreshold: 4_500 })).toBe(4_500)
-    expect(sicknessEligibilityThresholdFor({ averageWage: 51_663, previousThreshold: 4_500 })).toBe(5_000)
+  })
+
+  it('raises the threshold to a tenth of the average wage rounded down to 500 Kč (rule only, no published year)', () => {
+    expect(sicknessEligibilityThresholdFor({ averageWage: 54_999, previousThreshold: 4_500 })).toBe(5_000)
+    expect(sicknessEligibilityThresholdFor({ averageWage: 55_000, previousThreshold: 4_500 })).toBe(5_500)
+  })
+
+  it('gives the published minimum OSVČ sickness premiums: 216 Kč in 2024, 243 Kč in 2026 (ČSSZ)', () => {
+    const premiumFor = (employeeEligibilityThreshold: number) =>
+      calculateOsvcSicknessInsurance({ rates: { sicknessInsuranceRatePercent: 2.7, employeeEligibilityThreshold } })
+        .monthlyPremium
+    expect(premiumFor(4_000)).toBe(216)
+    expect(premiumFor(4_500)).toBe(243)
   })
 
   it('never lowers the threshold', () => {
@@ -135,6 +147,17 @@ describe('OSVČ yearly minimums from the average wage (zákon 592/1992 Sb. § 3a
 
   it('returns the 2026 minimum SP advance of 5 005 Kč (ČSSZ, from July 2026)', () => {
     expect(calculateOsvcMinimums({ averageWage: 48_967, rates: { socialMinimumShare: 0.35 } }).minimumSocialMonthlyPremium).toBe(5_005)
+  })
+
+  it('gives the published 2024 minimum SP advance (3 852 Kč) and maximum bases 2024–2025 (ČSSZ, MPSV)', () => {
+    expect(calculateOsvcMinimums({ averageWage: 43_967, rates: { socialMinimumShare: 0.3 } })).toMatchObject({
+      minimumSocialMonthlyBase: 13_191,
+      minimumSocialMonthlyPremium: 3_852,
+      maximumSocialYearlyBase: 2_110_416,
+    })
+    expect(calculateOsvcMinimums({ averageWage: 46_557, rates: { socialMinimumShare: 0.35 } }).maximumSocialYearlyBase).toBe(
+      2_234_736,
+    )
   })
 
   it('derives the solidarity threshold and the maximum SP base from the average wage (§ 16; § 15a)', () => {

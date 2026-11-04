@@ -6,7 +6,7 @@
 >
 > — [zákon č. 187/2006 Sb., o nemocenském pojištění](https://www.zakonyprolidi.cz/cs/2006-187), Aktuální znění 01.11.2026 - 31.12.2026 (verze 67)
 
-4 500 Kč for 2025 and 2026; a tenth of the 2027 average wage (51 663 Kč) rounded down to 500 Kč gives 5 000 Kč. `sicknessEligibilityThresholdFor`. The OSVČ minimum sickness base is twice this amount.
+4 000 Kč in 2024 ([ČSSZ 2024 overview](https://www.cssz.gov.cz/-/prehled-nejdulezitejsich-udaju-pro-socialni-zabezpeceni-pro-rok-2024)) and 4 500 Kč in 2025 and 2026 ([ČSSZ 2026 overview](https://www.cssz.gov.cz/-/prehled-nejdulezitejsich-udaju-pro-socialni-zabezpeceni-v-roce-2026): "zůstává v roce 2026 ve výši 4 500 Kč"). `sicknessEligibilityThresholdFor`. The OSVČ minimum sickness base is twice this amount, so the minimum premium is 216 Kč in 2024 and 243 Kč in 2026, as ČSSZ publishes.
 
 ## OSVČ sickness benefit waiting period
 
