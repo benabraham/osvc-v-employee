@@ -1,0 +1,11 @@
+# Private reference material: Dan's Python tax library, its tests, the test harness and fixtures derived from them
+/reference/
+
+# Tooling
+node_modules/
+dist/
+.vite/
+coverage/
+.env
+.env.*
+.DS_Store
