@@ -53,3 +53,7 @@ Rounding follows the library's Python 2 `round()`: exact ties go away from zero,
 ## Year values used in tests
 
 Every year value the tests expect, and the official publication behind it, is listed in [legal-research/year-values.md](legal-research/year-values.md).
+
+## Salary compensation thresholds
+
+The hourly reduction thresholds for salary compensation (náhrada mzdy, the employer's first 14 days of sickness pay) are not stored in the year data. `hourlyReductionThresholdsFor` in `src/screens/benefits/compare-benefits.ts` derives them from the year's daily sickness thresholds, as § 192 odst. 2 of the Labour Code (zákoník práce, zákon 262/2006 Sb.) prescribes: each daily threshold × 0.175, rounded up to haléře. `calculateSalaryCompensation` in `src/calc/benefits.ts` takes the derived thresholds as an input. The rule is tested in `compare-benefits.test.ts`.
