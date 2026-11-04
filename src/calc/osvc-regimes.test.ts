@@ -90,7 +90,8 @@ describe('OSVČ voluntary sickness insurance (zákon 589/1992 Sb. § 3, § 5b od
 })
 
 describe('OSVČ yearly minimums from the average wage (zákon 592/1992 Sb. § 3a odst. 2; zákon 589/1992 Sb. § 14 odst. 5, § 15a)', () => {
-  // average wage and minimum SP share per year, as in the PRD constants table
+  // Average wages: VZP, nařízení vlády 365/2025 Sb. and 177/2026 Sb. Band 1 amounts 2024–2026 are published by
+  // Finanční správa; 2027 is not published yet, so 9 662 Kč is derived from the official 2027 average wage.
   const years = [
     { year: 2024, averageWage: 43_967, socialMinimumShare: 0.3, healthYearly: 263_802, socialYearly: 158_292, band1: 7_498 },
     { year: 2025, averageWage: 46_557, socialMinimumShare: 0.35, healthYearly: 279_342, socialYearly: 195_540, band1: 8_716 },
