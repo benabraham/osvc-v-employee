@@ -22,7 +22,7 @@
 >
 > — [zákon č. 589/1992 Sb., o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti](https://www.zakonyprolidi.cz/cs/1992-589), Aktuální znění 01.11.2026 - 31.12.2026 (verze 76)
 
-The raised base rounds up to whole crowns (§ 14 odst. 13) and the premium rounds up (§ 7 odst. 3). This statutory order reproduces Finanční správa's published band 1 amounts for 2024–2026 and gives 9 661 Kč for 2027. See [year-values.md](year-values.md) and [2027.md](2027.md).
+The raised base rounds up to whole crowns (§ 14 odst. 13) and the premium rounds up (§ 7 odst. 3). ČSSZ shows the same order for 2026: "17 139 × 1,15 = 19 710; 19 710 × 0,292 = 5 756 Kč" ([ČSSZ, OSVČ v paušálním režimu](https://www.cssz.gov.cz/osvc-v-pausalnim-rezimu)). This statutory order reproduces Finanční správa's published band 1 amounts for 2024–2026 and gives 9 661 Kč for 2027. See [year-values.md](year-values.md) and [2027.md](2027.md).
 
 ## Maximum base
 
