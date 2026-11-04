@@ -1,0 +1,158 @@
+/*
+ * Calculator screen. Layout only: colours, spacing and type come from the tokens in main.css.
+ * Phones: the headline block comes first, then the inputs, then the details (CSS order, one grid).
+ * Desktop (≥ 960 px, the split-layout breakpoint): inputs on the left, results on the right, sticky.
+ */
+
+.calc-screen,
+.calc-layout,
+.calc-headline-block,
+.calc-inputs,
+.calc-details {
+  min-width: 0;
+  /* one column that can shrink: a wide child (a long note, a field row) must wrap, not widen the page */
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.calc-layout {
+  align-items: start;
+}
+
+.calc-results {
+  display: contents;
+}
+
+.calc-headline-block {
+  display: grid;
+  gap: var(--space-3);
+  order: 0;
+}
+
+.calc-inputs {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  order: 1;
+
+  & > .card + .card {
+    margin-top: 0;
+  }
+}
+
+.calc-details {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  order: 2;
+}
+
+.calc-headline {
+  display: grid;
+  gap: var(--space-2);
+  border-left: 4px solid var(--color-accent);
+
+  & .row {
+    justify-content: space-between;
+  }
+
+  & .headline-value .money {
+    font-size: inherit;
+  }
+}
+
+.calc-hint {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.calc-warnings {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.calc-field-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.calc-child {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.calc-costs-line {
+  margin: 0;
+}
+
+.calc-summary-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--font-size);
+}
+
+.calc-summary-text {
+  font-weight: 400;
+}
+
+.calc-screen h3 {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+
+@media (min-width: 960px) {
+  .calc-results {
+    display: grid;
+    gap: var(--space-4);
+    align-content: start;
+    grid-column: 2;
+    grid-row: 1;
+    max-height: calc(100dvh - var(--header-height) - 2 * var(--space-4));
+    overflow-y: auto;
+  }
+
+  .calc-inputs {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .calc-headline-block,
+  .calc-details {
+    order: 0;
+  }
+}
+
+/* the detailed list: one column that can shrink; a row wraps its value under a long label instead of widening */
+.calc-screen .result-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.calc-screen .result-row {
+  min-width: 0;
+  flex-wrap: wrap;
+
+  & dt {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
