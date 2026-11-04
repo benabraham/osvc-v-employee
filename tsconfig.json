@@ -27,6 +27,9 @@
     "src",
     "tools",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "e2e",
+    "scripts",
+    "playwright.config.ts"
   ]
 }
