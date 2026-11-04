@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { FixtureRow } from './fixtures/run-fixtures'
 import incomeTaxRows from './fixtures/osvc-income-tax.json'
 import retirementRows from './fixtures/retirement-products-deduction.json'
-import { calculateOsvcIncomeTax, calculateRetirementProductsDeduction } from './osvc-income-tax'
+import { calculateOsvcIncomeTax, calculateRetirementProductsDeduction, deductibleMortgageInterestFor } from './osvc-income-tax'
 
 // Rates for tax year 2025 as exported with the fixtures (minimum wage 20 800 Kč).
 const rates2025 = (incomeTaxRows as FixtureRow[]).find((row) => row.taxYear === 2025)!.rates as any
@@ -133,5 +133,118 @@ describe('credits from 2027 (zákon 180/2026 Sb., new § 35bc–35be)', () => {
       rates: rates2025,
     })
     expect([result.studentCredit, result.childPlacementCredit, result.salesRegistrationCredit]).toEqual([0, 0, 0])
+  })
+})
+
+describe('child credit for a child with a ZTP/P card (§ 35c odst. 7 zákona 586/1992 Sb.)', () => {
+  // 600 000 Kč profit gives tax 90 000 − payer credit 30 840, so the child credits are not capped by tax
+  const profit = 600_000
+
+  it('doubles the credit of a ZTP/P child: 1 267 × 12 × 2 = 30 408 Kč', () => {
+    const result = calculateOsvcIncomeTax({ profit, childrenDetail: [{ months: 12, hasZtpP: true }], rates: rates2025 })
+    expect(result.childCredit).toBe(30_408)
+  })
+
+  it('uses the position of each child for the amount, and doubles only the ZTP/P child', () => {
+    const result = calculateOsvcIncomeTax({
+      profit,
+      childrenDetail: [
+        { months: 12, hasZtpP: false },
+        { months: 12, hasZtpP: true },
+      ],
+      rates: rates2025,
+    })
+    // first child 1 267 × 12 + second child 1 860 × 12 × 2
+    expect(result.childCredit).toBe(15_204 + 44_640)
+  })
+
+  it('uses the third-and-more amount for a ZTP/P third child', () => {
+    const result = calculateOsvcIncomeTax({
+      profit,
+      childrenDetail: [
+        { months: 12, hasZtpP: false },
+        { months: 12, hasZtpP: false },
+        { months: 12, hasZtpP: true },
+      ],
+      rates: rates2025,
+    })
+    // 15 204 + 22 320 + 2 320 × 12 × 2
+    expect(result.childCredit).toBe(93_204)
+  })
+
+  it('prorates each child by its months', () => {
+    const result = calculateOsvcIncomeTax({ profit, childrenDetail: [{ months: 6, hasZtpP: true }], rates: rates2025 })
+    expect(result.childCredit).toBe(15_204)
+  })
+
+  it('replaces the first, second and third child month parameters when childrenDetail is given', () => {
+    const result = calculateOsvcIncomeTax({
+      profit,
+      firstChildMonths: 6,
+      childrenDetail: [{ months: 12, hasZtpP: false }],
+      rates: rates2025,
+    })
+    expect(result.childCredit).toBe(15_204)
+  })
+
+  it('keeps the old month parameters working without childrenDetail', () => {
+    const result = calculateOsvcIncomeTax({ profit, firstChildMonths: 12, secondChildMonths: 6, rates: rates2025 })
+    expect(result.childCredit).toBe(15_204 + 11_160)
+  })
+
+  it('returns the child credit that the tax did not absorb', () => {
+    // 100 000 Kč profit: tax 15 000 is below the payer credit, so no child credit is applied
+    const result = calculateOsvcIncomeTax({ profit: 100_000, firstChildMonths: 12, secondChildMonths: 12, rates: rates2025 })
+    expect(result.childCredit).toBe(37_524)
+    expect(result.childCreditApplied).toBe(0)
+    expect(result.unpaidChildCredit).toBe(37_524)
+  })
+})
+
+describe('spouse credit for a spouse with a ZTP/P card (§ 35ba odst. 1 písm. b) a § 35bb odst. 1)', () => {
+  it('doubles the spouse credit to 2 × 24 840 Kč when the spouse holds a ZTP/P card', () => {
+    const result = calculateOsvcIncomeTax({
+      profit: 600_000,
+      spouseCaringForChild: true,
+      spouseHasZtpP: true,
+      rates: rates2025,
+    })
+    expect(result.spouseCredit).toBe(49_680)
+  })
+
+  it('gives no spouse credit, doubled or not, when the spouse does not care for a child under 3', () => {
+    const result = calculateOsvcIncomeTax({ profit: 600_000, spouseHasZtpP: true, rates: rates2025 })
+    expect(result.spouseCredit).toBe(0)
+  })
+})
+
+describe('housing loan interest prorated by months (§ 15 odst. 4)', () => {
+  // "nejvýše jedna dvanáctina této maximální částky za každý měsíc placení úroků"
+  const deductionFor = (loans: { mortgageInterest?: number; mortgageInterestPre2021?: number; mortgageInterestMonths?: number }) =>
+    calculateOsvcIncomeTax({ profit: 2_000_000, ...loans, rates: rates2025 }).deductibleMortgageInterest
+
+  it('keeps the full 150 000 Kč cap when interest is paid for all 12 months', () => {
+    expect(deductionFor({ mortgageInterest: 200_000, mortgageInterestMonths: 12 })).toBe(150_000)
+    expect(deductionFor({ mortgageInterest: 200_000 })).toBe(150_000)
+  })
+
+  it('gives one twelfth of the cap for each month the interest was paid', () => {
+    expect(deductionFor({ mortgageInterest: 200_000, mortgageInterestMonths: 6 })).toBe(75_000)
+    expect(deductionFor({ mortgageInterest: 200_000, mortgageInterestMonths: 3 })).toBe(37_500)
+  })
+
+  it('prorates the 300 000 Kč cap for housing acquired before 2021 the same way', () => {
+    expect(deductionFor({ mortgageInterestPre2021: 400_000, mortgageInterestMonths: 6 })).toBe(150_000)
+  })
+
+  it('deducts nothing when no interest was paid in the year', () => {
+    expect(deductionFor({ mortgageInterest: 200_000, mortgageInterestMonths: 0 })).toBe(0)
+  })
+
+  it('takes the months as a parameter of deductibleMortgageInterestFor, and 12 months by default', () => {
+    expect(
+      deductibleMortgageInterestFor({ mortgageInterest: 200_000, mortgageInterestPre2021: 0, rates: rates2025, months: 3 }),
+    ).toBe(37_500)
+    expect(deductibleMortgageInterestFor({ mortgageInterest: 200_000, mortgageInterestPre2021: 0, rates: rates2025 })).toBe(150_000)
   })
 })

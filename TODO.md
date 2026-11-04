@@ -14,13 +14,17 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 
 ## Calculations not modelled yet
 
-- [ ] Doubled spouse credit when the spouse holds a ZTP/P card (zákon 586/1992 Sb. § 35bb odst. 1)
-- [ ] Doubled child credit for a child with a ZTP/P card (§ 35c odst. 1)
-- [ ] Mortgage interest prorated by month when paid for part of the year (§ 15 odst. 4)
+- [x] Doubled spouse credit when the spouse holds a ZTP/P card (zákon 586/1992 Sb. § 35bb odst. 1)
+- [x] Doubled child credit for a child with a ZTP/P card (§ 35c odst. 7)
+- [x] Mortgage interest prorated by month when paid for part of the year (§ 15 odst. 4)
+- [ ] Open questions from the ZTP/P and mortgage work (see docs/legal-research/income-tax.md)
+  - [ ] Is the 300 000 Kč pre-2021 mortgage cap prorated by month like the 150 000 Kč one?
+  - [ ] Maximum child bonus: § 35c odst. 7 refers to a maximum in odst. 3 that the 2026 wording no longer states
+  - [ ] Employee spouse credit is claimed only in the yearly settlement, so the monthly gross equivalent leaves it out; decide whether to show a note
 - [ ] Eligibility check for the 2027 paušální daň surcharge (band 1, previous-year income up to 1 000 000 Kč, § 2b)
-- [ ] Yearly tax data module: one `rates` object per tax year (2024–2027) built from `year-values.md`, so the app no longer needs fixtures for rates
-  - [ ] Each value carries its source and a status (researched / verified), as the PRD asks
-  - [ ] Derivation check in CI: minimum bases, thresholds and paušální daň recomputed from the average wage
+- [x] Yearly tax data module: one `rates` object per tax year (2024–2027) built from `year-values.md`, so the app no longer needs fixtures for rates
+  - [x] Each value carries its source and a status (researched / verified), as the PRD asks
+  - [x] Derivation check in CI: minimum bases, thresholds and paušální daň recomputed from the average wage
 
 ## Verification (PRD "Value verification")
 

@@ -38,6 +38,23 @@ export type OsvcIncomeTaxRates = {
   salesRegistrationCredit?: number
 }
 
+/** § 35c odst. 7 and § 35bb odst. 1: a child or spouse with a ZTP/P card doubles the credit. */
+export const ZTP_CREDIT_MULTIPLE = 2
+
+/**
+ * Monthly child credit for the child at a position: the first child, the second, and every further child at the third amount.
+ *
+ * @param {object} params
+ * @param {number} params.position 0 for the first child, 1 for the second, 2 and more for the third and every further one
+ * @param {ChildCreditsMonthly} params.credits
+ * @returns {number}
+ */
+export const monthlyChildCreditFor = ({ position, credits }: { position: number; credits: ChildCreditsMonthly }) => {
+  if (position === 0) return credits.first
+  if (position === 1) return credits.second
+  return credits.thirdAndMore
+}
+
 /** § 35be odst. 1: the sales registration credit is capped at 15 % of the § 7 base minus the payer credit. */
 export const SALES_REGISTRATION_CREDIT_BASE_SHARE = 0.15
 
@@ -69,24 +86,32 @@ export const deductibleDonationsFor = ({
 
 /**
  * Deductible housing loan interest: newer loans first up to their cap, then older loans up to the combined cap.
+ * Interest paid for part of the year only gets one twelfth of each cap for every month (§ 15 odst. 4).
  *
  * @param {object} params
  * @param {number} params.mortgageInterest interest on loans for housing acquired from 2021
  * @param {number} params.mortgageInterestPre2021 interest on loans for housing acquired before 2021
+ * @param {number} [params.months=12] months the interest was paid in the year (0–12)
  * @param {Pick<OsvcIncomeTaxRates, 'mortgageInterestCap' | 'mortgageInterestPre2021Cap'>} params.rates
  * @returns {number}
  */
 export const deductibleMortgageInterestFor = ({
   mortgageInterest,
   mortgageInterestPre2021,
+  months = 12,
   rates,
 }: {
   mortgageInterest: number
   mortgageInterestPre2021: number
+  months?: number
   rates: Pick<OsvcIncomeTaxRates, 'mortgageInterestCap' | 'mortgageInterestPre2021Cap'>
 }) => {
-  const fromNewLoans = Math.min(mortgageInterest, rates.mortgageInterestCap)
-  const fromOldLoans = Math.min(mortgageInterestPre2021, rates.mortgageInterestPre2021Cap - fromNewLoans)
+  // § 15 odst. 4: "jednu dvanáctinu této maximální částky za každý měsíc placení úroků"
+  const monthsPaid = Math.min(12, Math.max(0, months))
+  const newLoansCap = (rates.mortgageInterestCap * monthsPaid) / 12
+  const combinedCap = (rates.mortgageInterestPre2021Cap * monthsPaid) / 12
+  const fromNewLoans = Math.min(mortgageInterest, newLoansCap)
+  const fromOldLoans = Math.min(mortgageInterestPre2021, combinedCap - fromNewLoans)
   return fromNewLoans + Math.max(0, fromOldLoans)
 }
 
@@ -99,14 +124,18 @@ export const deductibleMortgageInterestFor = ({
  * @param {number} params.profit income minus expenses (dílčí základ daně § 7)
  * @param {number} [params.qualifyingIncome] § 6 and § 7 income (příjmy, not profit) for the child bonus test;
  *   omit to skip the test
+ * @param {{ months: number; hasZtpP: boolean }[]} [params.childrenDetail] each child in order, with its months and ZTP/P card;
+ *   when given it replaces firstChildMonths, secondChildMonths and thirdChildMonths (§ 35c odst. 1 and 7)
  * @param {number} [params.firstChildMonths=0] months the credit is claimed for the first child
  * @param {number} [params.secondChildMonths=0]
  * @param {number} [params.thirdChildMonths=0] third and every further child
  * @param {number} [params.donations=0] gifts (dary)
  * @param {number} [params.mortgageInterest=0] housing acquired from 2021
  * @param {number} [params.mortgageInterestPre2021=0] housing acquired before 2021
+ * @param {number} [params.mortgageInterestMonths=12] months the mortgage interest was paid; the caps are prorated (§ 15 odst. 4)
  * @param {number} [params.retirementProducts=0] deductible retirement products total (see calculateRetirementProductsDeduction)
  * @param {boolean} [params.spouseCaringForChild=false] spouse credit (spouse caring for a child under 3)
+ * @param {boolean} [params.spouseHasZtpP=false] the spouse holds a ZTP/P card: the spouse credit doubles (§ 35bb odst. 1)
  * @param {boolean} [params.disabilityDegree1or2=false]
  * @param {boolean} [params.disabilityDegree3=false]
  * @param {boolean} [params.ztpHolder=false] holder of a ZTP/P card
@@ -118,14 +147,17 @@ export const deductibleMortgageInterestFor = ({
 export const calculateOsvcIncomeTax = ({
   profit,
   qualifyingIncome,
+  childrenDetail,
   firstChildMonths = 0,
   secondChildMonths = 0,
   thirdChildMonths = 0,
   donations = 0,
   mortgageInterest = 0,
   mortgageInterestPre2021 = 0,
+  mortgageInterestMonths = 12,
   retirementProducts = 0,
   spouseCaringForChild = false,
+  spouseHasZtpP = false,
   disabilityDegree1or2 = false,
   disabilityDegree3 = false,
   ztpHolder = false,
@@ -136,6 +168,7 @@ export const calculateOsvcIncomeTax = ({
 }: {
   profit: number
   qualifyingIncome?: number
+  childrenDetail?: { months: number; hasZtpP: boolean }[]
   studentMonths?: number
   childPlacementFees?: number[]
   isFirstYearWithRegisteredSales?: boolean
@@ -145,15 +178,22 @@ export const calculateOsvcIncomeTax = ({
   donations?: number
   mortgageInterest?: number
   mortgageInterestPre2021?: number
+  mortgageInterestMonths?: number
   retirementProducts?: number
   spouseCaringForChild?: boolean
+  spouseHasZtpP?: boolean
   disabilityDegree1or2?: boolean
   disabilityDegree3?: boolean
   ztpHolder?: boolean
   rates: OsvcIncomeTaxRates
 }) => {
   const deductibleDonations = deductibleDonationsFor({ donations, taxBase: profit, rates })
-  const deductibleMortgageInterest = deductibleMortgageInterestFor({ mortgageInterest, mortgageInterestPre2021, rates })
+  const deductibleMortgageInterest = deductibleMortgageInterestFor({
+    mortgageInterest,
+    mortgageInterestPre2021,
+    months: mortgageInterestMonths,
+    rates,
+  })
   const deductibleRetirementProducts = Math.min(rates.retirementProductsCap, retirementProducts)
   const deductionsTotal = deductibleDonations + deductibleMortgageInterest + deductibleRetirementProducts
 
@@ -166,7 +206,7 @@ export const calculateOsvcIncomeTax = ({
   const taxBeforeCredits = Math.ceil(taxAtBaseRate + taxAtSolidarityRate)
 
   const payerCredit = rates.payerCredit
-  const spouseCredit = spouseCaringForChild ? rates.spouseCredit : 0
+  const spouseCredit = spouseCaringForChild ? rates.spouseCredit * (spouseHasZtpP ? ZTP_CREDIT_MULTIPLE : 1) : 0
   const disabilityDegree1or2Credit = disabilityDegree1or2 ? rates.disabilityDegree1or2Credit : 0
   const disabilityDegree3Credit = disabilityDegree3 ? rates.disabilityDegree3Credit : 0
   const ztpHolderCredit = ztpHolder ? rates.ztpHolderCredit : 0
@@ -190,15 +230,25 @@ export const calculateOsvcIncomeTax = ({
     salesRegistrationCredit
   const taxAfterCredits = Math.max(0, taxBeforeCredits - creditsTotal)
 
-  const { first, second, thirdAndMore } = rates.childCreditsMonthly
-  const childCredit = firstChildMonths * first + secondChildMonths * second + thirdChildMonths * thirdAndMore
+  // § 35c odst. 1 and 7: each child's monthly credit by position, times its months, doubled for a ZTP/P card
+  const childrenForCredit = childrenDetail ?? [
+    { months: firstChildMonths, hasZtpP: false },
+    { months: secondChildMonths, hasZtpP: false },
+    { months: thirdChildMonths, hasZtpP: false },
+  ]
+  const childCredit = childrenForCredit.reduce(
+    (total, child, position) =>
+      total +
+      child.months * monthlyChildCreditFor({ position, credits: rates.childCreditsMonthly }) * (child.hasZtpP ? ZTP_CREDIT_MULTIPLE : 1),
+    0,
+  )
   const childCreditApplied = Math.min(childCredit, taxAfterCredits)
   const taxAfterChildCredit = taxAfterCredits - childCreditApplied
 
   const isChildBonusEligible =
     qualifyingIncome === undefined || qualifyingIncome >= CHILD_BONUS_MINIMUM_WAGES * rates.minimumWage
-  const unpaidCredit = Math.max(childCredit - childCreditApplied, 0)
-  const childBonus = isChildBonusEligible && unpaidCredit >= rates.minimumChildBonus ? unpaidCredit : 0
+  const unpaidChildCredit = Math.max(childCredit - childCreditApplied, 0)
+  const childBonus = isChildBonusEligible && unpaidChildCredit >= rates.minimumChildBonus ? unpaidChildCredit : 0
   const taxTotal = taxAfterChildCredit - childBonus
 
   return {
@@ -222,6 +272,7 @@ export const calculateOsvcIncomeTax = ({
     taxAfterCredits,
     childCredit,
     childCreditApplied,
+    unpaidChildCredit,
     taxAfterChildCredit,
     isChildBonusEligible,
     childBonus,

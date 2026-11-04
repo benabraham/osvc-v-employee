@@ -18,13 +18,23 @@ Implemented by `calculateFlatRateExpenses` in `src/calc/osvc-regimes.ts`. Each c
 
 Donations count only when they exceed 2 % of the tax base or reach 1 000 Kč, up to 15 % of the base. `deductibleDonationsFor`, tested in `osvc-income-tax.law.test.ts`. The reference library had no floor or cap.
 
+Blood and organ donations are valued as donations in the same paragraph:
+
+> **§ 15 odst. 1 (oceňení odběrů)**: Jako bezúplatné plnění na zdravotnické účely se hodnota jednoho odběru krve nebo jejích složek dárce, kterému nebyla poskytnuta finanční úhrada výdajů spojených s odběrem krve nebo jejích složek podle zákona upravujícího specifické zdravotní služby, s výjimkou úhrady prokázaných cestovních nákladů spojených s odběrem, oceňuje částkou 3 000 Kč, hodnota odběru orgánu od žijícího dárce se oceňuje částkou 20 000 Kč … a hodnota odběru krvetvorných buněk … se oceňuje částkou 20 000 Kč.
+>
+> — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), znění od 1. 1. 2026 (e-Sbírka, `pnpm esbirka /sb/1992/586/2026-01-01`)
+
+The model adds 3 000 Kč for each unpaid blood donation and 20 000 Kč for each organ or stem-cell donation to the money donations (`computeResults` in `src/model/compute.ts`); the 2 % floor and 15 % cap then apply to the total.
+
 ### Housing loan interest
 
 > **§ 15 odst. 4**: Úhrn částek úroků ze všech úvěrů poplatníků v téže společně hospodařící domácnosti a částek, které se rovnají úrokům ze všech úvěrů bytových družstev připadajících na podíl těchto poplatníků, o které se snižuje základ daně podle odstavce 3, nesmí překročit 150000 Kč. … Při placení úroků jen po část roku nesmí uplatňovaná částka překročit jednu dvanáctinu této maximální částky za každý měsíc placení úroků.
 >
 > — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), Aktuální znění 01.08.2026 - 31.12.2026 (verze 157)
 
-For housing acquired before 2021 the earlier cap of 300 000 Kč stays (zákon č. 386/2020 Sb., čl. IV); old and new loans together never exceed 300 000 Kč, and the newer loan counts first. Source: [Finanční správa, change of the interest limit](https://financnisprava.gov.cz/assets/cs/prilohy/d-seznam-dani/Informace-ke-zmene-vyse-limitu-uhrnne-castky-uroku.pdf). `deductibleMortgageInterestFor`. Not modelled: the monthly proration for interest paid only part of the year.
+For housing acquired before 2021 the earlier cap of 300 000 Kč stays (zákon č. 386/2020 Sb., čl. IV); old and new loans together never exceed 300 000 Kč, and the newer loan counts first. Source: [Finanční správa, change of the interest limit](https://financnisprava.gov.cz/assets/cs/prilohy/d-seznam-dani/Informace-ke-zmene-vyse-limitu-uhrnne-castky-uroku.pdf).
+
+Interest paid for part of the year is prorated by months (the `mortgageInterestMonths` option, 12 by default). The proration sentence is written in § 15 odst. 4 for the 150 000 Kč cap; the calculator applies the same twelfth to the 300 000 Kč combined cap for older housing, because the transitional article does not repeat the sentence. **Check with Finanční správa before relying on the older-housing figure for a part-year.** `deductibleMortgageInterestFor`, tested in `osvc-income-tax.law.test.ts` ("housing loan interest prorated by months").
 
 ### Retirement products and long-term care insurance
 
@@ -64,7 +74,7 @@ So pension savings count only above 1 700 Kč in each month. In 2024 the level w
 >
 > — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), Aktuální znění 01.08.2026 - 31.12.2026 (verze 157)
 
-Rates used: payer 30 840, spouse 24 840, disability 2 520 and 5 040, ZTP/P 16 140 Kč a year. Not modelled yet: the doubled spouse credit when the spouse holds a ZTP/P card.
+Rates used: payer 30 840, spouse 24 840, disability 2 520 and 5 040, ZTP/P 16 140 Kč a year. The spouse credit doubles when the spouse holds a ZTP/P card (`spouseHasZtpP` in `calculateOsvcIncomeTax`, `credits.spouseHasZtpP` in the inputs; the employee side has no spouse credit). The statute places the rule in § 35bb odst. 1; § 35ba odst. 1 písm. b) only names the credit.
 
 ## Child credit and bonus (§ 35c)
 
@@ -80,7 +90,13 @@ Rates used: payer 30 840, spouse 24 840, disability 2 520 and 5 040, ZTP/P 16 14
 >
 > — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), Aktuální znění 01.08.2026 - 31.12.2026 (verze 157)
 
-Monthly credits 1 267, 1 860 and 2 320 Kč (the yearly amounts ÷ 12). The bonus needs at least 6 × the minimum wage of § 6 or § 7 income and at least 100 Kč. `calculateOsvcIncomeTax` with `qualifyingIncome`, tested in `osvc-income-tax.law.test.ts`. Not modelled: the doubled credit for a child with a ZTP/P card.
+Monthly credits 1 267, 1 860 and 2 320 Kč (the yearly amounts ÷ 12). The bonus needs at least 6 × the minimum wage of § 6 or § 7 income and at least 100 Kč. `calculateOsvcIncomeTax` with `qualifyingIncome`, tested in `osvc-income-tax.law.test.ts`.
+
+> **§ 35c odst. 7**: (7) Dočasný pobyt dítěte mimo společně hospodařící domácnost nemá vliv na uplatnění daňového zvýhodnění. Jedná-li se o dítě, kterému je přiznán nárok na průkaz ZTP/P, zvyšuje se na ně částka daňového zvýhodnění na dvojnásobek; maximální výše daňového bonusu podle odstavce 3 zůstává zachována.
+>
+> — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), znění od 1. 1. 2026 (e-Sbírka, `pnpm esbirka /sb/1992/586/2026-01-01`)
+
+A child with a ZTP/P card gets twice the credit for each month (`childrenDetail` with `hasZtpP`; the employee side in `calculateEmployeeNetWage` doubles the same way). The statute puts this rule in odstavec 7, not odstavec 1, and the 2026 wording has no bonus maximum in odstavec 3. The phrase "maximální výše daňového bonusu podle odstavce 3 zůstává zachována" refers to a maximum the text does not state, so the calculator sets no cap. **Open question for Dan:** whether a cap applies to the doubled bonus; it would bind only at very high child credits.
 
 ## New credits from 2027 (zákon č. 180/2026 Sb.)
 
