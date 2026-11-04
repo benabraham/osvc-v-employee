@@ -65,7 +65,7 @@ export const calculateEmployeeNetWage = ({
   rates: EmployeeNetWageRates
 }) => {
   const employerHealthInsurance = Math.ceil(grossWage * 2 * rates.healthRate)
-  // zákon 592/1992 Sb. § 3 odst. 6 and § 9 odst. 10: below the minimum wage the employee tops up
+  // zákon 592/1992 Sb. § 3 odst. 6 and 10: below the minimum wage the employee tops up
   // to the full premium on the minimum wage, unless the state also insures them
   const minimumHealthPremium =
     rates.minimumEmployeeHealthPremium ?? Math.ceil(roundHalfAwayFromZero(rates.minimumWage * 3 * rates.healthRate, 8))

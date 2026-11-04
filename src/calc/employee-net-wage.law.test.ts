@@ -5,7 +5,7 @@ import netWageRows from './fixtures/employee-net-wage.json'
 
 const rates2026 = (netWageRows as FixtureRow[]).find((row) => row.taxYear === 2026)!.rates as any
 
-describe('minimum health insurance base (zákon 592/1992 Sb. § 3 odst. 4 a 6, § 9 odst. 10)', () => {
+describe('minimum health insurance base (zákon 592/1992 Sb. § 3 odst. 4, 6 a 10)', () => {
   it('makes an employee below the minimum wage top up 13.5 % of the difference', () => {
     // 2026 minimum wage 22 400 Kč: 4.5 % of 20 000 = 900, plus 13.5 % of 2 400 = 324
     const result = calculateEmployeeNetWage({ grossWage: 20_000, rates: rates2026 })

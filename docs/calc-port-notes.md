@@ -26,6 +26,8 @@ Each row carries its own `rates`, so formulas shared across years are also check
 
 ## Checked against the law
 
+The statute text behind each rule is quoted word for word in [legal-research/](legal-research/README.md), with the version it was read from and the official amounts for each year.
+
 Sources: zákon 586/1992 Sb. (version 157, 1 Aug 2026), 589/1992 Sb. (version 76), 592/1992 Sb. (version 64), 187/2006 Sb. (version 67), 427/2011 Sb. (version 20), all on zakonyprolidi.cz, and Finanční správa guidance.
 
 | Rule | Law | Library | Port |
@@ -36,7 +38,7 @@ Sources: zákon 586/1992 Sb. (version 157, 1 Aug 2026), 589/1992 Sb. (version 76
 | Child bonus | From 100 Kč, only with § 6/§ 7 income of 6 × the minimum wage (§ 35c odst. 3–4) | Always paid | Law, via `qualifyingIncome` |
 | Pension savings | Part of each monthly contribution above 1 700 Kč (§ 15 odst. 7; zákon 427/2011 Sb. § 14) | Yearly 16 200 / 20 400 Kč | Monthly thresholds; 2024 has 1 000 Kč until June, so 16 200 Kč was right for 2024 |
 | Long-term care insurance | In the 48 000 Kč cap from 2024 (§ 15 odst. 6) | Missing | Added |
-| Employee minimum health base | Minimum wage; the employee tops up 13.5 % of the difference (zákon 592/1992 Sb. § 3, § 9 odst. 10) | Dropped from 2024 | Every year |
+| Employee minimum health base | Minimum wage; the employee tops up 13.5 % of the difference (zákon 592/1992 Sb. § 3 odst. 4, 6 a 10) | Dropped from 2024 | Every year |
 | Employee 23 % band | Applies to the tax base above 3 × the average wage | Compares the gross | Same result for whole-crown wages |
 | Paušální daň bands | § 2a odst. 5 | Not modelled | `pausalniDanBandFor` |
 | Paušální daň amount | Tax 100 / 4 963 / 9 320 Kč (§ 38lk odst. 7) + SP (§ 14 odst. 3) + ZP (§ 3a odst. 5) | Not modelled | `calculatePausalniDanMonthlyAmounts`; band 1 raises the SP premium by 15 %, which matches all published 2024–2027 amounts |
