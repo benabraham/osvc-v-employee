@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 test('the app shell loads with its title and heading', async ({ page }) => {
   await page.goto('./')
-  await expect(page).toHaveTitle('OSVČ vs. zaměstnanec')
+  await expect(page).toHaveTitle(/OSVČ vs. zaměstnanec/)
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 })
 

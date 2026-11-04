@@ -1,0 +1,149 @@
+/*
+ * App shell styles: the header controls, the year switcher, the language toggle, the toast stack and the footer
+ * links. Shared tokens, surfaces and the navigation are in src/styles/main.css.
+ */
+
+.app-header {
+  flex-wrap: wrap;
+  row-gap: var(--space-2);
+
+  & .app-title {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  & .header-field {
+    gap: 0;
+
+    & label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    & select {
+      min-height: 2.75rem;
+      text-align: left;
+    }
+  }
+}
+
+.year-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-2);
+
+  & .year-field {
+    gap: 0;
+
+    & label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    & select {
+      min-width: 9.5rem;
+      text-align: left;
+    }
+  }
+
+  & .badge {
+    min-height: 1.5rem;
+    align-items: center;
+  }
+}
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+
+  & button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0 var(--space-2);
+    border: 0;
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      background: var(--color-accent);
+      color: var(--color-accent-contrast);
+    }
+  }
+}
+
+.app-icon {
+  flex: 0 0 auto;
+}
+
+.year-notice {
+  margin-bottom: var(--space-4);
+
+  & .notice p {
+    margin: 0;
+  }
+}
+
+.custom-year-form {
+  & h2 {
+    margin: 0;
+  }
+}
+
+.toast-stack {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-height) + var(--space-4) + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 50;
+  display: grid;
+  gap: var(--space-2);
+  width: max-content;
+  max-width: calc(100vw - 2 * var(--space-4));
+
+  & .toast {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  & .toast .button,
+  & .toast .icon-button {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  @media (min-width: 960px) {
+    bottom: var(--space-5);
+  }
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+}
+
+.app-footer .notice {
+  margin: 0;
+}
