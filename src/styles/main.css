@@ -325,6 +325,13 @@ a {
   gap: var(--space-3);
 }
 
+/* grid and flex children may shrink below their content, so wide tables scroll instead of widening the page */
+.stack > *,
+.split-layout > *,
+.app-main {
+  min-width: 0;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -423,6 +430,13 @@ a {
   display: grid;
   gap: var(--space-3);
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+}
+
+/* the switch is an input inside .field, so undo the text-input styles first */
+.field .toggle input {
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: 0;
 }
 
 .toggle {
@@ -640,18 +654,19 @@ a {
 .headline {
   display: grid;
   gap: var(--space-1);
+}
 
-  & .headline-label {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
-  }
+.headline-label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
 
-  & .headline-value {
-    font-size: var(--font-size-xl);
-    font-weight: 800;
-    color: var(--color-accent-strong);
-    line-height: 1.1;
-  }
+.headline-value {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-accent-strong);
+  line-height: 1.1;
 }
 
 .split-bar {

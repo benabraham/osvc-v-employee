@@ -17,6 +17,7 @@ export const commonMessages: MessageBundle = {
     'nav.benefits': 'Dávky',
     'nav.data': 'Data a sdílení',
     'nav.about': 'O aplikaci',
+    'nav.more': 'Více',
 
     'year.kind.historical': 'minulý rok',
     'year.kind.current': 'aktuální',
@@ -77,6 +78,7 @@ export const commonMessages: MessageBundle = {
     'nav.benefits': 'Benefits',
     'nav.data': 'Data and sharing',
     'nav.about': 'About',
+    'nav.more': 'More',
 
     'year.kind.historical': 'past year',
     'year.kind.current': 'current',

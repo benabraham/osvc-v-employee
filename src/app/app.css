@@ -147,3 +147,108 @@
 .app-footer .notice {
   margin: 0;
 }
+
+/* Phones: four screens in the bottom bar, the others in a panel opened by "Více" */
+@media (max-width: 959px) {
+  /* nav.app-nav outranks main.css, which loads later and sets overflow-x: auto */
+  nav.app-nav {
+    overflow: visible;
+
+    /* above the toasts while the menu is open */
+    &.is-more-open {
+      z-index: 60;
+    }
+
+    & a.nav-primary,
+    & .nav-more {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    & a.nav-secondary {
+      display: none;
+    }
+
+    &.is-more-open a.nav-secondary {
+      position: absolute;
+      right: var(--space-2);
+      bottom: calc(100% + var(--space-2) + 3.25rem * var(--more-index, 0));
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: var(--space-3);
+      width: min(16rem, calc(100vw - 2 * var(--space-2)));
+      min-height: 3rem;
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface);
+      box-shadow: var(--shadow);
+      font-size: var(--font-size);
+    }
+
+    & a.nav-secondary:nth-of-type(5) { --more-index: 3; }
+    & a.nav-secondary:nth-of-type(6) { --more-index: 2; }
+    & a.nav-secondary:nth-of-type(7) { --more-index: 1; }
+    & a.nav-secondary:nth-of-type(8) { --more-index: 0; }
+
+    & .nav-more {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: var(--space-1) var(--space-2);
+      border: 0;
+      background: transparent;
+      color: var(--color-text-muted);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+
+      & svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &.is-active,
+      &[aria-expanded='true'] {
+        color: var(--color-accent-strong);
+        font-weight: 700;
+      }
+    }
+
+    & a span {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  /* language and theme live on the Data screen on phones, so the header stays one row */
+  .app-header {
+    & .lang-toggle,
+    & .header-field {
+      display: none;
+    }
+
+    & .app-title {
+      font-size: var(--font-size-sm);
+    }
+
+    & .year-field label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .app-nav .nav-more {
+    display: none;
+  }
+}

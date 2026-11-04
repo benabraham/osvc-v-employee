@@ -16,12 +16,20 @@ const SCREENS = [
 
 const mainNavigation = (page: Page) => page.getByRole('navigation', { name: 'Hlavní navigace' })
 
+/** Clicks a screen in the navigation; on phones the less used screens sit behind "Více". */
+const openScreen = async ({ page, label }: { page: Page; label: string }) => {
+  const link = mainNavigation(page).getByRole('link', { name: label })
+  if (!(await link.isVisible())) await mainNavigation(page).getByRole('button', { name: 'Více' }).click()
+  await link.click()
+}
+
 test('every screen is reachable from the navigation and titles the page', async ({ page }) => {
   await page.goto('./')
   for (const screen of SCREENS) {
-    await mainNavigation(page).getByRole('link', { name: screen.label }).click()
+    await openScreen({ page, label: screen.label })
     await expect(page).toHaveURL(new RegExp(`#/${screen.route}$`))
-    await expect(mainNavigation(page).getByRole('link', { name: screen.label })).toHaveAttribute('aria-current', 'page')
+    // a CSS locator, because on phones the link of a screen behind "Více" is hidden once the menu closes
+    await expect(page.locator(`nav a[href="#/${screen.route}"]`)).toHaveAttribute('aria-current', 'page')
     await expect(page).toHaveTitle(`${screen.label} · OSVČ vs. zaměstnanec`)
     await expect(page.getByRole('main').getByRole('heading', { level: 1 }).first()).toBeVisible()
   }
@@ -38,7 +46,8 @@ test('the year switcher changes the tax year and the footer follows it', async (
   await expect(page.getByRole('contentinfo').getByText(/z minulého roku/)).toBeVisible()
 })
 
-test('switching to English translates the navigation and the page language', async ({ page }) => {
+test('switching to English translates the navigation and the page language', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'on phones the language switch is on the Data screen (covered by data.spec.ts)')
   await page.goto('./#/calc')
   await page.getByRole('button', { name: 'English' }).click()
   await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'About' })).toBeVisible()
@@ -58,7 +67,8 @@ test('a shared link opens the calculator with its year and shows the confirmatio
   await expect(page.getByText('Načteno ze sdíleného odkazu')).toBeVisible()
 })
 
-test('the theme select sets the theme on the page', async ({ page }) => {
+test('the theme select sets the theme on the page', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'on phones the theme is set on the Data screen')
   await page.goto('./#/about')
   await page.getByRole('combobox', { name: 'Motiv' }).selectOption('dark')
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
