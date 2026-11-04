@@ -8,7 +8,8 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
   - [ ] VZP: minimum ZP base 25 831,50 Kč and advance 3 488 Kč
   - [ ] ČSSZ: minimum SP base 18 083 Kč / advance 5 281 Kč, new OSVČ 12 916 / 3 772 Kč, maximum base 2 479 824 Kč, sickness threshold 5 000 Kč, minimum sickness premium 270 Kč
   - [ ] Finanční správa: paušální daň bands 9 661 / 16 745 / 27 139 Kč, band 1 with surcharge 11 061 Kč, 23 % threshold 1 859 868 Kč
-  - [ ] If band 1 differs from 9 661 Kč, recheck the rounding order in `calculatePausalniDanMonthlyAmounts`
+  - [ ] Band 1: the press reports 9 662 Kč (15 % added to the premium), the law gives 9 661 Kč (15 % added to the base); follow Finanční správa's figure when published (docs/legal-research/2027.md)
+  - [x] Press figures for the ZP and SP minimums, new OSVČ and sickness premium match the derived values (4 November 2026)
 - [ ] Add the published links to `docs/legal-research/year-values.md` and the published numbers to the 2027 tests in `src/calc/osvc-regimes.test.ts`
 - [ ] Add the 2028 slot each January: average wage from the new nařízení vlády, minimum wage from MPSV, act wordings from e-Sbírka (`pnpm esbirka /sb/1992/589/2028-01-01 --find …`)
 
