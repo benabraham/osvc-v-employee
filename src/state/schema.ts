@@ -2,7 +2,7 @@
  * The persisted app state (version 1) and the normalizers that turn anything stored, shared or imported
  * into a valid state. Normalizers never throw: whatever is wrong is replaced with the default for that field.
  */
-import { customYearDataFor, type Source, type TaxYearData, type ValueStatus } from '../data/tax-years'
+import { customYearDataFor, taxYearWindow, type Source, type TaxYearData, type ValueStatus } from '../data/tax-years'
 import { defaultInputs, type ChildInput, type CostItem, type DisabilityDegree, type Inputs } from '../model/inputs'
 import type { ExpenseRate } from '../calc/osvc-regimes'
 import { createId } from './id'
@@ -335,7 +335,10 @@ export const normalizeState = (value: unknown, { today }: { today: Date }): Pers
   return {
     version: CURRENT_STATE_VERSION,
     locale: oneOf(migrated.locale, LOCALES, fallback.locale),
-    activeYear: yearOr(migrated.activeYear, fallback.activeYear),
+    // a year that has left the rolling window (each January) falls back to the current year
+    activeYear: taxYearWindow({ today }).includes(yearOr(migrated.activeYear, fallback.activeYear))
+      ? yearOr(migrated.activeYear, fallback.activeYear)
+      : fallback.activeYear,
     syncInputs: booleanOr(migrated.syncInputs, fallback.syncInputs),
     sharedInputs: normalizeInputs(migrated.sharedInputs),
     inputsByYear: normalizeYearRecord(migrated.inputsByYear, (entry) => normalizeInputs(entry)),

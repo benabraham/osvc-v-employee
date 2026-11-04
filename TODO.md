@@ -62,7 +62,10 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 - [x] Install, offline and local persistence; Lighthouse targets
 - [x] Deploy to GitHub Pages; disclaimer, links to the year sheets and to GitHub issues
 
-- [ ] Follow-ups from the first QA pass (added below as they are found)
+- [ ] Follow-ups from the first QA and documentation pass
+  - [ ] Scenarios and the year-on-year change use official data only; use the user's own numbers when they are switched on for that year
+  - [ ] sicknessBands sums unrounded bands; § 21 odst. 2 rounds each band to two decimals first (no input found where it matters yet)
+  - [ ] PRD notes to update in the Claude Doc: union dues and exam deductions abolished from 2024; SP base capped at 48 × the average wage; the gross search scans back 400 Kč after bisection; English app name "Freelancer vs. employee"; two-source status of 2024–2026 values
 
 ## Delivery
 

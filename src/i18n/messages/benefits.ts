@@ -60,7 +60,7 @@ export const benefitsMessages: MessageBundle = {
     'benefits.assumptions.osvc':
       'OSVČ: vyměřovací základ se odvodí z pojistného: pojistné × 100 ÷ 2,7 %, zaokrouhleno nahoru. Dávky z něj počítáme stejně jako u zaměstnance.',
     'benefits.assumptions.maternity':
-      'Mateřská a otcovská: denní dávka je 70 % denního vyměřovacího základu po redukci (§ 21 odst. 1 písm. b) zákona 187/2006 Sb.). Platí se za každý kalendářní den.',
+      'Mateřská a otcovská: denní dávka je 70 % denního vyměřovacího základu (§ 37 a § 38c zákona 187/2006 Sb.), který se upraví redukčními hranicemi podle § 21 odst. 1 písm. b). Platí se za každý kalendářní den.',
 
     'benefits.eligibility.heading': 'Nárok',
     'benefits.eligibility.intro': 'Orientační podle vstupů výše. Nárok posuzuje ČSSZ.',
@@ -135,7 +135,7 @@ export const benefitsMessages: MessageBundle = {
     'benefits.assumptions.osvc':
       'Freelancer: the assessment base is derived from the premium: premium × 100 ÷ 2.7 %, rounded up. Benefits are calculated from it as for an employee.',
     'benefits.assumptions.maternity':
-      'Maternity and paternity: the daily amount is 70 % of the reduced daily assessment base (§ 21(1)(b) of Act 187/2006 Coll.), paid for every calendar day.',
+      'Maternity and paternity: the daily amount is 70 % of the daily assessment base (§ 37 and § 38c of Act 187/2006 Coll.), reduced by the thresholds of § 21(1)(b), paid for every calendar day.',
 
     'benefits.eligibility.heading': 'Eligibility',
     'benefits.eligibility.intro': 'Indicative, based on the answers above. The Czech Social Security Administration (ČSSZ) decides.',

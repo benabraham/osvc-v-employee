@@ -120,7 +120,7 @@ export const osvcPremiumForBenefits = ({
  * Sickness: the employee gets salary compensation from the employer for the first 14 calendar days (§ 192 zákoníku
  * práce, 60 % of the reduced hourly earnings) and sickness benefit from day 15; the OSVČ gets nothing for days 1–14
  * and sickness benefit from day 15. The OSVČ waiting period (§ 24) is checked in benefit-eligibility, not here.
- * Maternity and paternity: the daily amount is 70 % of the reduced daily base for both (§ 21 odst. 1 písm. b)).
+ * Maternity and paternity: the daily amount is 70 % of the daily base reduced by § 21 odst. 1 písm. b) (§ 37 for maternity, § 38c for paternity).
  *
  * @param {object} params
  * @param {number} params.employeeMonthlyGross the employee's monthly gross wage, Kč

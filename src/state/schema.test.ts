@@ -151,6 +151,12 @@ describe('initialState', () => {
 })
 
 describe('normalizeState', () => {
+  it('moves a stored year that has left the window to the current year (PRD "Tax years")', () => {
+    const stored = { ...initialState({ today: new Date('2026-11-04') }), activeYear: 2024 }
+    expect(normalizeState(stored, { today: new Date('2027-01-02') }).activeYear).toBe(2027)
+    expect(normalizeState({ ...stored, activeYear: 2025 }, { today: new Date('2027-01-02') }).activeYear).toBe(2025)
+  })
+
   it.each([undefined, null, 'garbage', [], 7])('returns the initial state for %j', (value) => {
     expect(normalizeState(value, { today })).toEqual(initialState({ today }))
   })

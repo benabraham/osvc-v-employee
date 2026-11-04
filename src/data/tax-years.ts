@@ -215,6 +215,8 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
       sicknessEligibilityThreshold: 'researched',
       reductionThresholds: 'researched',
       salesRegistrationSurcharge: 'researched',
+      // child credits for 2027 have one source so far (the 2027 wording of § 35c)
+      incomeTax: 'researched',
     },
     sources: {
       averageWage: [{ label: 'nařízení vlády 177/2026 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2026-177' }],
