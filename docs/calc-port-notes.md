@@ -8,9 +8,10 @@
 | `osvc-income-tax.ts` | OSVČ income tax from 2024: deductions, credits, child credit and bonus; retirement products deduction | library fixtures + law tests |
 | `employee-net-wage.ts` | Employee net wage, employee and employer contributions | library fixtures + law tests |
 | `gross-from-net.ts` | Smallest gross wage that reaches a net wage (gross equivalent) | properties + PRD value 50 589 Kč |
-| `osvc-regimes.ts` | Flat-rate expenses, paušální daň bands and amounts, OSVČ minimums, voluntary sickness insurance | law tests |
+| `osvc-regimes.ts` | Flat-rate expenses, paušální daň bands and amounts, OSVČ minimums (incl. new OSVČ), average wage, voluntary sickness insurance | law tests |
 | `osvc-plan.ts` | The PRD pipeline: working time and rate → levies, net income, reserve, holiday, invoice split | PRD 2026 parity fixture and edge cases |
 | `benefits.ts` | Sickness benefit (employee, OSVČ), carer's allowance, salary compensation, maternity and paternity | library fixtures |
+| `benefit-eligibility.ts` | Who qualifies for maternity, paternity and OSVČ sickness benefit | law tests |
 
 Pensions are left out on purpose: the app only notes that OSVČ pensions are lower.
 
@@ -41,4 +42,17 @@ Sources: zákon 586/1992 Sb. (version 157, 1 Aug 2026), 589/1992 Sb. (version 76
 | Paušální daň amount | Tax 100 / 4 963 / 9 320 Kč (§ 38lk odst. 7) + SP (§ 14 odst. 3) + ZP (§ 3a odst. 5) | Not modelled | `calculatePausalniDanMonthlyAmounts`; band 1 raises the SP premium by 15 %, which matches all published 2024–2027 amounts |
 | OSVČ sickness insurance | 2.7 %, minimum base twice the employee threshold (zákon 589/1992 Sb. § 3, § 5b odst. 4; zákon 187/2006 Sb. § 6 odst. 2) | Not modelled | `calculateOsvcSicknessInsurance` |
 
-Still open: maternity eligibility (270 days of insurance in two years) is not modelled, only the amounts. Rounding follows the library's Python 2 `round()`: exact ties go away from zero, the same as Google Sheets.
+| New OSVČ minimum SP base | 25 % of the average wage in the start year and the next two, unless an OSVČ in the 20 years before (zákon 589/1992 Sb. § 14 odst. 5) | Not modelled | `isNewOsvcFor`, `calculateOsvcMinimums({ isNewOsvc })`; matches ČSSZ 2026: 12 242 Kč base, 3 575 Kč advance |
+| Maternity eligibility | 270 insured days in two years; an OSVČ also 180 days of OSVČ sickness insurance in the last year (zákon 187/2006 Sb. § 32 odst. 2–3) | Not modelled | `isEligibleForMaternityBenefit` |
+| OSVČ sickness and paternity eligibility | 3 months of OSVČ sickness insurance before, unless it continued within 8 days from a job insured for its last 3 months (§ 24, § 38a odst. 3) | Not modelled | `isEligibleForOsvcSicknessBenefit`, `isEligibleForPaternityBenefit` |
+
+Rounding follows the library's Python 2 `round()`: exact ties go away from zero, the same as Google Sheets.
+
+## Year values used in tests
+
+| Value | 2024 | 2025 | 2026 | 2027 | Source |
+| --- | --- | --- | --- | --- | --- |
+| Average wage (Kč) | 43 967 | 46 557 | 48 967 | 51 663 | [VZP](https://www.vzp.cz/platci/informace/osvc/osvc-prumerna-mzda); 2026 nařízení vlády 365/2025 Sb.; 2027 [nařízení vlády 177/2026 Sb.](https://www.zakonyprolidi.cz/cs/2026-177) (48 900 × 1.0565) |
+| Minimum wage (Kč) | 18 900 | 20 800 | 22 400 | 24 900 | [MPSV overview](https://mpsv.gov.cz/prehled-o-vyvoji-castek-minimalni-mzdy), [MPSV 2027](https://mpsv.gov.cz/minimalni-mzda-v-roce-2027-vzroste-na-24-900-korun) |
+| Paušální daň band 1 / 2 / 3 (Kč a month) | 7 498 / – / – | 8 716 / – / – | 9 162 / 16 745 / 27 139 | 9 662 / – / – | [Finanční správa 2025–2026](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/pausalni-dan/informace-k-institutu-pausalni-dane-pro-rok-2025); 2024 and 2027 band 1 from the PRD sources |
+| New OSVČ minimum SP base / advance (Kč a month) | | | 12 242 / 3 575 | | [ČSSZ](https://www.cssz.cz/vyse-minimalnich-vymerovacich-zakladu-osvc) |

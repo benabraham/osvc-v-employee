@@ -138,21 +138,28 @@ const ceilClean = (value: number) => Math.ceil(roundHalfAwayFromZero(value, 8))
  *
  * @param {object} params
  * @param {number} params.averageWage average wage for the year
- * @param {{ socialMinimumShare: number }} params.rates share of the average wage for the minimum monthly SP base
+ * @param {boolean} [params.isNewOsvc=false] start year or the two after it (see isNewOsvcFor)
+ * @param {{ socialMinimumShare: number, newOsvcSocialMinimumShare?: number }} params.rates
+ *   share of the average wage for the minimum monthly SP base, and the lower share for a new OSVČ
  */
 export const calculateOsvcMinimums = ({
   averageWage,
+  isNewOsvc = false,
   rates,
 }: {
   averageWage: number
-  rates: { socialMinimumShare: number }
+  isNewOsvc?: boolean
+  rates: { socialMinimumShare: number; newOsvcSocialMinimumShare?: number }
 }) => {
+  const socialMinimumShare = isNewOsvc
+    ? (rates.newOsvcSocialMinimumShare ?? rates.socialMinimumShare)
+    : rates.socialMinimumShare
   // zákon 592/1992 Sb. § 3a odst. 2: twelve times 50 % of the average wage
   const minimumHealthMonthlyBase = averageWage * 0.5
   const minimumHealthYearlyBase = averageWage * 6
   const minimumHealthMonthlyPremium = ceilClean(minimumHealthMonthlyBase * 0.135)
   // zákon 589/1992 Sb. § 14 odst. 5
-  const minimumSocialMonthlyBase = ceilClean(averageWage * rates.socialMinimumShare)
+  const minimumSocialMonthlyBase = ceilClean(averageWage * socialMinimumShare)
   const minimumSocialYearlyBase = minimumSocialMonthlyBase * 12
   const minimumSocialMonthlyPremium = ceilClean(minimumSocialMonthlyBase * 0.292)
   return {
@@ -206,3 +213,43 @@ export const calculatePausalniDanMonthlyAmounts = ({
     taxParts[index + 1]! + ceilClean((healthYearlyBases[index] / 12) * 0.135) + ceilClean(socialMonthlyBases[index] * 0.292)
   return { monthlyAmounts: [band1, fixedBand(0), fixedBand(1)] }
 }
+
+/**
+ * Average wage for insurance purposes (průměrná mzda): the general assessment base from two years earlier
+ * times its conversion coefficient, rounded up to whole crowns. Both come from a yearly nařízení vlády.
+ *
+ * @param {object} params
+ * @param {number} params.generalAssessmentBase všeobecný vyměřovací základ
+ * @param {number} params.conversionCoefficient přepočítací koeficient
+ * @returns {number}
+ */
+export const averageWageFor = ({
+  generalAssessmentBase,
+  conversionCoefficient,
+}: {
+  generalAssessmentBase: number
+  conversionCoefficient: number
+}) => ceilClean(generalAssessmentBase * conversionCoefficient)
+
+/** zákon 589/1992 Sb. § 14 odst. 5: the start year and the 2 following years… */
+export const NEW_OSVC_YEARS_AFTER_START = 2
+
+/**
+ * Whether the lower minimum SP base for a new OSVČ applies in a year: the start year and the two after it,
+ * unless the person was an OSVČ in the 20 years before starting.
+ *
+ * @param {object} params
+ * @param {number} params.year the year the minimum is for
+ * @param {number} params.startYear year the main self-employment started
+ * @param {boolean} [params.wasOsvcInPrevious20Years=false]
+ * @returns {boolean}
+ */
+export const isNewOsvcFor = ({
+  year,
+  startYear,
+  wasOsvcInPrevious20Years = false,
+}: {
+  year: number
+  startYear: number
+  wasOsvcInPrevious20Years?: boolean
+}) => !wasOsvcInPrevious20Years && year >= startYear && year - startYear <= NEW_OSVC_YEARS_AFTER_START

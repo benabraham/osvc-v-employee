@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import {
+  averageWageFor,
   calculateFlatRateExpenses,
   calculateOsvcMinimums,
   calculatePausalniDanMonthlyAmounts,
   calculateOsvcSicknessInsurance,
   calculatePausalniDan,
+  isNewOsvcFor,
   pausalniDanBandFor,
   sicknessEligibilityThresholdFor,
 } from './osvc-regimes'
@@ -121,5 +123,38 @@ describe('OSVČ yearly minimums from the average wage (zákon 592/1992 Sb. § 3a
     const result = calculateOsvcMinimums({ averageWage: 48_967, rates: { socialMinimumShare: 0.35 } })
     expect(result.minimumHealthMonthlyPremium).toBe(3_306)
     expect(result.minimumSocialMonthlyPremium).toBe(5_005)
+  })
+})
+
+describe('average wage for insurance purposes (zákon 155/1995 Sb.; nařízení vlády 365/2025 Sb. and 177/2026 Sb.)', () => {
+  it.each([
+    [40_638, 1.0819, 43_967],
+    [43_682, 1.0658, 46_557],
+    [46_278, 1.0581, 48_967],
+    [48_900, 1.0565, 51_663],
+  ])('general base %d × coefficient %d rounds up to %d', (generalAssessmentBase, conversionCoefficient, expected) => {
+    expect(averageWageFor({ generalAssessmentBase, conversionCoefficient })).toBe(expected)
+  })
+})
+
+describe('new OSVČ minimum SP base (zákon 589/1992 Sb. § 14 odst. 5)', () => {
+  const rates = { socialMinimumShare: 0.35, newOsvcSocialMinimumShare: 0.25 }
+
+  it('uses 25 % of the average wage in the start year and the next two (ČSSZ 2026: 12 242 Kč, advance 3 575 Kč)', () => {
+    const result = calculateOsvcMinimums({ averageWage: 48_967, isNewOsvc: true, rates })
+    expect(result.minimumSocialMonthlyBase).toBe(12_242)
+    expect(result.minimumSocialMonthlyPremium).toBe(3_575)
+  })
+
+  it('keeps 35 % for everyone else', () => {
+    expect(calculateOsvcMinimums({ averageWage: 48_967, rates }).minimumSocialMonthlyBase).toBe(17_139)
+  })
+
+  it.each([
+    [{ year: 2026, startYear: 2024 }, true],
+    [{ year: 2027, startYear: 2024 }, false],
+    [{ year: 2026, startYear: 2026, wasOsvcInPrevious20Years: true }, false],
+  ] as const)('%o is a new OSVČ: %s', (input, expected) => {
+    expect(isNewOsvcFor(input)).toBe(expected)
   })
 })

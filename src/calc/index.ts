@@ -2,6 +2,7 @@
  * Pure calculators for comparing OSVČ income with an employee salary.
  * Each takes its inputs plus one year's `rates` and returns every intermediate value.
  */
+export * from './benefit-eligibility'
 export * from './benefits'
 export * from './employee-net-wage'
 export * from './gross-from-net'
