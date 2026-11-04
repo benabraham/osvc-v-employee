@@ -199,3 +199,49 @@ describe('new OSVČ minimum SP base (zákon 589/1992 Sb. § 14 odst. 5)', () => 
     expect(isNewOsvcFor(input)).toBe(expected)
   })
 })
+
+describe('2027 from the acts as they read from 1 January 2027 (e-Sbírka) and nařízení vlády 177/2026 Sb.', () => {
+  // average wage 51 663 Kč; 589/1992 § 14 odst. 5 (35 %, new OSVČ 25 %), § 14 odst. 13 and § 7 odst. 3 (round up),
+  // § 15a (48 ×); 592/1992 § 3a (50 %); 586/1992 § 16 (36 ×), § 38lk odst. 7 a 8, § 2b
+  const rates2027 = { socialMinimumShare: 0.35, newOsvcSocialMinimumShare: 0.25 }
+  const minimums = calculateOsvcMinimums({ averageWage: 51_663, rates: rates2027 })
+
+  it('derives the ZP and SP minimums, the maximum SP base and the 23 % threshold', () => {
+    expect(minimums).toMatchObject({
+      minimumHealthMonthlyBase: 25_831.5,
+      minimumHealthYearlyBase: 309_978,
+      minimumHealthMonthlyPremium: 3_488,
+      minimumSocialMonthlyBase: 18_083,
+      minimumSocialYearlyBase: 216_996,
+      minimumSocialMonthlyPremium: 5_281,
+      maximumSocialYearlyBase: 2_479_824,
+      solidarityThreshold: 1_859_868,
+    })
+    const newOsvc = calculateOsvcMinimums({ averageWage: 51_663, isNewOsvc: true, rates: rates2027 })
+    expect([newOsvc.minimumSocialMonthlyBase, newOsvc.minimumSocialMonthlyPremium]).toEqual([12_916, 3_772])
+  })
+
+  it('derives the paušální daň: band 1 rounds the raised base up before the premium (9 661 Kč)', () => {
+    expect(calculatePausalniDanMonthlyAmounts({ averageWage: 51_663, rates: rates2027 }).monthlyAmounts).toEqual([
+      9_661, 16_745, 27_139,
+    ])
+  })
+
+  it('adds the 1 400 Kč surcharge to band 1 for taxpayers who opt out of sales registration (§ 2b, § 38lk odst. 8)', () => {
+    const { monthlyAmounts } = calculatePausalniDanMonthlyAmounts({
+      averageWage: 51_663,
+      withSalesRegistrationSurcharge: true,
+      rates: { ...rates2027, salesRegistrationSurcharge: 1_400 },
+    })
+    expect(monthlyAmounts).toEqual([11_061, 16_745, 27_139])
+  })
+
+  it('derives the sickness eligibility threshold (5 000 Kč) and the OSVČ minimum sickness premium (270 Kč)', () => {
+    const threshold = sicknessEligibilityThresholdFor({ averageWage: 51_663, previousThreshold: 4_500 })
+    expect(threshold).toBe(5_000)
+    expect(
+      calculateOsvcSicknessInsurance({ rates: { sicknessInsuranceRatePercent: 2.7, employeeEligibilityThreshold: threshold } })
+        .monthlyPremium,
+    ).toBe(270)
+  })
+})

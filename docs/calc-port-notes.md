@@ -41,7 +41,7 @@ Sources: zákon 586/1992 Sb. (version 157, 1 Aug 2026), 589/1992 Sb. (version 76
 | Employee minimum health base | Minimum wage; the employee tops up 13.5 % of the difference (zákon 592/1992 Sb. § 3 odst. 4, 6 a 10) | Dropped from 2024 | Every year |
 | Employee 23 % band | Applies to the tax base above 3 × the average wage | Compares the gross | Same result for whole-crown wages |
 | Paušální daň bands | § 2a odst. 5 | Not modelled | `pausalniDanBandFor` |
-| Paušální daň amount | Tax 100 / 4 963 / 9 320 Kč (§ 38lk odst. 7) + SP (§ 14 odst. 3) + ZP (§ 3a odst. 5) | Not modelled | `calculatePausalniDanMonthlyAmounts`; band 1 raises the SP premium by 15 %, which matches all published 2024–2027 amounts |
+| Paušální daň amount | Tax 100 / 4 963 / 9 320 Kč (§ 38lk odst. 7) + SP (§ 14 odst. 3) + ZP (§ 3a odst. 5) | Not modelled | `calculatePausalniDanMonthlyAmounts`; band 1 raises the minimum SP base by 15 % and rounds up (§ 14 odst. 3 a 13), matching the published 2024–2026 amounts; 2027 adds an optional 1 400 Kč surcharge (§ 2b) |
 | OSVČ sickness insurance | 2.7 %, minimum base twice the employee threshold (zákon 589/1992 Sb. § 3, § 5b odst. 4; zákon 187/2006 Sb. § 6 odst. 2) | Not modelled | `calculateOsvcSicknessInsurance` |
 
 | New OSVČ minimum SP base | 25 % of the average wage in the start year and the next two, unless an OSVČ in the 20 years before (zákon 589/1992 Sb. § 14 odst. 5) | Not modelled | `isNewOsvcFor`, `calculateOsvcMinimums({ isNewOsvc })`; matches ČSSZ 2026: 12 242 Kč base, 3 575 Kč advance |

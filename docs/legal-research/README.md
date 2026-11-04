@@ -10,6 +10,7 @@ Each file lists the rule, the quote, the official numbers and the function and t
 | [social-insurance.md](social-insurance.md) | OSVČ pension insurance minimums and maximum, sickness insurance rate |
 | [sickness-insurance.md](sickness-insurance.md) | Employee eligibility threshold, benefit waiting periods and maternity eligibility |
 | [year-values.md](year-values.md) | Average wage, minimum wage and the amounts published for each year |
+| [2027.md](2027.md) | The acts as they read from 2027 (e-Sbírka) and the 2027 amounts derived from them |
 
 ## Sources and versions
 

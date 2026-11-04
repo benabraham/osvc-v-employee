@@ -190,25 +190,32 @@ export const PAUSALNI_DAN_FIXED = {
 /**
  * Monthly paušální daň for bands 1, 2 and 3 in a year.
  *
- * Band 1 is the minimum ZP and SP premiums, the SP raised by 15 %, plus 100 Kč of tax. Raising the minimum SP
- * premium (not its base) by 15 % reproduces every published amount for 2024–2027 (7 498, 8 716, 9 162, 9 662 Kč);
- * raising the base first, as § 14 odst. 3 reads, would give 1 Kč less in 2025 and 2027.
+ * Band 1 is the minimum ZP premium, plus SP on the minimum monthly SP base raised by 15 % (zákon 589/1992 Sb.
+ * § 14 odst. 3), plus 100 Kč of tax. The raised base rounds up to whole crowns (§ 14 odst. 13) before the
+ * premium, which rounds up too (§ 7 odst. 3); this reproduces every published amount for 2024–2026
+ * (7 498, 8 716 and 9 162 Kč). From 2027 a band 1 taxpayer may add the surcharge that exempts them from
+ * registering sales (zákon 586/1992 Sb. § 2b, § 38lk odst. 7 a 8).
  *
  * @param {object} params
  * @param {number} params.averageWage average wage for the year
- * @param {{ socialMinimumShare: number }} params.rates
+ * @param {boolean} [params.withSalesRegistrationSurcharge=false] band 1 surcharge instead of registering sales (2027+)
+ * @param {{ socialMinimumShare: number, salesRegistrationSurcharge?: number }} params.rates
  * @returns {{ monthlyAmounts: [number, number, number] }}
  */
 export const calculatePausalniDanMonthlyAmounts = ({
   averageWage,
+  withSalesRegistrationSurcharge = false,
   rates,
 }: {
   averageWage: number
-  rates: { socialMinimumShare: number }
+  withSalesRegistrationSurcharge?: boolean
+  rates: { socialMinimumShare: number; salesRegistrationSurcharge?: number }
 }): { monthlyAmounts: [number, number, number] } => {
   const minimums = calculateOsvcMinimums({ averageWage, rates })
   const { taxParts, socialMonthlyBases, healthYearlyBases } = PAUSALNI_DAN_FIXED
-  const band1 = taxParts[0] + minimums.minimumHealthMonthlyPremium + ceilClean(minimums.minimumSocialMonthlyPremium * 1.15)
+  const band1SocialBase = ceilClean(minimums.minimumSocialMonthlyBase * 1.15)
+  const surcharge = withSalesRegistrationSurcharge ? (rates.salesRegistrationSurcharge ?? 0) : 0
+  const band1 = taxParts[0] + surcharge + minimums.minimumHealthMonthlyPremium + ceilClean(band1SocialBase * 0.292)
   const fixedBand = (index: 0 | 1) =>
     taxParts[index + 1]! + ceilClean((healthYearlyBases[index] / 12) * 0.135) + ceilClean(socialMonthlyBases[index] * 0.292)
   return { monthlyAmounts: [band1, fixedBand(0), fixedBand(1)] }
