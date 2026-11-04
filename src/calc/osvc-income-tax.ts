@@ -30,7 +30,16 @@ export type OsvcIncomeTaxRates = {
   minimumWage: number
   /** § 35c odst. 3: a bonus under 100 Kč is not paid */
   minimumChildBonus: number
+  /** from 2027, § 35bc: student credit per year (4 020 Kč); absent before 2027 */
+  studentCredit?: number
+  /** from 2027, § 35bd: školkovné up to the minimum wage per child; absent before 2027 */
+  childPlacementCreditCapIsMinimumWage?: boolean
+  /** from 2027, § 35be: sales registration credit (5 000 Kč) in the first period with registered sales */
+  salesRegistrationCredit?: number
 }
+
+/** § 35be odst. 1: the sales registration credit is capped at 15 % of the § 7 base minus the payer credit. */
+export const SALES_REGISTRATION_CREDIT_BASE_SHARE = 0.15
 
 /** § 35c odst. 4: the bonus needs § 6 or § 7 income of at least this many monthly minimum wages. */
 export const CHILD_BONUS_MINIMUM_WAGES = 6
@@ -101,6 +110,9 @@ export const deductibleMortgageInterestFor = ({
  * @param {boolean} [params.disabilityDegree1or2=false]
  * @param {boolean} [params.disabilityDegree3=false]
  * @param {boolean} [params.ztpHolder=false] holder of a ZTP/P card
+ * @param {number} [params.studentMonths=0] months as a student (from 2027)
+ * @param {number[]} [params.childPlacementFees=[]] yearly preschool fees per child (školkovné, from 2027)
+ * @param {boolean} [params.isFirstYearWithRegisteredSales=false] sales registration credit (from 2027)
  * @param {OsvcIncomeTaxRates} params.rates
  */
 export const calculateOsvcIncomeTax = ({
@@ -117,10 +129,16 @@ export const calculateOsvcIncomeTax = ({
   disabilityDegree1or2 = false,
   disabilityDegree3 = false,
   ztpHolder = false,
+  studentMonths = 0,
+  childPlacementFees = [],
+  isFirstYearWithRegisteredSales = false,
   rates,
 }: {
   profit: number
   qualifyingIncome?: number
+  studentMonths?: number
+  childPlacementFees?: number[]
+  isFirstYearWithRegisteredSales?: boolean
   firstChildMonths?: number
   secondChildMonths?: number
   thirdChildMonths?: number
@@ -152,7 +170,24 @@ export const calculateOsvcIncomeTax = ({
   const disabilityDegree1or2Credit = disabilityDegree1or2 ? rates.disabilityDegree1or2Credit : 0
   const disabilityDegree3Credit = disabilityDegree3 ? rates.disabilityDegree3Credit : 0
   const ztpHolderCredit = ztpHolder ? rates.ztpHolderCredit : 0
-  const creditsTotal = payerCredit + spouseCredit + disabilityDegree1or2Credit + disabilityDegree3Credit + ztpHolderCredit
+  // § 35ba odst. 3: the student credit is one twelfth for each month the condition is met
+  const studentCredit = rates.studentCredit === undefined ? 0 : (rates.studentCredit / 12) * studentMonths
+  const childPlacementCredit = rates.childPlacementCreditCapIsMinimumWage
+    ? childPlacementFees.reduce((total, fees) => total + Math.min(fees, rates.minimumWage), 0)
+    : 0
+  const salesRegistrationCredit =
+    rates.salesRegistrationCredit !== undefined && isFirstYearWithRegisteredSales
+      ? Math.min(rates.salesRegistrationCredit, Math.max(0, SALES_REGISTRATION_CREDIT_BASE_SHARE * profit - payerCredit))
+      : 0
+  const creditsTotal =
+    payerCredit +
+    spouseCredit +
+    disabilityDegree1or2Credit +
+    disabilityDegree3Credit +
+    ztpHolderCredit +
+    studentCredit +
+    childPlacementCredit +
+    salesRegistrationCredit
   const taxAfterCredits = Math.max(0, taxBeforeCredits - creditsTotal)
 
   const { first, second, thirdAndMore } = rates.childCreditsMonthly
@@ -180,6 +215,9 @@ export const calculateOsvcIncomeTax = ({
     disabilityDegree1or2Credit,
     disabilityDegree3Credit,
     ztpHolderCredit,
+    studentCredit,
+    childPlacementCredit,
+    salesRegistrationCredit,
     creditsTotal,
     taxAfterCredits,
     childCredit,

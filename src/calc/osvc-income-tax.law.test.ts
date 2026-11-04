@@ -93,3 +93,45 @@ describe('retirement products (§ 15 odst. 6 a 7; zákon 427/2011 Sb. § 14)', (
     expect(result.deduction).toBe(48_000)
   })
 })
+
+describe('credits from 2027 (zákon 180/2026 Sb., new § 35bc–35be)', () => {
+  // 2027 minimum wage 24 900 Kč (MPSV); the new credits exist only in rates for 2027 onwards
+  const rates2027 = {
+    ...rates2025,
+    minimumWage: 24_900,
+    studentCredit: 4_020,
+    childPlacementCreditCapIsMinimumWage: true,
+    salesRegistrationCredit: 5_000,
+  }
+
+  it('gives the student credit of 4 020 Kč, one twelfth for each month (§ 35bc, § 35ba odst. 3)', () => {
+    expect(calculateOsvcIncomeTax({ profit: 400_000, studentMonths: 12, rates: rates2027 }).studentCredit).toBe(4_020)
+    expect(calculateOsvcIncomeTax({ profit: 400_000, studentMonths: 6, rates: rates2027 }).studentCredit).toBe(2_010)
+  })
+
+  it('gives školkovné up to the minimum wage per child (§ 35bd odst. 1)', () => {
+    const result = calculateOsvcIncomeTax({ profit: 600_000, childPlacementFees: [30_000, 10_000], rates: rates2027 })
+    expect(result.childPlacementCredit).toBe(34_900)
+    // 90 000 − 30 840 − 34 900
+    expect(result.taxAfterCredits).toBe(24_260)
+  })
+
+  it('gives the sales registration credit: 5 000 Kč, less when 15 % of the base minus the payer credit is lower (§ 35be)', () => {
+    const creditFor = (profit: number) =>
+      calculateOsvcIncomeTax({ profit, isFirstYearWithRegisteredSales: true, rates: rates2027 }).salesRegistrationCredit
+    expect(creditFor(400_000)).toBe(5_000)
+    expect(creditFor(230_000)).toBe(3_660)
+    expect(creditFor(200_000)).toBe(0)
+  })
+
+  it('gives none of these before 2027, when the rates do not define them', () => {
+    const result = calculateOsvcIncomeTax({
+      profit: 600_000,
+      studentMonths: 12,
+      childPlacementFees: [30_000],
+      isFirstYearWithRegisteredSales: true,
+      rates: rates2025,
+    })
+    expect([result.studentCredit, result.childPlacementCredit, result.salesRegistrationCredit]).toEqual([0, 0, 0])
+  })
+})

@@ -22,6 +22,7 @@ The quotes were taken from these consolidated texts on 4 November 2026:
 | zákon č. 589/1992 Sb., o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti | Aktuální znění 01.11.2026 - 31.12.2026 (verze 76) | [zakonyprolidi.cz](https://www.zakonyprolidi.cz/cs/1992-589) |
 | zákon č. 187/2006 Sb., o nemocenském pojištění | Aktuální znění 01.11.2026 - 31.12.2026 (verze 67) | [zakonyprolidi.cz](https://www.zakonyprolidi.cz/cs/2006-187) |
 | zákon č. 427/2011 Sb., o doplňkovém penzijním spoření | Aktuální znění 01.08.2026 (verze 20) | [zakonyprolidi.cz](https://www.zakonyprolidi.cz/cs/2011-427) |
+| zákon č. 180/2026 Sb., o evidenci tržeb a o změně některých dalších zákonů | Aktuální znění 08.10.2026 - 31.12.2026 (verze 1) | [zakonyprolidi.cz](https://www.zakonyprolidi.cz/cs/2026-180) |
 
 The amounts for a given year come from the state bodies that publish them (VZP, ČSSZ, MPSV, Finanční správa) and the government regulations (nařízení vlády). Each is linked where it is used.
 
