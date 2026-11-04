@@ -9,9 +9,20 @@ import { reverseMessages } from './reverse'
 import { scenariosMessages } from './scenarios'
 import { shellMessages } from './shell'
 import { splitMessages } from './split'
+import { valuesMessages } from './values'
+
+/** Bundles in the initial download: shared strings and the two default screens. */
+export const initialBundles: readonly MessageBundle[] = [
+  commonMessages,
+  shellMessages,
+  valuesMessages,
+  calcMessages,
+  splitMessages,
+]
 
 /**
- * Every message bundle the app uses. One file per feature in this folder; add the export here.
+ * Every message bundle the app uses (the tests check them all). The bundles of lazily loaded screens are
+ * registered by their screen module (registerBundle in src/app/context.ts), so their text downloads with them. One file per feature in this folder; add the export here.
  * `bundles.test.ts` checks each bundle: same keys in cs and en, same placeholders, dotted keys.
  */
 export const allBundles: readonly MessageBundle[] = [
@@ -25,4 +36,5 @@ export const allBundles: readonly MessageBundle[] = [
   benefitsMessages,
   dataMessages,
   aboutMessages,
+  valuesMessages,
 ]

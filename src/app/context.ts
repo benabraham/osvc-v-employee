@@ -2,10 +2,10 @@
  * App-wide wiring the screens share: the store, the translator for the current language, and the results
  * of the active year as computed signals (recomputed only when inputs or year data change).
  */
-import { computed } from '@preact/signals'
+import { computed, signal } from '@preact/signals'
 import { TAX_YEARS } from '../data/tax-years'
-import { createTranslator, type Translator } from '../i18n'
-import { allBundles } from '../i18n/messages'
+import { createTranslator, type MessageBundle, type Translator } from '../i18n'
+import { initialBundles } from '../i18n/messages'
 import { computeResults, yearOnYearChangeFor } from '../model'
 import { getAppStore } from '../state'
 import { currentLocale } from '../ui/locale'
@@ -15,6 +15,20 @@ export const store = getAppStore()
 
 const translators = new Map<string, Translator>()
 
+/** Bundles registered by lazily loaded screens; a change re-creates the translators. */
+const lateBundles = signal<readonly MessageBundle[]>([])
+
+/**
+ * Adds the messages of a lazily loaded screen. Call it at the top of the screen module.
+ *
+ * @param {MessageBundle} bundle
+ */
+export const registerBundle = (bundle: MessageBundle) => {
+  if (lateBundles.peek().includes(bundle)) return
+  translators.clear()
+  lateBundles.value = [...lateBundles.peek(), bundle]
+}
+
 /**
  * The translator for the current language. Calling it inside a component subscribes the component to
  * language changes. Usage: `const t = useT(); t('nav.split')`.
@@ -23,9 +37,10 @@ const translators = new Map<string, Translator>()
  */
 export const useT = (): Translator => {
   const locale = currentLocale.value
+  const bundles = [...initialBundles, ...lateBundles.value]
   const cached = translators.get(locale)
   if (cached) return cached
-  const translator = createTranslator({ locale, bundles: allBundles })
+  const translator = createTranslator({ locale, bundles })
   translators.set(locale, translator)
   return translator
 }

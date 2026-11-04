@@ -1,6 +1,10 @@
 import { results, useT } from '../../app/context'
 import { BenefitsCalculator } from './benefits-calculator'
 import { SicknessInsuranceCard } from './sickness-insurance-card'
+import { registerBundle } from '../../app/context'
+import { benefitsMessages } from '../../i18n/messages/benefits'
+
+registerBundle(benefitsMessages)
 
 /**
  * The benefits screen (#/benefits): sickness, maternity and paternity benefit for an employee and an OSVČ with the

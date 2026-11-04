@@ -4,6 +4,10 @@ import { ResetSection } from './reset-section'
 import { SettingsSection } from './settings-section'
 import { SharingSection } from './sharing-section'
 import './data-screen.css'
+import { registerBundle } from '../../app/context'
+import { dataMessages } from '../../i18n/messages/data'
+
+registerBundle(dataMessages)
 
 /**
  * The data and sharing screen (#/data): share a calculation or the app, export and import the data, the settings,

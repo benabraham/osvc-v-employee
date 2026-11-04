@@ -1,15 +1,10 @@
 import { effect } from '@preact/signals'
 import type { JSX } from 'preact'
 import { useEffect } from 'preact/hooks'
-import { AboutScreen } from '../screens/about/about-screen'
-import { BenefitsScreen } from '../screens/benefits/benefits-screen'
 import { CalcScreen } from '../screens/calc/calc-screen'
-import { CostsScreen } from '../screens/costs/costs-screen'
-import { DataScreen } from '../screens/data/data-screen'
-import { ReverseScreen } from '../screens/reverse/reverse-screen'
-import { ScenariosScreen } from '../screens/scenarios/scenarios-screen'
 import { SplitScreen } from '../screens/split/split-screen'
 import './app.css'
+import { lazyScreen } from './lazy-screen'
 import { AppFooter } from './footer'
 import { AppHeader } from './header'
 import { useT, store } from './context'
@@ -22,16 +17,28 @@ import { YearDataNotice } from './year-data-notice'
 // Language and theme follow the store at once, before any screen renders in the new language
 effect(() => applyShellSettings({ locale: localeSetting.value, theme: themeSetting.value }))
 
-/** The screen component of each route. */
+const lazyScreens = {
+  costs: lazyScreen({ load: () => import('../screens/costs/costs-screen').then((module) => module.CostsScreen) }),
+  scenarios: lazyScreen({ load: () => import('../screens/scenarios/scenarios-screen').then((module) => module.ScenariosScreen) }),
+  reverse: lazyScreen({ load: () => import('../screens/reverse/reverse-screen').then((module) => module.ReverseScreen) }),
+  benefits: lazyScreen({ load: () => import('../screens/benefits/benefits-screen').then((module) => module.BenefitsScreen) }),
+  data: lazyScreen({ load: () => import('../screens/data/data-screen').then((module) => module.DataScreen) }),
+  about: lazyScreen({ load: () => import('../screens/about/about-screen').then((module) => module.AboutScreen) }),
+}
+
+/** Loads the other screens once the browser is idle, so switching screens is instant. */
+export const preloadScreens = () => Promise.all(Object.values(lazyScreens).map((screen) => screen.preload()))
+
+/** The screen component of each route; the split and calculator screens ship in the initial bundle. */
 const SCREENS: Record<Route, () => JSX.Element> = {
   split: SplitScreen,
   calc: CalcScreen,
-  costs: CostsScreen,
-  scenarios: ScenariosScreen,
-  reverse: ReverseScreen,
-  benefits: BenefitsScreen,
-  data: DataScreen,
-  about: AboutScreen,
+  costs: lazyScreens.costs.Screen,
+  scenarios: lazyScreens.scenarios.Screen,
+  reverse: lazyScreens.reverse.Screen,
+  benefits: lazyScreens.benefits.Screen,
+  data: lazyScreens.data.Screen,
+  about: lazyScreens.about.Screen,
 }
 
 /** Screens that do not depend on the tax year's values, so they get no year notice. */
@@ -49,12 +56,24 @@ export const App = () => {
 
   useEffect(() => startRouting({ store }), [])
   useEffect(() => {
+    const idle = globalThis.requestIdleCallback ?? ((callback: () => void) => setTimeout(callback, 1_500))
+    idle(() => void preloadScreens())
+  }, [])
+  useEffect(() => {
     document.title = title
   }, [title])
 
   return (
     <>
-      <a class="skip-link" href="#main">
+      <a
+        class="skip-link"
+        href="#main"
+        onClick={(event) => {
+          // the hash drives routing, so focus the main region instead of navigating to #main
+          event.preventDefault()
+          document.getElementById('main')?.focus()
+        }}
+      >
         {t('shell.skip')}
       </a>
       <AppHeader />

@@ -8,6 +8,10 @@ import { bestColumnIdsFor, comparisonColumnsFor } from './scenario-results'
 import { SaveScenarioForm } from './save-scenario-form'
 import { ScenarioComparison } from './scenario-comparison'
 import { ScenarioList } from './scenario-list'
+import { registerBundle } from '../../app/context'
+import { scenariosMessages } from '../../i18n/messages/scenarios'
+
+registerBundle(scenariosMessages)
 
 /**
  * The scenarios screen. The first comparison column is the current calculation; the list shows the rest.

@@ -10,6 +10,10 @@ import { MAXIMUM_SEARCHED_HOURLY_RATE } from '../../model'
 import { Money, NumberField, ResultRow, currentLocale } from '../../ui'
 import { defaultTargetNetMonthlyFor, reverseSearchFor } from './reverse-target'
 import './reverse.css'
+import { registerBundle } from '../../app/context'
+import { reverseMessages } from '../../i18n/messages/reverse'
+
+registerBundle(reverseMessages)
 
 /**
  * The reverse screen: target field, the result (live region) and the action that applies the rate.

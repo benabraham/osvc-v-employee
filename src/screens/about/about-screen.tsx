@@ -4,6 +4,10 @@ import { ISSUES_URL, REPOSITORY_URL, SHEET_LINKS } from '../../app/footer'
 import { activeYear } from '../../app/shell-state'
 import { valueLabelFor } from '../../app/value-labels'
 import type { TaxYearData, ValueStatus } from '../../data/tax-years'
+import { registerBundle } from '../../app/context'
+import { aboutMessages } from '../../i18n/messages/about'
+
+registerBundle(aboutMessages)
 
 /** The original video by the author. */
 export const VIDEO_URL = 'https://www.youtube.com/watch?v=iJGjTFDYw9A'

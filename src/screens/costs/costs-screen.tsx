@@ -10,6 +10,10 @@ import { costsPerYearFor, type CostItem } from '../../model'
 import { currentLocale, ResultRow } from '../../ui'
 import { CostRow } from './cost-row'
 import './costs.css'
+import { registerBundle } from '../../app/context'
+import { costsMessages } from '../../i18n/messages/costs'
+
+registerBundle(costsMessages)
 
 /** How long a deleted row can be restored. */
 const UNDO_WINDOW_MS = 5_000
