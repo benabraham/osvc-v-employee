@@ -1,0 +1,13 @@
+/*
+ * Reverse screen: spacing of the result card. Colours and sizes come from main.css custom properties.
+ */
+
+.reverse-screen {
+  & .headline {
+    margin-bottom: var(--space-3);
+  }
+
+  & .result-list {
+    margin-bottom: var(--space-4);
+  }
+}
