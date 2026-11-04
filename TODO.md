@@ -62,7 +62,8 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 - [x] Install, offline and local persistence; Lighthouse targets
 - [x] Deploy to GitHub Pages; disclaimer, links to the year sheets and to GitHub issues
 
-- [ ] Follow-ups from the first QA and documentation pass
+- [ ] Follow-ups from the first QA and documentation pass (fixed: stale focused field after a year switch, desktop sidebar scrolling away, year-on-year with different default working days, toasts over controls, 360 px overflow, benefit citations, stored year outside the window)
+  - [ ] Check on a real phone: swipe between scenario cards, the native year picker, install and offline
   - [ ] Scenarios and the year-on-year change use official data only; use the user's own numbers when they are switched on for that year
   - [ ] sicknessBands sums unrounded bands; § 21 odst. 2 rounds each band to two decimals first (no input found where it matters yet)
   - [ ] PRD notes to update in the Claude Doc: union dues and exam deductions abolished from 2024; SP base capped at 48 × the average wage; the gross search scans back 400 Kč after bisection; English app name "Freelancer vs. employee"; two-source status of 2024–2026 values
@@ -71,4 +72,4 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 
 - [ ] Dogfood for 2 weeks with no fallback to the sheet
 - [ ] Make the repository public under MIT when ready
-- [ ] Write down the yearly upkeep (January window move, verification of new values)
+- [x] Write down the yearly upkeep (January window move, verification of new values): docs/maintenance.md
