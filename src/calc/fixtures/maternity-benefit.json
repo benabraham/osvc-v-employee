@@ -1,0 +1,2702 @@
+[
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 28320
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 931.07,
+   "reducedFirstBand": 931.07,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 932,
+   "dailyBenefit": 653,
+   "monthlyBenefit": 19590
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 30000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 986.3,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 987,
+   "dailyBenefit": 691,
+   "monthlyBenefit": 20730
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 35000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1150.68,
+   "reducedFirstBand": 1090,
+   "reducedSecondBand": 36.41,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1127,
+   "dailyBenefit": 789,
+   "monthlyBenefit": 23670
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 50000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1090,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 2.65,
+   "reducedDailyBase": 1420,
+   "dailyBenefit": 994,
+   "monthlyBenefit": 29820
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupport2019Tests",
+  "libraryClass": "MaternitySupport2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 100000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1090,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 490.5,
+   "reducedDailyBase": 1908,
+   "dailyBenefit": 1336,
+   "monthlyBenefit": 40080
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupportOSVC2019Tests",
+  "libraryClass": "MaternitySupportOSVC2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16087,
+   "dailyAssessmentBase": 528.89,
+   "reducedFirstBand": 528.89,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 529,
+   "dailyBenefit": 371,
+   "monthlyBenefit": 11130
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupportOSVC2019Tests",
+  "libraryClass": "MaternitySupportOSVC2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 15218,
+   "dailyAssessmentBase": 500.32,
+   "reducedFirstBand": 500.32,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 501,
+   "dailyBenefit": 351,
+   "monthlyBenefit": 10530
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupportOSVC2019Tests",
+  "libraryClass": "MaternitySupportOSVC2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17392,
+   "dailyAssessmentBase": 571.79,
+   "reducedFirstBand": 571.79,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 572,
+   "dailyBenefit": 401,
+   "monthlyBenefit": 12030
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupportOSVC2019Tests",
+  "libraryClass": "MaternitySupportOSVC2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 30435,
+   "dailyAssessmentBase": 1000.6,
+   "reducedFirstBand": 1000.6,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1001,
+   "dailyBenefit": 701,
+   "monthlyBenefit": 21030
+  }
+ },
+ {
+  "source": "library-test test_calc2019.MaternitySupportOSVC2019Tests",
+  "libraryClass": "MaternitySupportOSVC2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 86957,
+   "dailyAssessmentBase": 2858.86,
+   "reducedFirstBand": 1090,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 367.16,
+   "reducedDailyBase": 1785,
+   "dailyBenefit": 1250,
+   "monthlyBenefit": 37500
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 28320
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 931.07,
+   "reducedFirstBand": 931.07,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 932,
+   "dailyBenefit": 653,
+   "monthlyBenefit": 19590
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 30000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 986.3,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 987,
+   "dailyBenefit": 691,
+   "monthlyBenefit": 20730
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 37100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1219.73,
+   "reducedFirstBand": 1162,
+   "reducedSecondBand": 34.64,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1197,
+   "dailyBenefit": 838,
+   "monthlyBenefit": 25140
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 50000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1162,
+   "reducedSecondBand": 289.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1452,
+   "dailyBenefit": 1017,
+   "monthlyBenefit": 30510
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupport2020Tests",
+  "libraryClass": "MaternitySupport2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 100000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1162,
+   "reducedSecondBand": 348,
+   "reducedThirdBand": 463.7,
+   "reducedDailyBase": 1974,
+   "dailyBenefit": 1382,
+   "monthlyBenefit": 41460
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16087,
+   "dailyAssessmentBase": 528.89,
+   "reducedFirstBand": 528.89,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 529,
+   "dailyBenefit": 371,
+   "weeklyBenefit": 2597,
+   "monthlyBenefit": 11130
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 15218,
+   "dailyAssessmentBase": 500.32,
+   "reducedFirstBand": 500.32,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 501,
+   "dailyBenefit": 351,
+   "weeklyBenefit": 2457,
+   "monthlyBenefit": 10530
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17392,
+   "dailyAssessmentBase": 571.79,
+   "reducedFirstBand": 571.79,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 572,
+   "dailyBenefit": 401,
+   "weeklyBenefit": 2807,
+   "monthlyBenefit": 12030
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 30435,
+   "dailyAssessmentBase": 1000.6,
+   "reducedFirstBand": 1000.6,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1001,
+   "dailyBenefit": 701,
+   "weeklyBenefit": 4907,
+   "monthlyBenefit": 21030
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 86957,
+   "dailyAssessmentBase": 2858.86,
+   "reducedFirstBand": 1162,
+   "reducedSecondBand": 348,
+   "reducedThirdBand": 335.06,
+   "reducedDailyBase": 1846,
+   "dailyBenefit": 1293,
+   "weeklyBenefit": 9051,
+   "monthlyBenefit": 38790
+  }
+ },
+ {
+  "source": "library-test test_calc2020.MaternitySupportOSVC2020Tests",
+  "libraryClass": "MaternitySupportOSVC2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 130435,
+   "dailyAssessmentBase": 4288.27,
+   "reducedFirstBand": 1162,
+   "reducedSecondBand": 348,
+   "reducedThirdBand": 522.6,
+   "reducedDailyBase": 2033,
+   "dailyBenefit": 1424,
+   "weeklyBenefit": 9968,
+   "monthlyBenefit": 42720
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 28320
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 931.07,
+   "reducedFirstBand": 931.07,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 932,
+   "dailyBenefit": 653,
+   "monthlyBenefit": 19590
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 30000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 986.3,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 987,
+   "dailyBenefit": 691,
+   "monthlyBenefit": 20730
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 37100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1219.73,
+   "reducedFirstBand": 1182,
+   "reducedSecondBand": 22.64,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1205,
+   "dailyBenefit": 844,
+   "monthlyBenefit": 25320
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 50000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1182,
+   "reducedSecondBand": 277.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1460,
+   "dailyBenefit": 1022,
+   "monthlyBenefit": 30660
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupport2021Tests",
+  "libraryClass": "MaternitySupport2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 100000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1182,
+   "reducedSecondBand": 354.6,
+   "reducedThirdBand": 454.4,
+   "reducedDailyBase": 1991,
+   "dailyBenefit": 1394,
+   "monthlyBenefit": 41820
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16087,
+   "dailyAssessmentBase": 528.89,
+   "reducedFirstBand": 528.89,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 529,
+   "dailyBenefit": 371,
+   "weeklyBenefit": 2597,
+   "monthlyBenefit": 11130
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 15218,
+   "dailyAssessmentBase": 500.32,
+   "reducedFirstBand": 500.32,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 501,
+   "dailyBenefit": 351,
+   "weeklyBenefit": 2457,
+   "monthlyBenefit": 10530
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17392,
+   "dailyAssessmentBase": 571.79,
+   "reducedFirstBand": 571.79,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 572,
+   "dailyBenefit": 401,
+   "weeklyBenefit": 2807,
+   "monthlyBenefit": 12030
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 30435,
+   "dailyAssessmentBase": 1000.6,
+   "reducedFirstBand": 1000.6,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1001,
+   "dailyBenefit": 701,
+   "weeklyBenefit": 4907,
+   "monthlyBenefit": 21030
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 86957,
+   "dailyAssessmentBase": 2858.86,
+   "reducedFirstBand": 1182,
+   "reducedSecondBand": 354.6,
+   "reducedThirdBand": 325.76,
+   "reducedDailyBase": 1863,
+   "dailyBenefit": 1305,
+   "weeklyBenefit": 9135,
+   "monthlyBenefit": 39150
+  }
+ },
+ {
+  "source": "library-test test_calc2021.MaternitySupportOSVC2021Tests",
+  "libraryClass": "MaternitySupportOSVC2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 130435,
+   "dailyAssessmentBase": 4288.27,
+   "reducedFirstBand": 1182,
+   "reducedSecondBand": 354.6,
+   "reducedThirdBand": 531.6,
+   "reducedDailyBase": 2069,
+   "dailyBenefit": 1449,
+   "weeklyBenefit": 10143,
+   "monthlyBenefit": 43470
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 28320
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 931.07,
+   "reducedFirstBand": 931.07,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 932,
+   "dailyBenefit": 653,
+   "monthlyBenefit": 19590
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 30000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 986.3,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 987,
+   "dailyBenefit": 691,
+   "monthlyBenefit": 20730
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 37100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1219.73,
+   "reducedFirstBand": 1219.73,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1220,
+   "dailyBenefit": 854,
+   "monthlyBenefit": 25620
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 50000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 207.5,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1506,
+   "dailyBenefit": 1055,
+   "monthlyBenefit": 31650
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupport2022Tests",
+  "libraryClass": "MaternitySupport2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 100000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 402.5,
+   "reducedDailyBase": 2090,
+   "dailyBenefit": 1463,
+   "monthlyBenefit": 43890
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16087,
+   "dailyAssessmentBase": 528.89,
+   "reducedFirstBand": 528.89,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 529,
+   "dailyBenefit": 371,
+   "monthlyBenefit": 11130
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 15218,
+   "dailyAssessmentBase": 500.32,
+   "reducedFirstBand": 500.32,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 501,
+   "dailyBenefit": 351,
+   "monthlyBenefit": 10530
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17392,
+   "dailyAssessmentBase": 571.79,
+   "reducedFirstBand": 571.79,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 572,
+   "dailyBenefit": 401,
+   "monthlyBenefit": 12030
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 30435,
+   "dailyAssessmentBase": 1000.6,
+   "reducedFirstBand": 1000.6,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1001,
+   "dailyBenefit": 701,
+   "monthlyBenefit": 21030
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 86957,
+   "dailyAssessmentBase": 2858.86,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 273.86,
+   "reducedDailyBase": 1961,
+   "dailyBenefit": 1373,
+   "monthlyBenefit": 41190
+  }
+ },
+ {
+  "source": "library-test test_calc2022.MaternitySupportOSVC2022Tests",
+  "libraryClass": "MaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 130435,
+   "dailyAssessmentBase": 4288.27,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 583.8,
+   "reducedDailyBase": 2271,
+   "dailyBenefit": 1590,
+   "monthlyBenefit": 47700
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 15218,
+   "dailyAssessmentBase": 500.32,
+   "reducedFirstBand": 500.32,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 501,
+   "dailyBenefit": 351,
+   "fortnightBenefit": 4914
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16087,
+   "dailyAssessmentBase": 528.89,
+   "reducedFirstBand": 528.89,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 529,
+   "dailyBenefit": 371,
+   "fortnightBenefit": 5194
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17392,
+   "dailyAssessmentBase": 571.79,
+   "reducedFirstBand": 571.79,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 572,
+   "dailyBenefit": 401,
+   "fortnightBenefit": 5614
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 30435,
+   "dailyAssessmentBase": 1000.6,
+   "reducedFirstBand": 1000.6,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1001,
+   "dailyBenefit": 701,
+   "fortnightBenefit": 9814
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 86957,
+   "dailyAssessmentBase": 2858.86,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 273.86,
+   "reducedDailyBase": 1961,
+   "dailyBenefit": 1373,
+   "fortnightBenefit": 19222
+  }
+ },
+ {
+  "source": "library-test test_calc2022.PaternitySupportOSVC2022Tests",
+  "libraryClass": "PaternitySupportOSVC2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ],
+   "sicknessInsuranceRatePercent": 2.3
+  },
+  "expected": {
+   "monthlyAssessmentBase": 130435,
+   "dailyAssessmentBase": 4288.27,
+   "reducedFirstBand": 1298,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 583.8,
+   "reducedDailyBase": 2271,
+   "dailyBenefit": 1590,
+   "fortnightBenefit": 22260
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 28320
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 931.07,
+   "reducedFirstBand": 931.07,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 932,
+   "dailyBenefit": 653,
+   "fortnightBenefit": 9142
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "fortnightBenefit": 6454
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 30000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 986.3,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 987,
+   "dailyBenefit": 691,
+   "fortnightBenefit": 9674
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 37100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 1219.73,
+   "reducedFirstBand": 1219.73,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1220,
+   "dailyBenefit": 854,
+   "fortnightBenefit": 11956
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 50000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 179.3,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1525,
+   "dailyBenefit": 1068,
+   "fortnightBenefit": 14952
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupport2023Tests",
+  "libraryClass": "MaternitySupport2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 100000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 381.2,
+   "reducedDailyBase": 2130,
+   "dailyBenefit": 1491,
+   "fortnightBenefit": 20874
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17620,
+   "dailyAssessmentBase": 579.29,
+   "reducedFirstBand": 579.29,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 580,
+   "dailyBenefit": 406,
+   "monthlyBenefit": 12180
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16667,
+   "dailyAssessmentBase": 547.96,
+   "reducedFirstBand": 547.96,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 548,
+   "dailyBenefit": 384,
+   "monthlyBenefit": 11520
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 19048,
+   "dailyAssessmentBase": 626.24,
+   "reducedFirstBand": 626.24,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 627,
+   "dailyBenefit": 439,
+   "monthlyBenefit": 13170
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 33334,
+   "dailyAssessmentBase": 1095.91,
+   "reducedFirstBand": 1095.91,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1096,
+   "dailyBenefit": 768,
+   "monthlyBenefit": 23040
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 95239,
+   "dailyAssessmentBase": 3131.15,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 334.25,
+   "reducedDailyBase": 2083,
+   "dailyBenefit": 1459,
+   "monthlyBenefit": 43770
+  }
+ },
+ {
+  "source": "library-test test_calc2023.MaternitySupportOSVC2023Tests",
+  "libraryClass": "MaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 142858,
+   "dailyAssessmentBase": 4696.7,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 604.8,
+   "reducedDailyBase": 2353,
+   "dailyBenefit": 1648,
+   "monthlyBenefit": 49440
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 350
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 16667,
+   "dailyAssessmentBase": 547.96,
+   "reducedFirstBand": 547.96,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 548,
+   "dailyBenefit": 384,
+   "fortnightBenefit": 5376
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 370
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 17620,
+   "dailyAssessmentBase": 579.29,
+   "reducedFirstBand": 579.29,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 580,
+   "dailyBenefit": 406,
+   "fortnightBenefit": 5684
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 400
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 19048,
+   "dailyAssessmentBase": 626.24,
+   "reducedFirstBand": 626.24,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 627,
+   "dailyBenefit": 439,
+   "fortnightBenefit": 6146
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 700
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 33334,
+   "dailyAssessmentBase": 1095.91,
+   "reducedFirstBand": 1095.91,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1096,
+   "dailyBenefit": 768,
+   "fortnightBenefit": 10752
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 2000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 95239,
+   "dailyAssessmentBase": 3131.15,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 334.25,
+   "reducedDailyBase": 2083,
+   "dailyBenefit": 1459,
+   "fortnightBenefit": 20426
+  }
+ },
+ {
+  "source": "library-test test_calc2023.PaternitySupportOSVC2023Tests",
+  "libraryClass": "PaternitySupportOSVC2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlySicknessPremium": 3000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ],
+   "sicknessInsuranceRatePercent": 2.1
+  },
+  "expected": {
+   "monthlyAssessmentBase": 142858,
+   "dailyAssessmentBase": 4696.7,
+   "reducedFirstBand": 1345,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 604.8,
+   "reducedDailyBase": 2353,
+   "dailyBenefit": 1648,
+   "fortnightBenefit": 23072
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "weeklyBenefit": 3227,
+   "fortnightBenefit": 6454,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 43850
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1441.64,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1442,
+   "dailyBenefit": 1010,
+   "weeklyBenefit": 7070,
+   "fortnightBenefit": 14140,
+   "monthlyBenefit": 30300
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 52000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1466,
+   "reducedSecondBand": 146.15,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1613,
+   "dailyBenefit": 1130,
+   "weeklyBenefit": 7910,
+   "fortnightBenefit": 15820,
+   "monthlyBenefit": 33900
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 75000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1466,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 80.02,
+   "reducedDailyBase": 1986,
+   "dailyBenefit": 1391,
+   "weeklyBenefit": 9737,
+   "fortnightBenefit": 19474,
+   "monthlyBenefit": 41730
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 140000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1466,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 659.4,
+   "reducedDailyBase": 2566,
+   "dailyBenefit": 1797,
+   "weeklyBenefit": 12579,
+   "fortnightBenefit": 25158,
+   "monthlyBenefit": 53910
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlySicknessPremium": 200
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 7408,
+   "dailyAssessmentBase": 243.55,
+   "reducedFirstBand": 243.55,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 244,
+   "dailyBenefit": 171,
+   "weeklyBenefit": 1197,
+   "fortnightBenefit": 2394,
+   "monthlyBenefit": 5130
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlySicknessPremium": 750
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 27778,
+   "dailyAssessmentBase": 913.25,
+   "reducedFirstBand": 913.25,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 914,
+   "dailyBenefit": 640,
+   "weeklyBenefit": 4480,
+   "fortnightBenefit": 8960,
+   "monthlyBenefit": 19200
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlySicknessPremium": 1100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 40741,
+   "dailyAssessmentBase": 1339.43,
+   "reducedFirstBand": 1339.43,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1340,
+   "dailyBenefit": 938,
+   "weeklyBenefit": 6566,
+   "fortnightBenefit": 13132,
+   "monthlyBenefit": 28140
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlySicknessPremium": 1500
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 55556,
+   "dailyAssessmentBase": 1826.5,
+   "reducedFirstBand": 1466,
+   "reducedSecondBand": 216.3,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1683,
+   "dailyBenefit": 1179,
+   "weeklyBenefit": 8253,
+   "fortnightBenefit": 16506,
+   "monthlyBenefit": 35370
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlySicknessPremium": 8000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 296297,
+   "dailyAssessmentBase": 9741.27,
+   "reducedFirstBand": 1466,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 659.4,
+   "reducedDailyBase": 2566,
+   "dailyBenefit": 1797,
+   "weeklyBenefit": 12579,
+   "fortnightBenefit": 25158,
+   "monthlyBenefit": 53910
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "weeklyBenefit": 3227,
+   "fortnightBenefit": 6454,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 43850
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1441.64,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1442,
+   "dailyBenefit": 1010,
+   "weeklyBenefit": 7070,
+   "fortnightBenefit": 14140,
+   "monthlyBenefit": 30300
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 52000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1552,
+   "reducedSecondBand": 94.55,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1647,
+   "dailyBenefit": 1153,
+   "weeklyBenefit": 8071,
+   "fortnightBenefit": 16142,
+   "monthlyBenefit": 34590
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 75000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1552,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 41.32,
+   "reducedDailyBase": 2059,
+   "dailyBenefit": 1442,
+   "weeklyBenefit": 10094,
+   "fortnightBenefit": 20188,
+   "monthlyBenefit": 43260
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 140000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1552,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 682.42,
+   "reducedDailyBase": 2701,
+   "dailyBenefit": 1891,
+   "weeklyBenefit": 13237,
+   "fortnightBenefit": 26474,
+   "monthlyBenefit": 56730
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlySicknessPremium": 200
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 7408,
+   "dailyAssessmentBase": 243.55,
+   "reducedFirstBand": 243.55,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 244,
+   "dailyBenefit": 171,
+   "weeklyBenefit": 1197,
+   "fortnightBenefit": 2394,
+   "monthlyBenefit": 5130
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlySicknessPremium": 750
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 27778,
+   "dailyAssessmentBase": 913.25,
+   "reducedFirstBand": 913.25,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 914,
+   "dailyBenefit": 640,
+   "weeklyBenefit": 4480,
+   "fortnightBenefit": 8960,
+   "monthlyBenefit": 19200
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlySicknessPremium": 1100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 40741,
+   "dailyAssessmentBase": 1339.43,
+   "reducedFirstBand": 1339.43,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1340,
+   "dailyBenefit": 938,
+   "weeklyBenefit": 6566,
+   "fortnightBenefit": 13132,
+   "monthlyBenefit": 28140
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlySicknessPremium": 1500
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 55556,
+   "dailyAssessmentBase": 1826.5,
+   "reducedFirstBand": 1552,
+   "reducedSecondBand": 164.7,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1717,
+   "dailyBenefit": 1202,
+   "weeklyBenefit": 8414,
+   "fortnightBenefit": 16828,
+   "monthlyBenefit": 36060
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlySicknessPremium": 8000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 296297,
+   "dailyAssessmentBase": 9741.27,
+   "reducedFirstBand": 1552,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 698.4,
+   "reducedDailyBase": 2716,
+   "dailyBenefit": 1902,
+   "weeklyBenefit": 13314,
+   "fortnightBenefit": 26628,
+   "monthlyBenefit": 57060
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 20000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 657.53,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 658,
+   "dailyBenefit": 461,
+   "weeklyBenefit": 3227,
+   "fortnightBenefit": 6454,
+   "monthlyBenefit": 13830
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 43850
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1441.64,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1442,
+   "dailyBenefit": 1010,
+   "weeklyBenefit": 7070,
+   "fortnightBenefit": 14140,
+   "monthlyBenefit": 30300
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 75000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 5.02,
+   "reducedDailyBase": 2128,
+   "dailyBenefit": 1490,
+   "weeklyBenefit": 10430,
+   "fortnightBenefit": 20860,
+   "monthlyBenefit": 44700
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 140000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 646.12,
+   "reducedDailyBase": 2769,
+   "dailyBenefit": 1939,
+   "weeklyBenefit": 13573,
+   "fortnightBenefit": 27146,
+   "monthlyBenefit": 58170
+  }
+ },
+ {
+  "source": "library-test test_calc2026.MaternitySupport2026Tests",
+  "libraryClass": "MaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 52000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 45.95,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1679,
+   "dailyBenefit": 1176,
+   "monthlyBenefit": 35280
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 200
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 7408,
+   "dailyAssessmentBase": 243.55,
+   "reducedFirstBand": 243.55,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 244,
+   "dailyBenefit": 171,
+   "weeklyBenefit": 1197,
+   "fortnightBenefit": 2394,
+   "monthlyBenefit": 5130
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 1100
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 40741,
+   "dailyAssessmentBase": 1339.43,
+   "reducedFirstBand": 1339.43,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1340,
+   "dailyBenefit": 938,
+   "weeklyBenefit": 6566,
+   "fortnightBenefit": 13132,
+   "monthlyBenefit": 28140
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 1500
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 55556,
+   "dailyAssessmentBase": 1826.5,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 116.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1750,
+   "dailyBenefit": 1225,
+   "weeklyBenefit": 8575,
+   "fortnightBenefit": 17150,
+   "monthlyBenefit": 36750
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "MaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 8000
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 296297,
+   "dailyAssessmentBase": 9741.27,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 734.4,
+   "reducedDailyBase": 2857,
+   "dailyBenefit": 2000,
+   "weeklyBenefit": 14000,
+   "fortnightBenefit": 28000,
+   "monthlyBenefit": 60000
+  }
+ },
+ {
+  "source": "library-test test_calc2026.MaternitySupportOSVC2026Tests",
+  "libraryClass": "MaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 750
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 27778,
+   "dailyAssessmentBase": 913.25,
+   "reducedFirstBand": 913.25,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 914,
+   "dailyBenefit": 640,
+   "monthlyBenefit": 19200
+  }
+ },
+ {
+  "source": "library-test test_calc2026.PaternitySupport2026Tests",
+  "libraryClass": "PaternitySupport2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 43850
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1441.64,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1442,
+   "dailyBenefit": 1010,
+   "fortnightBenefit": 14140
+  }
+ },
+ {
+  "source": "library-test test_calc2026.PaternitySupportOSVC2026Tests",
+  "libraryClass": "PaternitySupportOSVC2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlySicknessPremium": 1500
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ],
+   "sicknessInsuranceRatePercent": 2.7
+  },
+  "expected": {
+   "monthlyAssessmentBase": 55556,
+   "dailyAssessmentBase": 1826.5,
+   "reducedFirstBand": 1633,
+   "reducedSecondBand": 116.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1750,
+   "dailyBenefit": 1225,
+   "fortnightBenefit": 17150
+  }
+ }
+]

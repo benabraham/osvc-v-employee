@@ -1,0 +1,482 @@
+[
+ {
+  "source": "library-test test_calc2022.SocialInsuranceOSVC2021Advance2022Tests",
+  "libraryClass": "SocialInsuranceOSVC2021Advance2022",
+  "taxYear": 2021,
+  "input": {
+   "income": 750000,
+   "expenses": 250000
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 106332,
+   "maximumAssessmentBase": 1701168
+  },
+  "expected": {
+   "profit": 500000,
+   "calculatedAssessmentBase": 250000,
+   "assessmentBase": 250000,
+   "premium": 73000
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SocialInsuranceOSVC2021Advance2022Tests",
+  "libraryClass": "SocialInsuranceOSVC2021Advance2022",
+  "taxYear": 2021,
+  "input": {
+   "income": 421500,
+   "expenses": 201564
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 106332,
+   "maximumAssessmentBase": 1701168
+  },
+  "expected": {
+   "profit": 219936,
+   "calculatedAssessmentBase": 109968,
+   "assessmentBase": 109968,
+   "premium": 32111
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SocialInsuranceOSVC2021Advance2022Tests",
+  "libraryClass": "SocialInsuranceOSVC2021Advance2022",
+  "taxYear": 2021,
+  "input": {
+   "income": 899999,
+   "expenses": 444444
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 106332,
+   "maximumAssessmentBase": 1701168
+  },
+  "expected": {
+   "profit": 455555,
+   "calculatedAssessmentBase": 227778,
+   "assessmentBase": 227778,
+   "premium": 66512
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SocialInsuranceOSVC2021Advance2022Tests",
+  "libraryClass": "SocialInsuranceOSVC2021Advance2022",
+  "taxYear": 2021,
+  "input": {
+   "income": 489541,
+   "expenses": 312102
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 106332,
+   "maximumAssessmentBase": 1701168
+  },
+  "expected": {
+   "profit": 177439,
+   "calculatedAssessmentBase": 88720,
+   "assessmentBase": 106332,
+   "premium": 31049
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SocialInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "SocialInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 750000,
+   "expenses": 250000
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 116736,
+   "maximumAssessmentBase": 1867728
+  },
+  "expected": {
+   "profit": 500000,
+   "calculatedAssessmentBase": 250000,
+   "assessmentBase": 250000,
+   "premium": 73000
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SocialInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "SocialInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 421500,
+   "expenses": 201564
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 116736,
+   "maximumAssessmentBase": 1867728
+  },
+  "expected": {
+   "profit": 219936,
+   "calculatedAssessmentBase": 109968,
+   "assessmentBase": 116736,
+   "premium": 34087
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SocialInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "SocialInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 899999,
+   "expenses": 444444
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 116736,
+   "maximumAssessmentBase": 1867728
+  },
+  "expected": {
+   "profit": 455555,
+   "calculatedAssessmentBase": 227778,
+   "assessmentBase": 227778,
+   "premium": 66512
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SocialInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "SocialInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 489541,
+   "expenses": 312102
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 116736,
+   "maximumAssessmentBase": 1867728
+  },
+  "expected": {
+   "profit": 177439,
+   "calculatedAssessmentBase": 88720,
+   "assessmentBase": 116736,
+   "premium": 34087
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 120972,
+   "maximumAssessmentBase": 1935552
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 139100,
+   "assessmentBase": 139100,
+   "premium": 40618
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 120972,
+   "maximumAssessmentBase": 1935552
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 214000,
+   "assessmentBase": 214000,
+   "premium": 62488
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 120972,
+   "maximumAssessmentBase": 1935552
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 60000,
+   "assessmentBase": 120972,
+   "premium": 35324
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 9000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 120972,
+   "maximumAssessmentBase": 1935552
+  },
+  "expected": {
+   "profit": 7000000,
+   "calculatedAssessmentBase": 3500000,
+   "assessmentBase": 1935552,
+   "premium": 565182
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "profitShare": 0.5,
+   "minimumAssessmentBase": 120972,
+   "maximumAssessmentBase": 1935552
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 233333,
+   "assessmentBase": 233333,
+   "premium": 68134
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 158292,
+   "maximumAssessmentBase": 2110416
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 153010,
+   "assessmentBase": 158292,
+   "premium": 46222
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 158292,
+   "maximumAssessmentBase": 2110416
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 235400,
+   "assessmentBase": 235400,
+   "premium": 68737
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 158292,
+   "maximumAssessmentBase": 2110416
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 66000,
+   "assessmentBase": 158292,
+   "premium": 46222
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 9000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 158292,
+   "maximumAssessmentBase": 2110416
+  },
+  "expected": {
+   "profit": 7000000,
+   "calculatedAssessmentBase": 3850000,
+   "assessmentBase": 2110416,
+   "premium": 616242
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 158292,
+   "maximumAssessmentBase": 2110416
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 256667,
+   "assessmentBase": 256667,
+   "premium": 74947
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 153010,
+   "assessmentBase": 195540,
+   "premium": 57098
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 235400,
+   "assessmentBase": 235400,
+   "premium": 68737
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 66000,
+   "assessmentBase": 195540,
+   "premium": 57098
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 9000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 7000000,
+   "calculatedAssessmentBase": 3850000,
+   "assessmentBase": 2234736,
+   "premium": 652543
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 256667,
+   "assessmentBase": 256667,
+   "premium": 74947
+  }
+ },
+ {
+  "source": "library-test test_calc2026.SocialInsuranceOSVC2025Advance2026Tests",
+  "libraryClass": "SocialInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 500000,
+   "expenses": 100000
+  },
+  "rates": {
+   "profitShare": 0.55,
+   "minimumAssessmentBase": 195540,
+   "maximumAssessmentBase": 2234736
+  },
+  "expected": {
+   "profit": 400000,
+   "calculatedAssessmentBase": 220000,
+   "assessmentBase": 220000,
+   "premium": 64240
+  }
+ }
+]

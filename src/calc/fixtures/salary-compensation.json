@@ -1,0 +1,1010 @@
+[
+ {
+  "source": "library-test test_calc2019.SalaryCompensation2019Tests",
+  "libraryClass": "SalaryCompensation2019",
+  "taxYear": 2019,
+  "input": {
+   "averageHourlyEarnings": 300,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    190.75,
+    286.13,
+    572.25
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 171.675,
+   "reducedSecondBand": 57.228,
+   "reducedThirdBand": 4.161,
+   "reducedHourlyBase": 233.064,
+   "hourlyCompensation": 139.8384,
+   "totalCompensation": 6992
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SalaryCompensation2019Tests",
+  "libraryClass": "SalaryCompensation2019",
+  "taxYear": 2019,
+  "input": {
+   "averageHourlyEarnings": 245,
+   "hoursOfIncapacity": 45
+  },
+  "rates": {
+   "reductionThresholds": [
+    190.75,
+    286.13,
+    572.25
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 171.675,
+   "reducedSecondBand": 32.55,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 204.225,
+   "hourlyCompensation": 122.535,
+   "totalCompensation": 5515
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SalaryCompensation2019Tests",
+  "libraryClass": "SalaryCompensation2019",
+  "taxYear": 2019,
+  "input": {
+   "averageHourlyEarnings": 152,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    190.75,
+    286.13,
+    572.25
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 136.8,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 136.8,
+   "hourlyCompensation": 82.08,
+   "totalCompensation": 4104
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SalaryCompensation2019Tests",
+  "libraryClass": "SalaryCompensation2019",
+  "taxYear": 2019,
+  "input": {
+   "averageHourlyEarnings": 250,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    190.75,
+    286.13,
+    572.25
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 171.675,
+   "reducedSecondBand": 35.55,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 207.225,
+   "hourlyCompensation": 124.335,
+   "totalCompensation": 4974
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SalaryCompensation2019Tests",
+  "libraryClass": "SalaryCompensation2019",
+  "taxYear": 2019,
+  "input": {
+   "averageHourlyEarnings": 450,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    190.75,
+    286.13,
+    572.25
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 171.675,
+   "reducedSecondBand": 57.228,
+   "reducedThirdBand": 49.161,
+   "reducedHourlyBase": 278.064,
+   "hourlyCompensation": 166.8384,
+   "totalCompensation": 6674
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SalaryCompensation2020Tests",
+  "libraryClass": "SalaryCompensation2020",
+  "taxYear": 2020,
+  "input": {
+   "averageHourlyEarnings": 300,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    203.35,
+    304.85,
+    609.7
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 183.015,
+   "reducedSecondBand": 57.99,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 241.005,
+   "hourlyCompensation": 144.603,
+   "totalCompensation": 7231
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SalaryCompensation2020Tests",
+  "libraryClass": "SalaryCompensation2020",
+  "taxYear": 2020,
+  "input": {
+   "averageHourlyEarnings": 245,
+   "hoursOfIncapacity": 45
+  },
+  "rates": {
+   "reductionThresholds": [
+    203.35,
+    304.85,
+    609.7
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 183.015,
+   "reducedSecondBand": 24.99,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 208.005,
+   "hourlyCompensation": 124.803,
+   "totalCompensation": 5617
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SalaryCompensation2020Tests",
+  "libraryClass": "SalaryCompensation2020",
+  "taxYear": 2020,
+  "input": {
+   "averageHourlyEarnings": 152,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    203.35,
+    304.85,
+    609.7
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 136.8,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 136.8,
+   "hourlyCompensation": 82.08,
+   "totalCompensation": 4104
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SalaryCompensation2020Tests",
+  "libraryClass": "SalaryCompensation2020",
+  "taxYear": 2020,
+  "input": {
+   "averageHourlyEarnings": 250,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    203.35,
+    304.85,
+    609.7
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 183.015,
+   "reducedSecondBand": 27.99,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 211.005,
+   "hourlyCompensation": 126.603,
+   "totalCompensation": 5065
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SalaryCompensation2020Tests",
+  "libraryClass": "SalaryCompensation2020",
+  "taxYear": 2020,
+  "input": {
+   "averageHourlyEarnings": 450,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    203.35,
+    304.85,
+    609.7
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 183.015,
+   "reducedSecondBand": 60.9,
+   "reducedThirdBand": 43.545,
+   "reducedHourlyBase": 287.46,
+   "hourlyCompensation": 172.476,
+   "totalCompensation": 6900
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SalaryCompensation2021Tests",
+  "libraryClass": "SalaryCompensation2021",
+  "taxYear": 2021,
+  "input": {
+   "averageHourlyEarnings": 300,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    206.85,
+    310.28,
+    620.38
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 186.165,
+   "reducedSecondBand": 55.89,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 242.055,
+   "hourlyCompensation": 145.233,
+   "totalCompensation": 7262
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SalaryCompensation2021Tests",
+  "libraryClass": "SalaryCompensation2021",
+  "taxYear": 2021,
+  "input": {
+   "averageHourlyEarnings": 245,
+   "hoursOfIncapacity": 45
+  },
+  "rates": {
+   "reductionThresholds": [
+    206.85,
+    310.28,
+    620.38
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 186.165,
+   "reducedSecondBand": 22.89,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 209.055,
+   "hourlyCompensation": 125.433,
+   "totalCompensation": 5645
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SalaryCompensation2021Tests",
+  "libraryClass": "SalaryCompensation2021",
+  "taxYear": 2021,
+  "input": {
+   "averageHourlyEarnings": 152,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    206.85,
+    310.28,
+    620.38
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 136.8,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 136.8,
+   "hourlyCompensation": 82.08,
+   "totalCompensation": 4104
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SalaryCompensation2021Tests",
+  "libraryClass": "SalaryCompensation2021",
+  "taxYear": 2021,
+  "input": {
+   "averageHourlyEarnings": 250,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    206.85,
+    310.28,
+    620.38
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 186.165,
+   "reducedSecondBand": 25.89,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 212.055,
+   "hourlyCompensation": 127.233,
+   "totalCompensation": 5090
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SalaryCompensation2021Tests",
+  "libraryClass": "SalaryCompensation2021",
+  "taxYear": 2021,
+  "input": {
+   "averageHourlyEarnings": 450,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    206.85,
+    310.28,
+    620.38
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 186.165,
+   "reducedSecondBand": 62.058,
+   "reducedThirdBand": 41.916,
+   "reducedHourlyBase": 290.139,
+   "hourlyCompensation": 174.0834,
+   "totalCompensation": 6964
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SalaryCompensation2022Tests",
+  "libraryClass": "SalaryCompensation2022",
+  "taxYear": 2022,
+  "input": {
+   "averageHourlyEarnings": 300,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    227.15,
+    340.55,
+    681.1
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 204.435,
+   "reducedSecondBand": 43.71,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 248.145,
+   "hourlyCompensation": 148.887,
+   "totalCompensation": 7445
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SalaryCompensation2022Tests",
+  "libraryClass": "SalaryCompensation2022",
+  "taxYear": 2022,
+  "input": {
+   "averageHourlyEarnings": 245,
+   "hoursOfIncapacity": 45
+  },
+  "rates": {
+   "reductionThresholds": [
+    227.15,
+    340.55,
+    681.1
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 204.435,
+   "reducedSecondBand": 10.71,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 215.145,
+   "hourlyCompensation": 129.087,
+   "totalCompensation": 5809
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SalaryCompensation2022Tests",
+  "libraryClass": "SalaryCompensation2022",
+  "taxYear": 2022,
+  "input": {
+   "averageHourlyEarnings": 152,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    227.15,
+    340.55,
+    681.1
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 136.8,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 136.8,
+   "hourlyCompensation": 82.08,
+   "totalCompensation": 4104
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SalaryCompensation2022Tests",
+  "libraryClass": "SalaryCompensation2022",
+  "taxYear": 2022,
+  "input": {
+   "averageHourlyEarnings": 250,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    227.15,
+    340.55,
+    681.1
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 204.435,
+   "reducedSecondBand": 13.71,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 218.145,
+   "hourlyCompensation": 130.887,
+   "totalCompensation": 5236
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SalaryCompensation2022Tests",
+  "libraryClass": "SalaryCompensation2022",
+  "taxYear": 2022,
+  "input": {
+   "averageHourlyEarnings": 450,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    227.15,
+    340.55,
+    681.1
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 204.435,
+   "reducedSecondBand": 68.04,
+   "reducedThirdBand": 32.835,
+   "reducedHourlyBase": 305.31,
+   "hourlyCompensation": 183.186,
+   "totalCompensation": 7328
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SalaryCompensation2023Tests",
+  "libraryClass": "SalaryCompensation2023",
+  "taxYear": 2023,
+  "input": {
+   "averageHourlyEarnings": 300,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    235.38,
+    352.98,
+    705.78
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 211.842,
+   "reducedSecondBand": 38.772,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 250.614,
+   "hourlyCompensation": 150.3684,
+   "totalCompensation": 7519
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SalaryCompensation2023Tests",
+  "libraryClass": "SalaryCompensation2023",
+  "taxYear": 2023,
+  "input": {
+   "averageHourlyEarnings": 245,
+   "hoursOfIncapacity": 45
+  },
+  "rates": {
+   "reductionThresholds": [
+    235.38,
+    352.98,
+    705.78
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 211.842,
+   "reducedSecondBand": 5.772,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 217.614,
+   "hourlyCompensation": 130.5684,
+   "totalCompensation": 5876
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SalaryCompensation2023Tests",
+  "libraryClass": "SalaryCompensation2023",
+  "taxYear": 2023,
+  "input": {
+   "averageHourlyEarnings": 152,
+   "hoursOfIncapacity": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    235.38,
+    352.98,
+    705.78
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 136.8,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 136.8,
+   "hourlyCompensation": 82.08,
+   "totalCompensation": 4104
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SalaryCompensation2023Tests",
+  "libraryClass": "SalaryCompensation2023",
+  "taxYear": 2023,
+  "input": {
+   "averageHourlyEarnings": 250,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    235.38,
+    352.98,
+    705.78
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 211.842,
+   "reducedSecondBand": 8.772,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 220.614,
+   "hourlyCompensation": 132.3684,
+   "totalCompensation": 5295
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SalaryCompensation2023Tests",
+  "libraryClass": "SalaryCompensation2023",
+  "taxYear": 2023,
+  "input": {
+   "averageHourlyEarnings": 450,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    235.38,
+    352.98,
+    705.78
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 211.842,
+   "reducedSecondBand": 70.56,
+   "reducedThirdBand": 29.106,
+   "reducedHourlyBase": 311.508,
+   "hourlyCompensation": 186.9048,
+   "totalCompensation": 7477
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2024",
+  "taxYear": 2024,
+  "input": {
+   "averageHourlyEarnings": 150,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    256.55,
+    384.83,
+    769.48
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 135,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 135,
+   "hourlyCompensation": 81,
+   "totalCompensation": 3240
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2024",
+  "taxYear": 2024,
+  "input": {
+   "averageHourlyEarnings": 290,
+   "hoursOfIncapacity": 80
+  },
+  "rates": {
+   "reductionThresholds": [
+    256.55,
+    384.83,
+    769.48
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 230.895,
+   "reducedSecondBand": 20.07,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 250.965,
+   "hourlyCompensation": 150.579,
+   "totalCompensation": 12047
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2024",
+  "taxYear": 2024,
+  "input": {
+   "averageHourlyEarnings": 400,
+   "hoursOfIncapacity": 32
+  },
+  "rates": {
+   "reductionThresholds": [
+    256.55,
+    384.83,
+    769.48
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 230.895,
+   "reducedSecondBand": 76.968,
+   "reducedThirdBand": 4.551,
+   "reducedHourlyBase": 312.414,
+   "hourlyCompensation": 187.4484,
+   "totalCompensation": 5999
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2024",
+  "taxYear": 2024,
+  "input": {
+   "averageHourlyEarnings": 700,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    256.55,
+    384.83,
+    769.48
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 230.895,
+   "reducedSecondBand": 76.968,
+   "reducedThirdBand": 94.551,
+   "reducedHourlyBase": 402.414,
+   "hourlyCompensation": 241.4484,
+   "totalCompensation": 9658
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2024",
+  "taxYear": 2024,
+  "input": {
+   "averageHourlyEarnings": 1200,
+   "hoursOfIncapacity": 112
+  },
+  "rates": {
+   "reductionThresholds": [
+    256.55,
+    384.83,
+    769.48
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 230.895,
+   "reducedSecondBand": 76.968,
+   "reducedThirdBand": 115.395,
+   "reducedHourlyBase": 423.258,
+   "hourlyCompensation": 253.9548,
+   "totalCompensation": 28443
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2025",
+  "taxYear": 2025,
+  "input": {
+   "averageHourlyEarnings": 150,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    271.6,
+    407.4,
+    814.8
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 135,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 135,
+   "hourlyCompensation": 81,
+   "totalCompensation": 3240
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2025",
+  "taxYear": 2025,
+  "input": {
+   "averageHourlyEarnings": 290,
+   "hoursOfIncapacity": 80
+  },
+  "rates": {
+   "reductionThresholds": [
+    271.6,
+    407.4,
+    814.8
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 244.44,
+   "reducedSecondBand": 11.04,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 255.48,
+   "hourlyCompensation": 153.288,
+   "totalCompensation": 12264
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2025",
+  "taxYear": 2025,
+  "input": {
+   "averageHourlyEarnings": 400,
+   "hoursOfIncapacity": 32
+  },
+  "rates": {
+   "reductionThresholds": [
+    271.6,
+    407.4,
+    814.8
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 244.44,
+   "reducedSecondBand": 77.04,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 321.48,
+   "hourlyCompensation": 192.888,
+   "totalCompensation": 6173
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2025",
+  "taxYear": 2025,
+  "input": {
+   "averageHourlyEarnings": 700,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    271.6,
+    407.4,
+    814.8
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 244.44,
+   "reducedSecondBand": 81.48,
+   "reducedThirdBand": 87.78,
+   "reducedHourlyBase": 413.7,
+   "hourlyCompensation": 248.22,
+   "totalCompensation": 9929
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2025",
+  "taxYear": 2025,
+  "input": {
+   "averageHourlyEarnings": 1200,
+   "hoursOfIncapacity": 112
+  },
+  "rates": {
+   "reductionThresholds": [
+    271.6,
+    407.4,
+    814.8
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 244.44,
+   "reducedSecondBand": 81.48,
+   "reducedThirdBand": 122.22,
+   "reducedHourlyBase": 448.14,
+   "hourlyCompensation": 268.884,
+   "totalCompensation": 30116
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 150,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 135,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 135,
+   "hourlyCompensation": 81,
+   "totalCompensation": 3240
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 290,
+   "hoursOfIncapacity": 80
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 2.532,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 259.734,
+   "hourlyCompensation": 155.8404,
+   "totalCompensation": 12468
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 400,
+   "hoursOfIncapacity": 32
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 68.532,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 325.734,
+   "hourlyCompensation": 195.4404,
+   "totalCompensation": 6255
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 700,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 85.68,
+   "reducedThirdBand": 81.426,
+   "reducedHourlyBase": 424.308,
+   "hourlyCompensation": 254.5848,
+   "totalCompensation": 10184
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 1200,
+   "hoursOfIncapacity": 112
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 85.68,
+   "reducedThirdBand": 128.52,
+   "reducedHourlyBase": 471.402,
+   "hourlyCompensation": 282.8412,
+   "totalCompensation": 31679
+  }
+ },
+ {
+  "source": "library-test test_calc2026.SalaryCompensation2026Tests",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 310,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 14.532,
+   "reducedThirdBand": 0,
+   "reducedHourlyBase": 271.734,
+   "hourlyCompensation": 163.0404,
+   "totalCompensation": 6522
+  }
+ },
+ {
+  "source": "library-test test_calc2026.SalaryCompensation2026Tests",
+  "libraryClass": "SalaryCompensation2026",
+  "taxYear": 2026,
+  "input": {
+   "averageHourlyEarnings": 500,
+   "hoursOfIncapacity": 40
+  },
+  "rates": {
+   "reductionThresholds": [
+    285.78,
+    428.58,
+    856.98
+   ]
+  },
+  "expected": {
+   "reducedFirstBand": 257.202,
+   "reducedSecondBand": 85.68,
+   "reducedThirdBand": 21.426,
+   "reducedHourlyBase": 364.308,
+   "hourlyCompensation": 218.5848,
+   "totalCompensation": 8744
+  }
+ }
+]

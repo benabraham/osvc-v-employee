@@ -1,0 +1,380 @@
+[
+ {
+  "source": "library-test test_calc2022.HealthInsuranceOSVC2021Advance2022Tests",
+  "libraryClass": "HealthInsuranceOSVC2021Advance2022",
+  "taxYear": 2021,
+  "input": {
+   "income": 820000,
+   "expenses": 390000
+  },
+  "rates": {
+   "minimumAssessmentBase": 212646
+  },
+  "expected": {
+   "profit": 430000,
+   "calculatedAssessmentBase": 215000,
+   "assessmentBase": 215000,
+   "premium": 29025
+  }
+ },
+ {
+  "source": "library-test test_calc2023.HealthInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "HealthInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 820000,
+   "expenses": 390000
+  },
+  "rates": {
+   "minimumAssessmentBase": 233466
+  },
+  "expected": {
+   "profit": 430000,
+   "calculatedAssessmentBase": 215000,
+   "assessmentBase": 233466,
+   "premium": 31518
+  }
+ },
+ {
+  "source": "library-test test_calc2023.HealthInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "HealthInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 750000,
+   "expenses": 250000
+  },
+  "rates": {
+   "minimumAssessmentBase": 233466
+  },
+  "expected": {
+   "profit": 500000,
+   "calculatedAssessmentBase": 250000,
+   "assessmentBase": 250000,
+   "premium": 33750
+  }
+ },
+ {
+  "source": "library-test test_calc2023.HealthInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "HealthInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 100000,
+   "expenses": 60000
+  },
+  "rates": {
+   "minimumAssessmentBase": 233466
+  },
+  "expected": {
+   "profit": 40000,
+   "calculatedAssessmentBase": 20000,
+   "assessmentBase": 233466,
+   "premium": 31518
+  }
+ },
+ {
+  "source": "library-test test_calc2023.HealthInsuranceOSVC2022Advance2023Tests",
+  "libraryClass": "HealthInsuranceOSVC2022Advance2023",
+  "taxYear": 2022,
+  "input": {
+   "income": 800000,
+   "expenses": 201589
+  },
+  "rates": {
+   "minimumAssessmentBase": 233466
+  },
+  "expected": {
+   "profit": 598411,
+   "calculatedAssessmentBase": 299206,
+   "assessmentBase": 299206,
+   "premium": 40393
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "minimumAssessmentBase": 241944
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 139100,
+   "assessmentBase": 241944,
+   "premium": 32663
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "minimumAssessmentBase": 241944
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 214000,
+   "assessmentBase": 241944,
+   "premium": 32663
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "minimumAssessmentBase": 241944
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 60000,
+   "assessmentBase": 241944,
+   "premium": 32663
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 5000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "minimumAssessmentBase": 241944
+  },
+  "expected": {
+   "profit": 3000000,
+   "calculatedAssessmentBase": 1500000,
+   "assessmentBase": 1500000,
+   "premium": 202500
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2023Advance2024",
+  "taxYear": 2023,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "minimumAssessmentBase": 241944
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 233333,
+   "assessmentBase": 241944,
+   "premium": 32663
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "minimumAssessmentBase": 263802
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 139100,
+   "assessmentBase": 263802,
+   "premium": 35614
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "minimumAssessmentBase": 263802
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 214000,
+   "assessmentBase": 263802,
+   "premium": 35614
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "minimumAssessmentBase": 263802
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 60000,
+   "assessmentBase": 263802,
+   "premium": 35614
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 5000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "minimumAssessmentBase": 263802
+  },
+  "expected": {
+   "profit": 3000000,
+   "calculatedAssessmentBase": 1500000,
+   "assessmentBase": 1500000,
+   "premium": 202500
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2024Advance2025",
+  "taxYear": 2024,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "minimumAssessmentBase": 263802
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 233333,
+   "assessmentBase": 263802,
+   "premium": 35614
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 695500,
+   "expenses": 417300
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 278200,
+   "calculatedAssessmentBase": 139100,
+   "assessmentBase": 279342,
+   "premium": 37712
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 1070000,
+   "expenses": 642000
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 428000,
+   "calculatedAssessmentBase": 214000,
+   "assessmentBase": 279342,
+   "premium": 37712
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 300000,
+   "expenses": 180000
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 120000,
+   "calculatedAssessmentBase": 60000,
+   "assessmentBase": 279342,
+   "premium": 37712
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 5000000,
+   "expenses": 2000000
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 3000000,
+   "calculatedAssessmentBase": 1500000,
+   "assessmentBase": 1500000,
+   "premium": 202500
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 777777,
+   "expenses": 311111
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 466666,
+   "calculatedAssessmentBase": 233333,
+   "assessmentBase": 279342,
+   "premium": 37712
+  }
+ },
+ {
+  "source": "library-test test_calc2026.HealthInsuranceOSVC2025Advance2026Tests",
+  "libraryClass": "HealthInsuranceOSVC2025Advance2026",
+  "taxYear": 2025,
+  "input": {
+   "income": 1000000,
+   "expenses": 600000
+  },
+  "rates": {
+   "minimumAssessmentBase": 279342
+  },
+  "expected": {
+   "profit": 400000,
+   "calculatedAssessmentBase": 200000,
+   "assessmentBase": 279342,
+   "premium": 37712
+  }
+ }
+]

@@ -1,0 +1,244 @@
+[
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2025",
+  "taxYear": 2025,
+  "input": {
+   "pensionSavingsContributions": 12000,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 16200,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 0,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 0
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2025",
+  "taxYear": 2025,
+  "input": {
+   "pensionSavingsContributions": 36000,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 16200,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 19800,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 19800
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2025",
+  "taxYear": 2025,
+  "input": {
+   "pensionSavingsContributions": 68400,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 16200,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 52200,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 48000
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2025",
+  "taxYear": 2025,
+  "input": {
+   "pensionSavingsContributions": 24000,
+   "lifeInsurancePremiums": 12000,
+   "pensionInsurancePremiums": 6000,
+   "longTermInvestmentContributions": 10000
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 16200,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 7800,
+   "lifeInsuranceDeductible": 12000,
+   "pensionInsuranceDeductible": 6000,
+   "longTermInvestmentDeductible": 10000,
+   "deduction": 35800
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2025",
+  "taxYear": 2025,
+  "input": {
+   "pensionSavingsContributions": 30000,
+   "lifeInsurancePremiums": 30000,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 16200,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 13800,
+   "lifeInsuranceDeductible": 30000,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 43800
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 12000,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 0,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 0
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 36000,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 15600,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 15600
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 68400,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 48000,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 48000
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 24000,
+   "lifeInsurancePremiums": 12000,
+   "pensionInsurancePremiums": 6000,
+   "longTermInvestmentContributions": 10000
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 3600,
+   "lifeInsuranceDeductible": 12000,
+   "pensionInsuranceDeductible": 6000,
+   "longTermInvestmentDeductible": 10000,
+   "deduction": 31600
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 30000,
+   "lifeInsurancePremiums": 30000,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 9600,
+   "lifeInsuranceDeductible": 30000,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 39600
+  }
+ },
+ {
+  "source": "library-test test_calc2026.TaxSavingProducts2026Tests",
+  "libraryClass": "TaxSavingProducts2026",
+  "taxYear": 2026,
+  "input": {
+   "pensionSavingsContributions": 68400,
+   "lifeInsurancePremiums": 0,
+   "pensionInsurancePremiums": 0,
+   "longTermInvestmentContributions": 0
+  },
+  "rates": {
+   "pensionSavingsDeductibleAbove": 20400,
+   "cap": 48000
+  },
+  "expected": {
+   "pensionSavingsDeductible": 48000,
+   "lifeInsuranceDeductible": 0,
+   "pensionInsuranceDeductible": 0,
+   "longTermInvestmentDeductible": 0,
+   "deduction": 48000
+  }
+ }
+]

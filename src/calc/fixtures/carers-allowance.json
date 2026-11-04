@@ -1,0 +1,1877 @@
+[
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 7
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 2492
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 30000,
+   "careDays": 10
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 887.67,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 888,
+   "dailyBenefit": 533,
+   "totalBenefit": 5330
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 233.67,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1215,
+   "dailyBenefit": 729,
+   "totalBenefit": 11664
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 50000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 2.65,
+   "reducedDailyBase": 1311,
+   "dailyBenefit": 787,
+   "totalBenefit": 7083
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCare2019Tests",
+  "libraryClass": "SickCare2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 100000,
+   "careDays": 5
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 490.5,
+   "reducedDailyBase": 1799,
+   "dailyBenefit": 1080,
+   "totalBenefit": 5400
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCareLongterm2019Tests",
+  "libraryClass": "SickCareLongterm2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCareLongterm2019Tests",
+  "libraryClass": "SickCareLongterm2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 37400,
+   "careDays": 60
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1229.59,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 83.75,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1065,
+   "dailyBenefit": 639,
+   "totalBenefit": 38340
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCareLongterm2019Tests",
+  "libraryClass": "SickCareLongterm2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 233.67,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1215,
+   "dailyBenefit": 729,
+   "totalBenefit": 36450
+  }
+ },
+ {
+  "source": "library-test test_calc2019.SickCareLongterm2019Tests",
+  "libraryClass": "SickCareLongterm2019",
+  "taxYear": 2019,
+  "input": {
+   "monthlyAssessmentBase": 70000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1090,
+    1635,
+    3270
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2301.37,
+   "reducedFirstBand": 981,
+   "reducedSecondBand": 327,
+   "reducedThirdBand": 199.91,
+   "reducedDailyBase": 1508,
+   "dailyBenefit": 905,
+   "totalBenefit": 8145
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 7
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 2492
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 30000,
+   "careDays": 10
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 887.67,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 888,
+   "dailyBenefit": 533,
+   "totalBenefit": 5330
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 190.47,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1237,
+   "dailyBenefit": 743,
+   "totalBenefit": 11888
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 50000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 289.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1335,
+   "dailyBenefit": 801,
+   "totalBenefit": 7209
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCare2020Tests",
+  "libraryClass": "SickCare2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 100000,
+   "careDays": 5
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 348,
+   "reducedThirdBand": 463.7,
+   "reducedDailyBase": 1858,
+   "dailyBenefit": 1115,
+   "totalBenefit": 5575
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCareLongterm2020Tests",
+  "libraryClass": "SickCareLongterm2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCareLongterm2020Tests",
+  "libraryClass": "SickCareLongterm2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 37400,
+   "careDays": 60
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1229.59,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 40.55,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1087,
+   "dailyBenefit": 653,
+   "totalBenefit": 39180
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCareLongterm2020Tests",
+  "libraryClass": "SickCareLongterm2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 190.47,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1237,
+   "dailyBenefit": 743,
+   "totalBenefit": 37150
+  }
+ },
+ {
+  "source": "library-test test_calc2020.SickCareLongterm2020Tests",
+  "libraryClass": "SickCareLongterm2020",
+  "taxYear": 2020,
+  "input": {
+   "monthlyAssessmentBase": 70000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1162,
+    1742,
+    3484
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2301.37,
+   "reducedFirstBand": 1045.8,
+   "reducedSecondBand": 348,
+   "reducedThirdBand": 167.81,
+   "reducedDailyBase": 1562,
+   "dailyBenefit": 938,
+   "totalBenefit": 8442
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 7
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 2492
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 30000,
+   "careDays": 10
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 887.67,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 888,
+   "dailyBenefit": 533,
+   "totalBenefit": 5330
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 178.47,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1243,
+   "dailyBenefit": 746,
+   "totalBenefit": 11936
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 50000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 277.1,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1341,
+   "dailyBenefit": 805,
+   "totalBenefit": 7245
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCare2021Tests",
+  "libraryClass": "SickCare2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 100000,
+   "careDays": 5
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 354.6,
+   "reducedThirdBand": 454.4,
+   "reducedDailyBase": 1873,
+   "dailyBenefit": 1124,
+   "totalBenefit": 5620
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCareLongterm2021Tests",
+  "libraryClass": "SickCareLongterm2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCareLongterm2021Tests",
+  "libraryClass": "SickCareLongterm2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 37400,
+   "careDays": 60
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1229.59,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 28.55,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1093,
+   "dailyBenefit": 656,
+   "totalBenefit": 39360
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCareLongterm2021Tests",
+  "libraryClass": "SickCareLongterm2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 178.47,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1243,
+   "dailyBenefit": 746,
+   "totalBenefit": 37300
+  }
+ },
+ {
+  "source": "library-test test_calc2021.SickCareLongterm2021Tests",
+  "libraryClass": "SickCareLongterm2021",
+  "taxYear": 2021,
+  "input": {
+   "monthlyAssessmentBase": 70000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1182,
+    1773,
+    3545
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2301.37,
+   "reducedFirstBand": 1063.8,
+   "reducedSecondBand": 354.6,
+   "reducedThirdBand": 158.51,
+   "reducedDailyBase": 1577,
+   "dailyBenefit": 947,
+   "totalBenefit": 8523
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 7
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 2492
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 30000,
+   "careDays": 10
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 887.67,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 888,
+   "dailyBenefit": 533,
+   "totalBenefit": 5330
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1168.2,
+   "reducedSecondBand": 108.87,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1278,
+   "dailyBenefit": 767,
+   "totalBenefit": 12272
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 50000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1168.2,
+   "reducedSecondBand": 207.5,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1376,
+   "dailyBenefit": 826,
+   "totalBenefit": 7434
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCare2022Tests",
+  "libraryClass": "SickCare2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 100000,
+   "careDays": 5
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1168.2,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 402.5,
+   "reducedDailyBase": 1960,
+   "dailyBenefit": 1176,
+   "totalBenefit": 5880
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCareLongterm2022Tests",
+  "libraryClass": "SickCareLongterm2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCareLongterm2022Tests",
+  "libraryClass": "SickCareLongterm2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 37400,
+   "careDays": 60
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1229.59,
+   "reducedFirstBand": 1106.63,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1107,
+   "dailyBenefit": 665,
+   "totalBenefit": 39900
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCareLongterm2022Tests",
+  "libraryClass": "SickCareLongterm2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1168.2,
+   "reducedSecondBand": 108.87,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1278,
+   "dailyBenefit": 767,
+   "totalBenefit": 38350
+  }
+ },
+ {
+  "source": "library-test test_calc2022.SickCareLongterm2022Tests",
+  "libraryClass": "SickCareLongterm2022",
+  "taxYear": 2022,
+  "input": {
+   "monthlyAssessmentBase": 70000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1298,
+    1946,
+    3892
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2301.37,
+   "reducedFirstBand": 1168.2,
+   "reducedSecondBand": 388.8,
+   "reducedThirdBand": 106.61,
+   "reducedDailyBase": 1664,
+   "dailyBenefit": 999,
+   "totalBenefit": 8991
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 7
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 2492
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 30000,
+   "careDays": 10
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 986.3,
+   "reducedFirstBand": 887.67,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 888,
+   "dailyBenefit": 533,
+   "totalBenefit": 5330
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1210.5,
+   "reducedSecondBand": 80.67,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1292,
+   "dailyBenefit": 776,
+   "totalBenefit": 12416
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 50000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1643.84,
+   "reducedFirstBand": 1210.5,
+   "reducedSecondBand": 179.3,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1390,
+   "dailyBenefit": 834,
+   "totalBenefit": 7506
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCare2023Tests",
+  "libraryClass": "SickCare2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 100000,
+   "careDays": 5
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 3287.67,
+   "reducedFirstBand": 1210.5,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 381.2,
+   "reducedDailyBase": 1995,
+   "dailyBenefit": 1197,
+   "totalBenefit": 5985
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCareLongterm2023Tests",
+  "libraryClass": "SickCareLongterm2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 21850,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 718.36,
+   "reducedFirstBand": 646.52,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 647,
+   "dailyBenefit": 389,
+   "totalBenefit": 3501
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCareLongterm2023Tests",
+  "libraryClass": "SickCareLongterm2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 37400,
+   "careDays": 60
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1229.59,
+   "reducedFirstBand": 1106.63,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1107,
+   "dailyBenefit": 665,
+   "totalBenefit": 39900
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCareLongterm2023Tests",
+  "libraryClass": "SickCareLongterm2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 45000,
+   "careDays": 50
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1479.45,
+   "reducedFirstBand": 1210.5,
+   "reducedSecondBand": 80.67,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1292,
+   "dailyBenefit": 776,
+   "totalBenefit": 38800
+  }
+ },
+ {
+  "source": "library-test test_calc2023.SickCareLongterm2023Tests",
+  "libraryClass": "SickCareLongterm2023",
+  "taxYear": 2023,
+  "input": {
+   "monthlyAssessmentBase": 70000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1345,
+    2017,
+    4033
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2301.37,
+   "reducedFirstBand": 1210.5,
+   "reducedSecondBand": 403.2,
+   "reducedThirdBand": 85.31,
+   "reducedDailyBase": 1700,
+   "dailyBenefit": 1020,
+   "totalBenefit": 9180
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 3204
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 32040
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 43850,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1297.48,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1298,
+   "dailyBenefit": 779,
+   "totalBenefit": 12464
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1319.4,
+   "reducedSecondBand": 146.15,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1466,
+   "dailyBenefit": 880,
+   "totalBenefit": 7920
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1319.4,
+   "reducedSecondBand": 146.15,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1466,
+   "dailyBenefit": 880,
+   "totalBenefit": 79200
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 75000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1319.4,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 80.02,
+   "reducedDailyBase": 1840,
+   "dailyBenefit": 1104,
+   "totalBenefit": 17664
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1319.4,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 659.4,
+   "reducedDailyBase": 2419,
+   "dailyBenefit": 1452,
+   "totalBenefit": 13068
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2024",
+  "taxYear": 2024,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1466,
+    2199,
+    4397
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1319.4,
+   "reducedSecondBand": 439.8,
+   "reducedThirdBand": 659.4,
+   "reducedDailyBase": 2419,
+   "dailyBenefit": 1452,
+   "totalBenefit": 130680
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 3204
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 32040
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 43850,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1297.48,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1298,
+   "dailyBenefit": 779,
+   "totalBenefit": 12464
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1396.8,
+   "reducedSecondBand": 94.55,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1492,
+   "dailyBenefit": 896,
+   "totalBenefit": 8064
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1396.8,
+   "reducedSecondBand": 94.55,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1492,
+   "dailyBenefit": 896,
+   "totalBenefit": 80640
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 75000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1396.8,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 41.32,
+   "reducedDailyBase": 1904,
+   "dailyBenefit": 1143,
+   "totalBenefit": 18288
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1396.8,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 682.42,
+   "reducedDailyBase": 2545,
+   "dailyBenefit": 1527,
+   "totalBenefit": 13743
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2025",
+  "taxYear": 2025,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1552,
+    2328,
+    4656
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1396.8,
+   "reducedSecondBand": 465.6,
+   "reducedThirdBand": 682.42,
+   "reducedDailyBase": 2545,
+   "dailyBenefit": 1527,
+   "totalBenefit": 137430
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 3204
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 20000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 657.53,
+   "reducedFirstBand": 591.78,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 592,
+   "dailyBenefit": 356,
+   "totalBenefit": 32040
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 43850,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1441.64,
+   "reducedFirstBand": 1297.48,
+   "reducedSecondBand": 0,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1298,
+   "dailyBenefit": 779,
+   "totalBenefit": 12464
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 45.95,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1516,
+   "dailyBenefit": 910,
+   "totalBenefit": 81900
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 75000,
+   "careDays": 16
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 2465.75,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 5.02,
+   "reducedDailyBase": 1965,
+   "dailyBenefit": 1179,
+   "totalBenefit": 18864
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 646.12,
+   "reducedDailyBase": 2606,
+   "dailyBenefit": 1564,
+   "totalBenefit": 14076
+  }
+ },
+ {
+  "source": "generated",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 140000,
+   "careDays": 90
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 4602.74,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 489.6,
+   "reducedThirdBand": 646.12,
+   "reducedDailyBase": 2606,
+   "dailyBenefit": 1564,
+   "totalBenefit": 140760
+  }
+ },
+ {
+  "source": "library-test test_calc2026.SickCare2026Tests",
+  "libraryClass": "SickCare2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 9
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 45.95,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1516,
+   "dailyBenefit": 910,
+   "totalBenefit": 8190
+  }
+ },
+ {
+  "source": "library-test test_calc2026.SickCareLongterm2026Tests",
+  "libraryClass": "SickCareLongterm2026",
+  "taxYear": 2026,
+  "input": {
+   "monthlyAssessmentBase": 52000,
+   "careDays": 80
+  },
+  "rates": {
+   "reductionThresholds": [
+    1633,
+    2449,
+    4897
+   ]
+  },
+  "expected": {
+   "dailyAssessmentBase": 1709.59,
+   "reducedFirstBand": 1469.7,
+   "reducedSecondBand": 45.95,
+   "reducedThirdBand": 0,
+   "reducedDailyBase": 1516,
+   "dailyBenefit": 910,
+   "totalBenefit": 72800
+  }
+ }
+]
