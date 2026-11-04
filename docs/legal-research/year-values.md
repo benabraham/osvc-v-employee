@@ -1,6 +1,17 @@
 # Year values
 
-Every year-specific number the tests expect, with the state body or regulation that publishes it. As of 4 November 2026 VZP, ČSSZ and Finanční správa had published no 2027 amounts, so no 2027 amount is asserted; only the 2027 average wage, which is set by regulation, is tested.
+Every year-specific number the tests expect, with the state body or regulation that publishes it.
+
+## 2027 status (4 November 2026)
+
+| 2027 item | Status |
+| --- | --- |
+| Average wage 51 663 Kč | Verified: nařízení vlády 177/2026 Sb. § 1, tested |
+| Minimum wage 24 900 Kč | Verified: MPSV, used in the 2027 credit tests |
+| Student credit 4 020 Kč, školkovné up to the minimum wage, sales registration credit up to 5 000 Kč | Verified: zákon 180/2026 Sb., effective 1 January 2027, tested |
+| ZP and SP minimums, maximum SP base, paušální daň amounts | **Not published yet.** VZP, ČSSZ, MPSV and Finanční správa had no 2027 figures. The consolidated social insurance act is marked valid only until 31 December 2026, so a change from 2027 may exist that zakonyprolidi.cz does not show without a login. These amounts are not asserted by any test; add them when published. |
+
+## Values by year
 
 | Value | 2024 | 2025 | 2026 | 2027 | Source |
 | --- | --- | --- | --- | --- | --- |
