@@ -9,6 +9,7 @@
 | `employee-net-wage.ts` | Employee net wage, employee and employer contributions | library fixtures + law tests |
 | `gross-from-net.ts` | Smallest gross wage that reaches a net wage (gross equivalent) | properties + PRD value 50 589 Kč |
 | `osvc-regimes.ts` | Flat-rate expenses, paušální daň bands and amounts, OSVČ minimums, voluntary sickness insurance | law tests |
+| `osvc-plan.ts` | The PRD pipeline: working time and rate → levies, net income, reserve, holiday, invoice split | PRD 2026 parity fixture and edge cases |
 | `benefits.ts` | Sickness benefit (employee, OSVČ), carer's allowance, salary compensation, maternity and paternity | library fixtures |
 
 Pensions are left out on purpose: the app only notes that OSVČ pensions are lower.

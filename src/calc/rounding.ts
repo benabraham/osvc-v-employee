@@ -9,6 +9,8 @@
  */
 export const roundHalfAwayFromZero = (value: number, digits = 0): number => {
   if (!Number.isFinite(value) || value === 0) return value
+  // negative digits round to tens, hundreds… like Sheets ROUND(value; -2)
+  if (digits < 0) return roundHalfAwayFromZero(value / 10 ** -digits) * 10 ** -digits
   const sign = value < 0 ? -1 : 1
   // toFixed(100) prints the exact binary value for the magnitudes used in tax maths
   const [whole = '0', fraction = ''] = Math.abs(value).toFixed(100).split('.')

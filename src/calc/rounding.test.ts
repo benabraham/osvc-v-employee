@@ -36,3 +36,16 @@ describe('floorDivide', () => {
     expect(floorDivide(dividend, 10 ** 6)).toBe(Math.floor(dividend / 10 ** 6))
   })
 })
+
+describe('roundHalfAwayFromZero with negative digits (Sheets ROUND)', () => {
+  it.each([
+    [1907.4, -1, 1910],
+    [1905, -1, 1910],
+    [476_770, -3, 477_000],
+    [39_730.83, -2, 39_700],
+    [549.2, -2, 500],
+    [-150, -2, -200],
+  ])('rounds %d to %d digits as %d', (value, digits, expected) => {
+    expect(roundHalfAwayFromZero(value, digits)).toBe(expected)
+  })
+})

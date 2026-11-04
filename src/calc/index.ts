@@ -7,5 +7,7 @@ export * from './employee-net-wage'
 export * from './gross-from-net'
 export * from './osvc-income-tax'
 export * from './osvc-insurance'
+export * from './osvc-plan'
 export * from './osvc-regimes'
 export { floorDivide, modulo, roundHalfAwayFromZero } from './rounding'
+
