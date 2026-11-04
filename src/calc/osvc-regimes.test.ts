@@ -90,40 +90,57 @@ describe('OSVČ voluntary sickness insurance (zákon 589/1992 Sb. § 3, § 5b od
 })
 
 describe('OSVČ yearly minimums from the average wage (zákon 592/1992 Sb. § 3a odst. 2; zákon 589/1992 Sb. § 14 odst. 5, § 15a)', () => {
-  // Average wages: VZP, nařízení vlády 365/2025 Sb. and 177/2026 Sb. Band 1 amounts 2024–2026 are published by
-  // Finanční správa; 2027 is not published yet, so 9 662 Kč is derived from the official 2027 average wage.
+  // Every expected number is published by the agencies (2027 is not published yet, so it is not asserted):
+  // ZP monthly base and advance: VZP; SP yearly minimums and new-OSVČ minimums: ČSSZ (2026 at 35 % after the
+  // July 2026 change: 17 139 Kč a month, advance 5 005 Kč); paušální daň: Finanční správa.
   const years = [
-    { year: 2024, averageWage: 43_967, socialMinimumShare: 0.3, healthYearly: 263_802, socialYearly: 158_292, band1: 7_498 },
-    { year: 2025, averageWage: 46_557, socialMinimumShare: 0.35, healthYearly: 279_342, socialYearly: 195_540, band1: 8_716 },
-    { year: 2026, averageWage: 48_967, socialMinimumShare: 0.35, healthYearly: 293_802, socialYearly: 205_668, band1: 9_162 },
-    { year: 2027, averageWage: 51_663, socialMinimumShare: 0.35, healthYearly: 309_978, socialYearly: 216_996, band1: 9_662 },
+    {
+      year: 2024, averageWage: 43_967, socialMinimumShare: 0.3,
+      healthMonthlyBase: 21_983.5, healthMonthlyPremium: 2_968, socialYearly: 158_292, newOsvcSocialYearly: 131_904,
+      pausalniDan: [7_498, 16_745, 27_139],
+    },
+    {
+      year: 2025, averageWage: 46_557, socialMinimumShare: 0.35,
+      healthMonthlyBase: 23_278.5, healthMonthlyPremium: 3_143, socialYearly: 195_540, newOsvcSocialYearly: 139_680,
+      pausalniDan: [8_716, 16_745, 27_139],
+    },
+    {
+      year: 2026, averageWage: 48_967, socialMinimumShare: 0.35,
+      healthMonthlyBase: 24_483.5, healthMonthlyPremium: 3_306, socialYearly: 205_668, newOsvcSocialYearly: 146_904,
+      pausalniDan: [9_162, 16_745, 27_139],
+    },
   ]
+  const ratesFor = (row: (typeof years)[number]) => ({ socialMinimumShare: row.socialMinimumShare, newOsvcSocialMinimumShare: 0.25 })
 
-  it.each(years)('$year: minimum bases, solidarity threshold and maximum SP base', (row) => {
-    const result = calculateOsvcMinimums({ averageWage: row.averageWage, rates: { socialMinimumShare: row.socialMinimumShare } })
-    expect(result.minimumHealthYearlyBase).toBe(row.healthYearly)
-    expect(result.minimumSocialYearlyBase).toBe(row.socialYearly)
-    expect(result.solidarityThreshold).toBe(36 * row.averageWage)
-    expect(result.maximumSocialYearlyBase).toBe(48 * row.averageWage)
+  it.each(years)('$year: ZP minimum $healthMonthlyBase Kč a month, advance $healthMonthlyPremium Kč (VZP)', (row) => {
+    const result = calculateOsvcMinimums({ averageWage: row.averageWage, rates: ratesFor(row) })
+    expect(result.minimumHealthMonthlyBase).toBe(row.healthMonthlyBase)
+    expect(result.minimumHealthMonthlyPremium).toBe(row.healthMonthlyPremium)
+    expect(result.minimumHealthYearlyBase).toBe(row.healthMonthlyBase * 12)
   })
 
-  it.each(years)('$year: band 1 paušální daň is $band1 Kč a month', (row) => {
-    const { monthlyAmounts } = calculatePausalniDanMonthlyAmounts({
-      averageWage: row.averageWage,
-      rates: { socialMinimumShare: row.socialMinimumShare },
-    })
-    expect(monthlyAmounts[0]).toBe(row.band1)
+  it.each(years)('$year: SP minimum $socialYearly Kč a year, new OSVČ $newOsvcSocialYearly Kč (ČSSZ)', (row) => {
+    expect(calculateOsvcMinimums({ averageWage: row.averageWage, rates: ratesFor(row) }).minimumSocialYearlyBase).toBe(
+      row.socialYearly,
+    )
+    expect(
+      calculateOsvcMinimums({ averageWage: row.averageWage, isNewOsvc: true, rates: ratesFor(row) }).minimumSocialYearlyBase,
+    ).toBe(row.newOsvcSocialYearly)
   })
 
-  it('builds bands 2 and 3 from the fixed bases in the acts (2026: 16 745 and 27 139 Kč)', () => {
-    const { monthlyAmounts } = calculatePausalniDanMonthlyAmounts({ averageWage: 48_967, rates: { socialMinimumShare: 0.35 } })
-    expect(monthlyAmounts).toEqual([9_162, 16_745, 27_139])
+  it.each(years)('$year: paušální daň $pausalniDan Kč a month (Finanční správa)', (row) => {
+    const { monthlyAmounts } = calculatePausalniDanMonthlyAmounts({ averageWage: row.averageWage, rates: ratesFor(row) })
+    expect(monthlyAmounts).toEqual(row.pausalniDan)
   })
 
-  it('returns the 2026 minimum monthly premiums (ZP 3 306 Kč, SP 5 005 Kč)', () => {
+  it('returns the 2026 minimum SP advance of 5 005 Kč (ČSSZ, from July 2026)', () => {
+    expect(calculateOsvcMinimums({ averageWage: 48_967, rates: { socialMinimumShare: 0.35 } }).minimumSocialMonthlyPremium).toBe(5_005)
+  })
+
+  it('derives the solidarity threshold and the maximum SP base from the average wage (§ 16; § 15a)', () => {
     const result = calculateOsvcMinimums({ averageWage: 48_967, rates: { socialMinimumShare: 0.35 } })
-    expect(result.minimumHealthMonthlyPremium).toBe(3_306)
-    expect(result.minimumSocialMonthlyPremium).toBe(5_005)
+    expect(result.solidarityThreshold).toBe(1_762_812)
+    expect(result.maximumSocialYearlyBase).toBe(2_350_416)
   })
 })
 
