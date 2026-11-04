@@ -10,7 +10,8 @@ permissions:
 
 concurrency:
   group: deploy
-  cancel-in-progress: true
+  # let a running deploy finish; GitHub keeps only the newest queued run
+  cancel-in-progress: false
 
 jobs:
   test-and-deploy:
