@@ -41,6 +41,16 @@ pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> [--out file.txt] [--find "phrase"]
 - Lowercase-dash file and directory names.
 - Browser support target: Baseline 2024 (see the PRD).
 
+## Decisions so far
+
+- The PRD's source of truth is the Claude Doc linked at the top of `docs/prd.md`; after editing it, refresh the export in `docs/prd.md`.
+- Scope of the calculations: everything that changes the OSVČ vs. employee comparison (tax, insurance, paušální daň, benefits and eligibility, gross equivalent, the PRD plan). Pensions are left out on purpose; the app only says OSVČ pensions are lower.
+- The law wins over Dan's Python library and the year sheets; known sheet issues are listed in the PRD and in `TODO.md`.
+- 2024–2026 values are verified against the official texts and agency figures; 2027 values follow from the 2027 wording in e-Sbírka and nařízení vlády 177/2026 Sb. and must be compared with the agencies' figures once published (see `TODO.md`).
+- Calculations are TypeScript (as the PRD says); the front-end stack for the app is not chosen yet.
+- The repository is private on GitHub (`benabraham/osvc-v-employee`), MIT-licensed; it goes public at delivery.
+
 ## Git
 
 - Commit and push to `main` freely; descriptive messages that say what changed and why.
+- Commits are authored as `Claude <noreply@anthropic.com>` (a session hook checks this).
