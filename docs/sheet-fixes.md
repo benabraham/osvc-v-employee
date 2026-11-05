@@ -21,7 +21,7 @@ The 2024 and 2025 gross estimates (`výpočet!C38`) called `estimateGrossWage(..
 `=ROUND(LET(n;(kPouziti-rezerva)/12;c;taxReductionPayer;t;solidarityFeeThresholdEmployee;IF(n<=0,734*t+c;(n-c)/0,734;(n-c-0,08*t)/0,654));-2)`
 
 - **2024: done.** The estimate went from 57 500 to 58 000 Kč (the app gives 57 953 Kč).
-- **2025: not applied.** The write was refused by this session's permission check. Paste the formula above into `výpočet!C38` of the 2025 sheet; it should show 56 600 Kč (the app gives 56 585 Kč).
+- **2025: done.** The estimate went from 56 100 to 56 500 Kč (the app gives 56 585 Kč; the sheet starts from the unrounded net 44 071,67 Kč, the app from the rounded 44 100 Kč).
 - 2026 is unaffected: its script already matches 7.1 % (50 600 Kč vs 50 589 Kč in the app).
 
 ## Default results after the fixes (read back from the sheets)

@@ -40,11 +40,11 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 
 ## Source spreadsheets
 
-- [x] Fix known issues 9–14 in the 2024–2026 year sheets (docs/sheet-fixes.md; issue 12 needs a manual Apps Script edit)
+- [x] Fix known issues 9–14 in the 2024–2026 year sheets (docs/sheet-fixes.md)
   - [x] 9: SP share of profit 55 % in the 2025 and 2026 sheets
   - [x] 10: 2024 minimum SP base 158 292 Kč (131 904 Kč only for a new OSVČ)
   - [x] 11: 2025 minimum wage 20 800 Kč
-  - [ ] 12: employee social rate 7.1 % in the gross estimate: 2024 done with a script-free formula; paste the same formula into výpočet!C38 of the 2025 sheet (docs/sheet-fixes.md)
+  - [x] 12: employee social rate 7.1 % in the gross estimate: 2024 and 2025 use a script-free formula instead of the Apps Script (docs/sheet-fixes.md)
   - [x] 13: round the tax base down to hundreds
   - [x] 14: 23 % rate above 36 × the average wage
 

@@ -1,6 +1,6 @@
 # OSVČ vs. zaměstnanec — PRD
 
-Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 126).
+Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 127).
 
 ## Overview
 
@@ -366,6 +366,6 @@ Everything ships at once, in one release with no phases. It is done when every i
 - [x] Every feature in Scope works: calculator with full credits and deductions, costs, invoice splitter, overrides, warnings, year switcher with own numbers and input sync, reverse calculation, scenarios, share app, share my calculation, export and import, all four expense rates, Czech and English UI.
 - [x] Lighthouse targets are met, and the app installs and works offline.
 - [ ] Dan uses it for 2 weeks with no fallback to the sheet.
-- [ ] Sheet issues 9–14 are fixed in the year sheets. Done on 5 November 2026 except issue 12, which sits in the bound Apps Script and needs a manual edit.
+- [x] Sheet issues 9–14 are fixed in the year sheets. Done on 5 November 2026; issue 12 by replacing the Apps Script gross estimate with a formula.
 - [x] The repository is public under MIT and deployed to GitHub Pages, with the disclaimer, links to the year sheets and a link for reporting issues.
 - [x] Yearly upkeep is written down: each January the window moves forward, and new values go through the same verification.
