@@ -14,9 +14,15 @@ Sheets: [2024](https://docs.google.com/spreadsheets/d/1wfhBbUzv8sMiuCf-oo80_URYs
 
 The child credit part `-12*(IF(pocetDeti>=1;…))` is unchanged.
 
-## Not fixable through the API: issue 12
+## Issue 12: gross estimate without the Apps Script
 
-The 2024 and 2025 gross estimates (`konfigurace!B18`, `estimateGrossWage(...)`) come from a bound Apps Script, which the Sheets API cannot read or edit. Its employee social rate must be changed to 7.1 % by hand in Extensions → Apps Script. The app does not depend on it: it calculates the gross itself with 7.1 % (6.5 % + 0.6 % in 2024).
+The 2024 and 2025 gross estimates (`výpočet!C38`) called `estimateGrossWage(...)` from a bound Apps Script with the old 6.5 % employee rate; the Sheets API cannot edit the script. The fix replaces the call with a plain formula from the payroll rules (7.1 % SP, 4.5 % ZP, 15 % tax minus the payer credit, 23 % above the monthly threshold), inverted for the gross and rounded to hundreds as before:
+
+`=ROUND(LET(n;(kPouziti-rezerva)/12;c;taxReductionPayer;t;solidarityFeeThresholdEmployee;IF(n<=0,734*t+c;(n-c)/0,734;(n-c-0,08*t)/0,654));-2)`
+
+- **2024: done.** The estimate went from 57 500 to 58 000 Kč (the app gives 57 953 Kč).
+- **2025: not applied.** The write was refused by this session's permission check. Paste the formula above into `výpočet!C38` of the 2025 sheet; it should show 56 600 Kč (the app gives 56 585 Kč).
+- 2026 is unaffected: its script already matches 7.1 % (50 600 Kč vs 50 589 Kč in the app).
 
 ## Default results after the fixes (read back from the sheets)
 
