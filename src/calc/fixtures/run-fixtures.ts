@@ -21,15 +21,19 @@ export type FixtureRow = {
  * @param {string} options.name suite name
  * @param {unknown} options.rows fixture rows from a JSON file
  * @param {(input: any) => Record<string, unknown>} options.calculate calculator under test
+ * @param {Record<string, string>} [options.lawDifferences] rows (by label) where the library departs from the law,
+ *   with the reason; they run as expected failures, so a row that starts to pass is noticed
  */
 export const describeFixtures = ({
   name,
   rows,
   calculate,
+  lawDifferences = {},
 }: {
   name: string
   rows: unknown
   calculate: (input: any) => Record<string, unknown>
+  lawDifferences?: Record<string, string>
 }) => {
   const cases = (rows as FixtureRow[]).map((row, index) => [
     `${row.taxYear} ${row.libraryClass} ${row.source} #${index}`,
@@ -41,7 +45,7 @@ export const describeFixtures = ({
       expect(cases.length).toBeGreaterThan(0)
     })
 
-    it.each(cases)('%s', (_label, row) => {
+    const checkRow = (row: FixtureRow) => {
       const result = calculate({ ...row.input, rates: row.rates })
       Object.entries(row.expected).forEach(([key, expected]) => {
         const actual = result[key]
@@ -52,6 +56,12 @@ export const describeFixtures = ({
           expect(actual, message).toBe(expected)
         }
       })
+    }
+
+    cases.forEach(([label, row]) => {
+      const reason = lawDifferences[label]
+      if (reason) it.fails(`${label} (differs from the law: ${reason})`, () => checkRow(row))
+      else it(label, () => checkRow(row))
     })
   })
 }

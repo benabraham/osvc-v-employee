@@ -57,3 +57,7 @@ Every year value the tests expect, and the official publication behind it, is li
 ## Salary compensation thresholds
 
 The hourly reduction thresholds for salary compensation (náhrada mzdy, the employer's first 14 days of sickness pay) are not stored in the year data. `hourlyReductionThresholdsFor` in `src/screens/benefits/compare-benefits.ts` derives them from the year's daily sickness thresholds, as § 192 odst. 2 of the Labour Code (zákoník práce, zákon 262/2006 Sb.) prescribes: each daily threshold × 0.175, rounded up to haléře. `calculateSalaryCompensation` in `src/calc/benefits.ts` takes the derived thresholds as an input. The rule is tested in `compare-benefits.test.ts`.
+
+## 2024 employee contribution rounded once (found by the payroll cross-check, 5 November 2026)
+
+The 2024 wording of zákon 589/1992 Sb. § 7 odst. 1 písm. c) sets the employee contribution as "7,1 %, z toho 0,6 % na nemocenské pojištění a 6,5 % na důchodové pojištění", and § 7 odst. 3 rounds the premium up to whole crowns. The library rounded 6.5 % and 0.6 % separately, which adds 1 Kč at some wages (40 001 Kč: 2 842 instead of 2 841). `calculateEmployeeNetWage` now rounds the 7.1 % once and shows the sickness part as the difference. The five 2024 library rows that differ are listed in `lawDifferences` in `employee-net-wage.test.ts` and run as expected failures.

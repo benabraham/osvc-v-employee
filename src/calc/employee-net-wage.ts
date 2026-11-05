@@ -91,7 +91,12 @@ export const calculateEmployeeNetWage = ({
   const socialRate = isRetired ? (rates.socialRateRetired ?? rates.socialRate) : rates.socialRate
   const employeeSocialInsurance = Math.ceil(grossWage * socialRate)
   const employerSocialInsurance = Math.ceil(grossWage * rates.employerSocialRate)
-  const employeeSicknessInsurance = rates.sicknessRate === undefined ? 0 : Math.ceil(grossWage * rates.sicknessRate)
+  // 2024: one contribution of 7.1 % "z toho 0,6 % na nemocenské", rounded up once (zákon 589/1992 Sb. § 7 odst. 3);
+  // the sickness part shown is what the single rounding adds on top of the pension part
+  const employeeSicknessInsurance =
+    rates.sicknessRate === undefined
+      ? 0
+      : Math.ceil(roundHalfAwayFromZero(grossWage * (socialRate + rates.sicknessRate), 8)) - employeeSocialInsurance
 
   // the advance base rounds up to whole hundreds
   const taxBase = grossWage - modulo(grossWage, -100)

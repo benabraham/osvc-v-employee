@@ -64,3 +64,32 @@ describe('child credit for a child with a ZTP/P card (§ 35c odst. 7 zákona 586
     expect(result.netWage).toBeGreaterThanOrEqual(39_700)
   })
 })
+
+describe('2024 employee contribution: 7.1 % in total, rounded up once (zákon 589/1992 Sb. § 7 odst. 1 písm. c) and odst. 3)', () => {
+  // 2024 wording: "7,1 %, z toho 0,6 % na nemocenské pojištění a 6,5 % na důchodové pojištění"; "Pojistné se
+  // zaokrouhluje na celé koruny směrem nahoru." Rounding the two parts separately can add 1 Kč.
+  const rates2024 = {
+    minimumWage: 18_900,
+    healthRate: 0.045,
+    socialRate: 0.065,
+    sicknessRate: 0.006,
+    employerSocialRate: 0.248,
+    baseTaxRate: 0.15,
+    solidarityTaxRate: 0.23,
+    monthlySolidarityThreshold: 131_901,
+    payerCredit: 2_570,
+    ztpHolderCredit: 1_345,
+    disabilityDegree1or2Credit: 210,
+    disabilityDegree3Credit: 420,
+    childCreditsMonthly: { first: 1_267, second: 1_860, thirdAndMore: 2_320 },
+  }
+
+  it.each([
+    [40_001, 2_841],
+    [35_000, 2_485],
+    [160_000, 11_360],
+  ])('gross %d Kč pays %d Kč in total', (grossWage, expected) => {
+    const result = calculateEmployeeNetWage({ grossWage, rates: rates2024 })
+    expect(result.employeeSocialInsurance + result.employeeSicknessInsurance).toBe(expected)
+  })
+})
