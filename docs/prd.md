@@ -1,6 +1,6 @@
 # OSVČ vs. zaměstnanec — PRD
 
-Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 109).
+Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 124).
 
 ## Overview
 
@@ -293,9 +293,9 @@ The first run on 30 October 2026 covered the derivation check for all four years
 | Minimum SP base | pass; the sheet fails | pass | pass | pass |
 | Solidarity threshold | pass | pass | pass | pass |
 | Paušální daň band 1 | pass | pass | pass | pass |
-| Two sources: minimum wage, band 2, credits | to do | to do | to do | minimum wage and band 2 done; child credits have one source |
-| Payroll cross-check of the gross salary | to do | to do | to do | to do |
-| Calculations against official worked examples | to do | to do | to do | to do |
+| Two sources: minimum wage, band 2, credits | pass; employee rates have one source | pass; employee rates have one source | pass | minimum wage pass; bands 2–3 and the new credits have one source until the agencies publish |
+| Payroll cross-check of the gross salary | pass after a fix: 7.1 % now rounded once (law); hand check | pass: hand check from the statutes | pass: mesec.cz, vypocet.cz, kurzy.cz and hand check, incl. 160 000 Kč above the threshold | pass: hand check from the 2027 wording |
+| Calculations against official worked examples | no official example found | pass: credits, child credit, 36× threshold, paušální daň | pass: minimums, July change, sickness; 3 ČSSZ examples differ (documented) | none published yet |
 
 ## Known issues in the source sheet
 
@@ -353,19 +353,19 @@ The biggest risk is trust: one wrong tax number and users go back to the spreads
 - [x] Expense rates: 30, 40, 60 and 80 % are all in v1.
 - [x] Employer cost: not needed. The comparison already shows total levies, which covers it.
 - [x] Inputs across years: each year keeps its own inputs by default. A "Sync inputs across years" switch, off by default, shares them.
-- [ ] Dan shares his Python tax library and tests, the source for credits, deductions and their per-year amounts.
+- [x] Dan shares his Python tax library and tests, the source for credits, deductions and their per-year amounts.
 - [x] Tax calculation: the full OSVČ calculation with itemised credits and deductions, ported to TypeScript from Dan's Python library.
 
 ## Delivery
 
 Everything ships at once, in one release with no phases. It is done when every item below is ticked.
 
-- [ ] Dan's Python tax library and its tests are ported to TypeScript and pass.
-- [ ] Every value and every calculation for 2024–2027 passes the value verification against official state sources.
-- [ ] Each year's parity fixture passes, with the known sheet bugs as documented differences.
-- [ ] Every feature in Scope works: calculator with full credits and deductions, costs, invoice splitter, overrides, warnings, year switcher with own numbers and input sync, reverse calculation, scenarios, share app, share my calculation, export and import, all four expense rates, Czech and English UI.
-- [ ] Lighthouse targets are met, and the app installs and works offline.
+- [x] Dan's Python tax library and its tests are ported to TypeScript and pass.
+- [ ] Every value and every calculation for 2024–2027 passes the value verification against official state sources. Done for 2024–2026; 2027 waits for the agencies' figures in December (band 1: 9 661 Kč by the law, 9 662 Kč in the press).
+- [x] Each year's parity fixture passes, with the known sheet bugs as documented differences.
+- [x] Every feature in Scope works: calculator with full credits and deductions, costs, invoice splitter, overrides, warnings, year switcher with own numbers and input sync, reverse calculation, scenarios, share app, share my calculation, export and import, all four expense rates, Czech and English UI.
+- [x] Lighthouse targets are met, and the app installs and works offline.
 - [ ] Dan uses it for 2 weeks with no fallback to the sheet.
-- [ ] Sheet issues 9–14 are fixed in the year sheets.
-- [ ] The repository is public under MIT and deployed to GitHub Pages, with the disclaimer, links to the year sheets and a link for reporting issues.
-- [ ] Yearly upkeep is written down: each January the window moves forward, and new values go through the same verification.
+- [ ] Sheet issues 9–14 are fixed in the year sheets. Done on 5 November 2026 except issue 12, which sits in the bound Apps Script and needs a manual edit.
+- [x] The repository is public under MIT and deployed to GitHub Pages, with the disclaimer, links to the year sheets and a link for reporting issues.
+- [x] Yearly upkeep is written down: each January the window moves forward, and new values go through the same verification.
