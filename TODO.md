@@ -29,7 +29,7 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 
 ## Verification (PRD "Value verification")
 
-- [ ] Payroll cross-check of the gross salary against an independent payroll calculator, at least three gross amounts per year, one above the 23 % threshold
+- [x] Payroll cross-check of the gross salary against an independent payroll calculator, at least three gross amounts per year, one above the 23 % threshold (docs/legal-research/payroll-cross-check.md)
 - [x] Turn official worked examples (Finanční správa, ČSSZ guidance, tax return and Přehled instructions) into test cases: 17 examples in src/calc/official-examples.test.ts, 14 pass (docs/legal-research/official-examples.md)
   - [ ] Decide: OSVČ base from the sickness premium rounds up (library, 99 library tests) while ČSSZ's Příklad č. 2 rounds down (440 Kč → 16 296 Kč); the benefit is the same in the example
   - [ ] Decide: benefits for a partial reference period (ČSSZ Příklad č. 1 and 3 divide by insured days, the app assumes 12 months over 365 days)

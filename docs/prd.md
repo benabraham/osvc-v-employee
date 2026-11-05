@@ -1,6 +1,6 @@
 # OSVČ vs. zaměstnanec — PRD
 
-Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 124).
+Dan Srb · 30 Oct 2026 · Source of truth: [Claude Doc](https://claude.ai/artifact/CZ5AayDrMjFd5cdHs8zkFv); this file is an export (Claude Doc rev 126).
 
 ## Overview
 
@@ -294,7 +294,7 @@ The first run on 30 October 2026 covered the derivation check for all four years
 | Solidarity threshold | pass | pass | pass | pass |
 | Paušální daň band 1 | pass | pass | pass | pass |
 | Two sources: minimum wage, band 2, credits | pass; employee rates have one source | pass; employee rates have one source | pass | minimum wage pass; bands 2–3 and the new credits have one source until the agencies publish |
-| Payroll cross-check of the gross salary | pass after a fix: 7.1 % now rounded once (law); hand check | pass: hand check from the statutes | pass: mesec.cz, vypocet.cz, kurzy.cz and hand check, incl. 160 000 Kč above the threshold | pass: hand check from the 2027 wording |
+| Payroll cross-check of the gross salary | pass: kurzy.cz and hand check (after fixing the 7.1 % rounding) | pass: kurzy.cz and hand check; kurzy.cz rounds one advance down | pass: mesec.cz, vypocet.cz, kurzy.cz and hand check, incl. 160 000 Kč above the threshold | pass: hand check from the 2027 wording |
 | Calculations against official worked examples | no official example found | pass: credits, child credit, 36× threshold, paušální daň | pass: minimums, July change, sickness; 3 ČSSZ examples differ (documented) | none published yet |
 
 ## Known issues in the source sheet
