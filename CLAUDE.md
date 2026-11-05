@@ -57,7 +57,7 @@ pnpm esbirka /sb/<year>/<number>/<YYYY-MM-DD> [--out file.txt] [--find "phrase"]
 - Calculations are TypeScript (as the PRD says). The app is Vite 8 + Preact 11 with Signals and vite-plugin-pwa, plain CSS with native nesting (no framework) to stay under 50 KB of initial JS; screens other than the splitter and the calculator load lazily.
 - The app is deployed by `.github/workflows/deploy.yml` (typecheck, unit, e2e, Lighthouse, then the gh-pages branch) to https://benabraham.github.io/osvc-v-employee/.
 - UI text lives in one message bundle per feature (`src/i18n/messages/<feature>.ts`, Czech first, English complete); never hard-code user-visible strings.
-- The repository is private on GitHub (`benabraham/osvc-v-employee`), MIT-licensed; it goes public at delivery.
+- The repository is public on GitHub (`benabraham/osvc-v-employee`, checked 5 November 2026), MIT-licensed.
 
 ## Git
 

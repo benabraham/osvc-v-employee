@@ -72,5 +72,5 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
 ## Delivery
 
 - [ ] Dogfood for 2 weeks with no fallback to the sheet
-- [ ] Make the repository public under MIT when ready
+- [x] Make the repository public under MIT when ready (public as of 5 November 2026)
 - [x] Write down the yearly upkeep (January window move, verification of new values): docs/maintenance.md
