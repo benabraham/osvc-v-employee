@@ -61,3 +61,7 @@ The hourly reduction thresholds for salary compensation (náhrada mzdy, the empl
 ## 2024 employee contribution rounded once (found by the payroll cross-check, 5 November 2026)
 
 The 2024 wording of zákon 589/1992 Sb. § 7 odst. 1 písm. c) sets the employee contribution as "7,1 %, z toho 0,6 % na nemocenské pojištění a 6,5 % na důchodové pojištění", and § 7 odst. 3 rounds the premium up to whole crowns. The library rounded 6.5 % and 0.6 % separately, which adds 1 Kč at some wages (40 001 Kč: 2 842 instead of 2 841). `calculateEmployeeNetWage` now rounds the 7.1 % once and shows the sickness part as the difference. The five 2024 library rows that differ are listed in `lawDifferences` in `employee-net-wage.test.ts` and run as expected failures.
+
+## Donation cap 30 % for 2022–2026 (found by the two-source check, 5 November 2026)
+
+The library and the first version of the year data used the 15 % cap from § 15 odst. 1. Zákon 128/2022 Sb. § 1 odst. 1 (wording from 11 February 2025) allows 30 % for 2022–2026; see `docs/legal-research/income-tax.md`. The library's income-tax fixtures do not hit the cap, so no fixture row changes.

@@ -38,7 +38,8 @@ describe('AboutScreen', () => {
     render(<AboutScreen />)
     expect(screen.getByRole('heading', { name: 'Zdroje hodnot pro 2026' })).toBeTruthy()
     expect(screen.getByRole('heading', { name: /Průměrná mzda/ })).toBeTruthy()
-    const incomeTaxLink = screen.getByRole('link', { name: /zákon 586\/1992 Sb\., o daních z příjmů/ })
+    // the act is a source of several values (income tax, paušální daň), so take its first link
+    const incomeTaxLink = screen.getAllByRole('link', { name: /zákon 586\/1992 Sb\., o daních z příjmů/ })[0]!
     expect(incomeTaxLink.getAttribute('href')).toBe('https://www.zakonyprolidi.cz/cs/1992-586')
     expect(incomeTaxLink.getAttribute('target')).toBe('_blank')
     expect(incomeTaxLink.getAttribute('rel')).toBe('noopener noreferrer')

@@ -34,7 +34,9 @@ Tick items with `- [x]` when done; nest sub-tasks with two-space indentation. Ba
   - [ ] Decide: OSVČ base from the sickness premium rounds up (library, 99 library tests) while ČSSZ's Příklad č. 2 rounds down (440 Kč → 16 296 Kč); the benefit is the same in the example
   - [ ] Decide: benefits for a partial reference period (ČSSZ Příklad č. 1 and 3 divide by insured days, the app assumes 12 months over 365 days)
   - [ ] No official worked example found for maternity, the employee tax advance (post-2024) or the child bonus; add one when published
-- [ ] Second official source for the minimum wage, band 2 and the credits for every year
+- [x] Second official source for the minimum wage, band 2 and the credits for every year (docs/legal-research/year-values.md, "Two-source check"; found the 30 % donation cap for 2022–2026)
+  - [ ] Still one source: employee rates for 2024 and 2025 (VZP pages show the current year only), the 2027 average wage, bands 2–3 and the 2027 credits (until the agencies publish)
+  - [ ] Values without an explicit status count as verified; review socialMinimumShare, sicknessEligibilityThreshold, reductionThresholds, sicknessInsuranceRatePercent for two sources
 
 ## Source spreadsheets
 

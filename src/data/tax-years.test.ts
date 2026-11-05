@@ -48,6 +48,18 @@ describe('minimum bases against the published figures', () => {
   })
 })
 
+describe('donation cap (zákon 128/2022 Sb. § 1 odst. 1, wording from 11 February 2025)', () => {
+  // "Za zdaňovací období let 2022 až 2026 lze … odečíst hodnotu bezúplatného plnění v úhrnu nejvýše 30 % ze základu daně"
+  it.each([
+    [2024, 0.3],
+    [2025, 0.3],
+    [2026, 0.3],
+    [2027, 0.15],
+  ])('%d allows %d of the tax base', (year, share) => {
+    expect(TAX_YEARS[year]!.incomeTax.donationsMaximumShare).toBe(share)
+  })
+})
+
 describe('buildYearRates', () => {
   it.each([2024, 2025, 2026])('employee rates for %d equal the rates the payroll fixtures were made with', (year) => {
     // the library still had the student credit in 2024; zákon 349/2023 Sb. abolished it from 2024 until 2027
@@ -59,7 +71,8 @@ describe('buildYearRates', () => {
 
   it.each([2024, 2025])('OSVČ income tax rates for %d equal the fixture rates', (year) => {
     const fixtureRates = (incomeTaxRows as FixtureRow[]).find((row) => row.taxYear === year && row.source === 'generated')!.rates
-    expect(buildYearRates({ data: TAX_YEARS[year]! }).plan.incomeTax).toEqual(fixtureRates)
+    // the library kept the 15 % donation cap; zákon 128/2022 Sb. raised it to 30 % for 2022–2026
+    expect(buildYearRates({ data: TAX_YEARS[year]! }).plan.incomeTax).toEqual({ ...fixtureRates, donationsMaximumShare: 0.3 })
   })
 
   it('reproduces the PRD 2026 parity fixture through the plan', () => {

@@ -125,3 +125,11 @@ A child with a ZTP/P card gets twice the credit for each month (`childrenDetail`
 > — [zákon č. 586/1992 Sb., o daních z příjmů](https://www.zakonyprolidi.cz/cs/1992-586), Aktuální znění 01.08.2026 - 31.12.2026 (verze 157)
 
 The insurance parts of each band are set in the insurance acts (see [health-insurance.md](health-insurance.md) and [social-insurance.md](social-insurance.md)). `pausalniDanBandFor`, `calculatePausalniDanMonthlyAmounts`; the published amounts are in [year-values.md](year-values.md).
+
+## Donation cap 30 % for 2022–2026 (zákon 128/2022 Sb.)
+
+§ 15 odst. 1 of zákon 586/1992 Sb. caps donations at 15 % of the tax base. A separate act raises it: zákon 128/2022 Sb. § 1 odst. 1, in the wording in force from 11 February 2025 (e-Sbírka, checked 5 November 2026):
+
+> (1) Za zdaňovací období let 2022 až 2026 lze podle § 15 odst. 1 zákona o daních z příjmů od základu daně odečíst hodnotu bezúplatného plnění v úhrnu nejvýše 30 % ze základu daně.
+
+Before 11 February 2025 the same provision covered only "roku 2022 a 2023"; the amendment extended it to 2024–2026, so the 2024 tax-return instructions (printed earlier) still say 15 %, while the 2025 instructions and Finanční správa's 2026 page say 30 % ("Maximální limit 30 % ze základu daně platí pro roky 2022 až 2026"). `TAX_YEARS` uses 30 % for 2024–2026 and 15 % from 2027 (tested in `src/data/tax-years.test.ts`). The reference library kept 15 %.

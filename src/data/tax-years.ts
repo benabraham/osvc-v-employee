@@ -72,6 +72,58 @@ const LAW = {
   },
 } as const
 
+/** Second official sources for the two-source check (docs/legal-research/year-values.md, "Two-source check"). */
+const SOURCE = {
+  minimumWage2024: { label: 'nařízení vlády 396/2023 Sb. (minimální mzda 2024)', url: 'https://www.zakonyprolidi.cz/cs/2023-396' },
+  minimumWage2025: { label: 'sdělení MPSV 286/2024 Sb. (minimální mzda 2025)', url: 'https://www.zakonyprolidi.cz/cs/2024-286' },
+  minimumWage2026: { label: 'sdělení MPSV 356/2025 Sb. (minimální mzda 2026)', url: 'https://www.zakonyprolidi.cz/cs/2025-356' },
+  minimumWage2027: { label: 'sdělení MPSV 171/2026 Sb. (minimální mzda 2027)', url: 'https://www.zakonyprolidi.cz/cs/2026-171' },
+  coefficient2025And2026: { label: 'nařízení vlády 285/2024 Sb. (koeficient pro roky 2025 a 2026)', url: 'https://www.zakonyprolidi.cz/cs/2024-285' },
+  coefficient2027: { label: 'nařízení vlády 164/2026 Sb. (koeficient pro roky 2027 a 2028)', url: 'https://www.zakonyprolidi.cz/cs/2026-164' },
+  mpsvMinimumWage2026: {
+    label: 'MPSV: minimální mzda od ledna 2026',
+    url: 'https://mpsv.gov.cz/minimalni-mzda-od-ledna-2026-vzroste-o-1-600-korun-na-22-400-korun-mesicne',
+  },
+  cssz2024: {
+    label: 'ČSSZ: přehled údajů pro sociální zabezpečení 2024',
+    url: 'https://www.cssz.gov.cz/-/prehled-nejdulezitejsich-udaju-pro-socialni-zabezpeceni-pro-rok-2024',
+  },
+  cssz2025: {
+    label: 'ČSSZ: přehled údajů pro sociální zabezpečení 2025',
+    url: 'https://www.cssz.gov.cz/-/prehled-nejdulezitejsich-udaju-pro-socialni-zabezpeceni-v-roce-2025',
+  },
+  cssz2026: {
+    label: 'ČSSZ: přehled údajů pro sociální zabezpečení 2026',
+    url: 'https://www.cssz.gov.cz/-/prehled-nejdulezitejsich-udaju-pro-socialni-zabezpeceni-v-roce-2026',
+  },
+  csszRates: { label: 'ČSSZ: sazby pojistného', url: 'https://www.cssz.gov.cz/vyse-a-sazba' },
+  mpsvSocialInsurance2026: { label: 'MPSV: sociální pojištění v roce 2026', url: 'https://mpsv.gov.cz/socialni-pojisteni' },
+  vzpEmployeeSplit: {
+    label: 'VZP: platce pojistného, 4,5 % zaměstnanec a 9 % zaměstnavatel',
+    url: 'https://www.vzp.cz/platci/informace/povinnosti-platcu-metodika/2-4-platce-pojistneho-zamestnavatel',
+  },
+  fsGeneralInfo2024: {
+    label: 'Finanční správa: obecné informace 2024',
+    url: 'https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/zamestnanci-zamestnavatele/obecne-informace/archiv-obecne-informace-2024',
+  },
+  fsGeneralInfo2026: {
+    label: 'Finanční správa: obecné informace 2026',
+    url: 'https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/zamestnanci-zamestnavatele/obecne-informace',
+  },
+  fsQa2024And2025: {
+    label: 'Finanční správa: dotazy a odpovědi, zdaňovací období 2024 a 2025',
+    url: 'https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/zamestnanci-zamestnavatele/dotazy-a-odpovedi/2025/aktualni-dotazy-a-odpovedi-dzp-2024-a-2025',
+  },
+  fsQa2025And2026: {
+    label: 'Finanční správa: dotazy a odpovědi, zdaňovací období 2025 a 2026',
+    url: 'https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/zamestnanci-zamestnavatele/dotazy-a-odpovedi/2026/aktualni-dotazy-a-odpovedi-k-dani-z',
+  },
+  fsPausalni2024: {
+    label: 'Finanční správa: paušální daň 2024 (tisková zpráva)',
+    url: 'https://financnisprava.gov.cz/cs/financni-sprava/media-a-verejnost/tiskove-zpravy-gfr/tiskove-zpravy-2024/pausalni-dan-prilakala-na-32-tisic-osvc',
+  },
+} as const
+
 const COMMON_INCOME_TAX: YearIncomeTaxRates = {
   baseTaxRate: 0.15,
   solidarityTaxRate: 0.23,
@@ -89,6 +141,9 @@ const COMMON_INCOME_TAX: YearIncomeTaxRates = {
   donationsMaximumShare: 0.15,
   minimumChildBonus: 100,
 }
+
+/** zákon 128/2022 Sb. § 1 odst. 1 (wording from 11 February 2025): donations up to 30 % of the base for 2022–2026 */
+const INCOME_TAX_2022_TO_2026: YearIncomeTaxRates = { ...COMMON_INCOME_TAX, donationsMaximumShare: 0.3 }
 
 const EMPLOYEE_FROM_2025: YearEmployeeRates = { healthRate: 0.045, socialRate: 0.071, employerSocialRate: 0.248 }
 
@@ -109,20 +164,16 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
     sicknessEligibilityThreshold: 4_000,
     sicknessInsuranceRatePercent: 2.7,
     reductionThresholds: [1_466, 2_199, 4_397],
-    incomeTax: COMMON_INCOME_TAX,
+    incomeTax: INCOME_TAX_2022_TO_2026,
     employee: { healthRate: 0.045, socialRate: 0.065, sicknessRate: 0.006, employerSocialRate: 0.248 },
-    status: {},
+    status: { minimumWage: 'verified', averageWage: 'verified', pausalniDanMonthly: 'verified', incomeTax: 'verified', employee: 'researched' },
     sources: {
-      averageWage: [{ label: 'nařízení vlády 286/2023 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2023-286' }, LAW.vzpAverageWage],
-      minimumWage: [LAW.minimumWageMpsv],
-      pausalniDanMonthly: [
-        {
-          label: 'Finanční správa: paušální daň 2024',
-          url: 'https://financnisprava.gov.cz/cs/financni-sprava/media-a-verejnost/tiskove-zpravy-gfr/tiskove-zpravy-2024/pausalni-dan-prilakala-na-32-tisic-osvc',
-        },
-      ],
+      averageWage: [{ label: 'nařízení vlády 286/2023 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2023-286' }, LAW.vzpAverageWage, SOURCE.cssz2024],
+      minimumWage: [SOURCE.minimumWage2024, LAW.minimumWageMpsv],
+      pausalniDanMonthly: [SOURCE.fsPausalni2024, LAW.incomeTax, LAW.social, LAW.health],
       socialMinimumShare: [LAW.social, { label: 'ČSSZ: minimální vyměřovací základy', url: 'https://www.cssz.gov.cz/vyse-minimalnich-vymerovacich-zakladu-osvc' }],
-      incomeTax: [LAW.incomeTax],
+      incomeTax: [LAW.incomeTax, SOURCE.fsGeneralInfo2024, { label: 'Finanční správa: pokyny k vyplnění přiznání DPFO 2024', url: 'https://adisspr.mfcr.cz/dpr/adis/idpr_pub/dpf/dp7/doc/pokyny_dap_2024.pdf' }, { label: 'zákon 128/2022 Sb. § 1 odst. 1 (dary až 30 % za 2022–2026)', url: 'https://www.zakonyprolidi.cz/cs/2022-128' }],
+      employee: [LAW.social, SOURCE.cssz2024, LAW.health, SOURCE.vzpEmployeeSplit],
     },
   },
   2025: {
@@ -140,15 +191,16 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
     sicknessEligibilityThreshold: 4_500,
     sicknessInsuranceRatePercent: 2.7,
     reductionThresholds: [1_552, 2_328, 4_656],
-    incomeTax: COMMON_INCOME_TAX,
+    incomeTax: INCOME_TAX_2022_TO_2026,
     employee: EMPLOYEE_FROM_2025,
-    status: {},
+    status: { minimumWage: 'verified', averageWage: 'verified', pausalniDanMonthly: 'verified', incomeTax: 'verified', employee: 'researched' },
     sources: {
-      averageWage: [{ label: 'nařízení vlády 282/2024 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2024-282' }, LAW.vzpAverageWage],
-      minimumWage: [LAW.minimumWageMpsv],
-      pausalniDanMonthly: [LAW.pausalniDan2025],
+      averageWage: [{ label: 'nařízení vlády 282/2024 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2024-282' }, LAW.vzpAverageWage, SOURCE.cssz2025],
+      minimumWage: [SOURCE.minimumWage2025, SOURCE.coefficient2025And2026, LAW.minimumWageMpsv],
+      pausalniDanMonthly: [LAW.pausalniDan2025, LAW.incomeTax, LAW.social, LAW.health],
       socialMinimumShare: [LAW.social, { label: 'ČSSZ: minimální vyměřovací základy', url: 'https://www.cssz.gov.cz/vyse-minimalnich-vymerovacich-zakladu-osvc' }],
-      incomeTax: [LAW.incomeTax],
+      incomeTax: [LAW.incomeTax, SOURCE.fsQa2024And2025, { label: 'Finanční správa: pokyny k vyplnění přiznání DPFO 2025', url: 'https://adisspr.mfcr.cz/dpr/adis/idpr_pub/dpf/dp7/doc/pokyny_dap_2025.pdf' }, { label: 'zákon 128/2022 Sb. § 1 odst. 1 (dary až 30 % za 2022–2026)', url: 'https://www.zakonyprolidi.cz/cs/2022-128' }],
+      employee: [LAW.social, LAW.health, SOURCE.vzpEmployeeSplit],
     },
   },
   2026: {
@@ -167,13 +219,13 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
     sicknessEligibilityThreshold: 4_500,
     sicknessInsuranceRatePercent: 2.7,
     reductionThresholds: [1_633, 2_449, 4_897],
-    incomeTax: COMMON_INCOME_TAX,
+    incomeTax: INCOME_TAX_2022_TO_2026,
     employee: { ...EMPLOYEE_FROM_2025, socialRateRetired: 0.006 },
-    status: {},
+    status: { minimumWage: 'verified', averageWage: 'verified', pausalniDanMonthly: 'verified', incomeTax: 'verified', employee: 'verified' },
     sources: {
-      averageWage: [{ label: 'nařízení vlády 365/2025 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2025-365' }, LAW.vzpAverageWage],
-      minimumWage: [LAW.minimumWageMpsv],
-      pausalniDanMonthly: [LAW.pausalniDan2025],
+      averageWage: [{ label: 'nařízení vlády 365/2025 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2025-365' }, LAW.vzpAverageWage, SOURCE.cssz2026],
+      minimumWage: [SOURCE.minimumWage2026, SOURCE.coefficient2025And2026, SOURCE.mpsvMinimumWage2026, LAW.minimumWageMpsv],
+      pausalniDanMonthly: [LAW.pausalniDan2025, LAW.incomeTax, LAW.social, LAW.health],
       socialMinimumShare: [
         LAW.social,
         {
@@ -181,7 +233,8 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
           url: 'https://www.cssz.gov.cz/-/informace-pro-osvc-o-zmene-pojistneho-na-duchodove-pojisteni-od-1-7-2026',
         },
       ],
-      incomeTax: [LAW.incomeTax],
+      incomeTax: [LAW.incomeTax, SOURCE.fsGeneralInfo2026, SOURCE.fsQa2025And2026, { label: 'zákon 128/2022 Sb. § 1 odst. 1 (dary až 30 % za 2022–2026)', url: 'https://www.zakonyprolidi.cz/cs/2022-128' }],
+      employee: [LAW.social, SOURCE.mpsvSocialInsurance2026, SOURCE.csszRates, LAW.health, SOURCE.vzpEmployeeSplit],
     },
   },
   2027: {
@@ -210,6 +263,8 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
     employee: { ...EMPLOYEE_FROM_2025, socialRateRetired: 0.006 },
     // derived from the 2027 wording of the acts; the agencies publish their own figures in December
     status: {
+      minimumWage: 'verified',
+      averageWage: 'researched',
       pausalniDanMonthly: 'researched',
       socialMinimumShare: 'researched',
       sicknessEligibilityThreshold: 'researched',
@@ -217,10 +272,16 @@ export const TAX_YEARS: Record<number, TaxYearData> = {
       salesRegistrationSurcharge: 'researched',
       // child credits for 2027 have one source so far (the 2027 wording of § 35c)
       incomeTax: 'researched',
+      employee: 'researched',
     },
     sources: {
       averageWage: [{ label: 'nařízení vlády 177/2026 Sb.', url: 'https://www.zakonyprolidi.cz/cs/2026-177' }],
-      minimumWage: [{ label: 'MPSV: minimální mzda 2027', url: 'https://mpsv.gov.cz/minimalni-mzda-v-roce-2027-vzroste-na-24-900-korun' }],
+      minimumWage: [
+        SOURCE.minimumWage2027,
+        SOURCE.coefficient2027,
+        { label: 'MPSV: minimální mzda 2027', url: 'https://mpsv.gov.cz/minimalni-mzda-v-roce-2027-vzroste-na-24-900-korun' },
+      ],
+      employee: [LAW.social, LAW.health],
       pausalniDanMonthly: [LAW.incomeTax, LAW.social, LAW.health],
       socialMinimumShare: [LAW.social],
       incomeTax: [LAW.incomeTax, { label: 'zákon 180/2026 Sb. (slevy od 2027)', url: 'https://www.zakonyprolidi.cz/cs/2026-180' }],
